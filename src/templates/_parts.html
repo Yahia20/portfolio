@@ -1,0 +1,49 @@
+{% from "_icons.html" import icon %}
+
+{# A stat's value. Arabic wording runs right-to-left; English (and bare numbers) left-to-right. #}
+{% macro stat_value(s, t, animate=false) -%}
+{%- if s.count is not none -%}
+  {%- if animate -%}{{ s.prefix }}<span data-count="{{ s.count }}">{{ "{:,}".format(s.count) }}</span>{{ s.suffix }}
+  {%- else -%}<bdi>{{ s.prefix }}{{ "{:,}".format(s.count) }}{{ s.suffix }}</bdi>{%- endif -%}
+{%- else -%}
+  <bdi dir="{{ 'ltr' if t(s.display) == s.display.en else 'rtl' }}">{{ t(s.display) }}</bdi>
+{%- endif -%}
+{%- endmacro %}
+
+{% macro stat(s, t) -%}
+<div class="stat">
+  <p class="stat-value">{{ stat_value(s, t, animate=true) }}</p>
+  <p class="stat-label">{{ t(s.label) }}</p>
+  {% if s.note %}<p class="stat-note">{{ t(s.note) }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro status_badge(status, ui) -%}
+<span class="badge badge-{{ status }}">{% if status == "live" %}<span class="pulse" aria-hidden="true"></span>{% endif %}{{ ui("status", status) }}</span>
+{%- endmacro %}
+
+{% macro project_card(p, t, ui, root, lang, cat_by_id) -%}
+<article class="card project-card reveal" data-category="{{ p.category }}">
+  <a class="card-link" href="{{ root }}{{ lang }}/projects/{{ p.slug }}/">
+    <div class="card-media">
+      <img src="{{ root }}assets/projects/{{ p.slug }}/{{ lang }}/{{ p.cover.image }}" alt="{{ t(p.cover.alt) }}" loading="lazy" width="1200" height="675">
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="chip-static">{{ icon(cat_by_id[p.category].icon) }}{{ t(cat_by_id[p.category].name) }}</span>
+        {{ status_badge(p.status, ui) }}
+      </div>
+      <h3 class="card-title">{{ t(p.title) }}</h3>
+      <p class="card-text">{{ t(p.tagline) }}</p>
+      {% if p.stats %}
+      <dl class="mini-stats">
+        {% for s in p.stats[:2] %}
+        <div><dt>{{ t(s.label) }}</dt><dd>{{ stat_value(s, t) }}</dd></div>
+        {% endfor %}
+      </dl>
+      {% endif %}
+      <span class="card-cta">{{ ui("read_story") }} {{ icon("arrow", "icon icon-dir") }}</span>
+    </div>
+  </a>
+</article>
+{%- endmacro %}

@@ -1,0 +1,76 @@
+# Copy this file to data/projects/<slug>.yaml to add a project. The slug becomes the URL.
+# Every text is { en: "...", ar: "..." } — both are required. Put text in "double quotes"
+# whenever it contains a comma or a colon.
+# Only slug, category, status, date, title, tagline, role, cover and problem are required;
+# leave out any section you don't need and the page simply won't show it.
+
+slug: my-new-project
+category: ai-assistants          # an id from data/categories.yaml
+status: completed                # live | completed | in-progress
+featured: false                  # true puts it on the home page (only one project should be featured)
+order: 10                        # lower comes first within its category
+date: 2026-10
+
+title: { en: "Short, outcome-first title", ar: "عنوان قصير يبدأ بالنتيجة" }
+tagline: { en: "One sentence: what it does and for whom.", ar: "جملة واحدة: ماذا يفعل ولمن." }
+client:                          # optional — delete for a personal project
+  name: { en: "Client name", ar: "اسم العميل" }
+  about: { en: "Industry · Country", ar: "المجال · الدولة" }
+role: { en: "What I did.", ar: "ماذا فعلت." }
+
+cover:
+  image: cover.png               # assets/projects/<slug>/<lang>/cover.png
+  alt: { en: "What the image shows", ar: "ماذا تُظهر الصورة" }
+
+stats:                           # 2–4 headline numbers
+  - count: 1200                  # animates from 0
+    suffix: "+"
+    label: { en: "things processed", ar: "عنصر تمت معالجته" }
+  - display: { en: "3× faster", ar: "أسرع 3 مرات" }
+    label: { en: "than before", ar: "من قبل" }
+
+problem:
+  title: { en: "The problem", ar: "المشكلة" }
+  body:
+    en: >-
+      Describe the situation before, in plain words, for someone who isn't technical.
+    ar: >-
+      صف الوضع قبل المشروع بكلمات بسيطة، لشخص غير تقني.
+
+steps:                           # icons: inbox, waveform, check, search, chart, chat, spark, target ...
+  - icon: inbox
+    title: { en: "Step name", ar: "اسم الخطوة" }
+    body: { en: "What happens in this step.", ar: "ماذا يحدث في هذه الخطوة." }
+
+results:
+  title: { en: "Results", ar: "النتائج" }
+  as_of: { en: "Where and when", ar: "أين ومتى" }
+  points:
+    - { en: "A concrete result.", ar: "نتيجة ملموسة." }
+
+value:
+  title: { en: "How this can help your business", ar: "كيف يفيد هذا شركتك" }
+  items:
+    - icon: target
+      title: { en: "Benefit", ar: "الفائدة" }
+      body: { en: "Why it matters.", ar: "لماذا يهم." }
+  fits: { en: "Who it suits.", ar: "لمن يناسب." }
+
+limits:
+  title: { en: "Good to know", ar: "من المهم أن تعرف" }
+  items:
+    - { en: "An honest limitation.", ar: "قيد صريح." }
+
+tech:
+  stack: [Python, LangChain]
+  points:
+    - { en: "Technical detail for engineers.", ar: "تفصيل تقني للمهندسين." }
+
+links:
+  - kind: github                 # github | live | video | article
+    url: https://github.com/Yahia20/...
+    label: { en: "Code on GitHub", ar: "الكود على GitHub" }
+
+gallery:                         # images rendered by `python src/build.py --shots` need a shot
+  - image: cover.png             # design in src/templates/shot.html; or drop your own PNGs into
+    caption: { en: "Caption", ar: "وصف" }   # assets/projects/<slug>/en/ and .../ar/

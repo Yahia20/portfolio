@@ -1,0 +1,35 @@
+# Site-wide settings. Every user-facing string has an `en` and an `ar` version;
+# the build refuses to run if one is missing.
+
+base_url: "https://yahia20.github.io/portfolio"   # hosted on GitHub Pages (gh-pages branch = dist/)
+default_lang: ar
+
+title:
+  en: Yahia Zakaria — AI Engineer
+  ar: يحيى زكريا — مهندس ذكاء اصطناعي
+description:
+  en: I build AI that listens to your customers, reads your data, and tells your team what to fix next.
+  ar: أبني أنظمة ذكاء اصطناعي تسمع عملاءك وتقرأ بياناتك وتقول لفريقك ما الذي يجب إصلاحه أولًا.
+
+nav:
+  home:     { en: Home,      ar: الرئيسية }
+  projects: { en: Projects,  ar: المشاريع }
+  about:    { en: About me,  ar: من أنا }
+  contact:  { en: Contact,   ar: تواصل }
+
+contact:
+  email: yahiazakaria412@gmail.com
+  phone: "+20 106 065 9470"      # shown with call + WhatsApp buttons on the Contact page
+  links:
+    - kind: linkedin
+      url: https://www.linkedin.com/in/yahia-zakaria-a27384213
+      label: { en: "LinkedIn", ar: "لينكدإن" }
+    - kind: github
+      url: https://github.com/Yahia20
+      label: { en: "GitHub", ar: "جيت هب" }
+    - kind: mostaql
+      url: https://mostaql.com/u/Yehia_Z_Ali
+      label: { en: "Mostaql (freelance)", ar: "مستقل (عمل حر)" }
+    - kind: kaggle
+      url: https://www.kaggle.com/yahiazakaria20
+      label: { en: "Kaggle", ar: "كاجل" }

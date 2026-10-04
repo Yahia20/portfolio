@@ -1,0 +1,153 @@
+# Written for a non-technical reader. Technical detail lives only under `tech`.
+
+slug: ask-your-data
+category: data-analysis
+status: completed
+featured: false
+order: 1
+date: 2026-10
+
+title:
+  en: Ask your business data a question in Arabic — and trust the number
+  ar: اسأل بيانات شركتك بالعربي — وثِق في الرقم
+tagline:
+  en: A data assistant for managers — ask in Saudi dialect or formal Arabic, get the number, the chart and the query behind it, and a question back when yours is unclear.
+  ar: مساعد بيانات للمدراء — اسأل باللهجة السعودية أو بالفصحى، واحصل على الرقم والرسم والاستعلام الذي خلفه، وسؤال توضيحي عندما يكون سؤالك غير واضح.
+
+role:
+  en: Designed and built it end to end — the business definitions, the assistant, a 200-question Arabic exam, and a check against a production database schema.
+  ar: صمّمته وبنيته بالكامل — تعريفات العمل، والمساعد، واختبار من 200 سؤال عربي، والتحقق على هيكل قاعدة بيانات حقيقية.
+
+cover:
+  image: cover.png
+  alt:
+    en: A manager asks "how much did we make last month?" in Saudi dialect and gets SAR 612,500, marked verified
+    ar: مدير يسأل "كم دخلنا الشهر اللي فات؟" فيحصل على 612,500 ريال مع علامة موثّق
+
+stats:
+  - display: { en: "97.6%", ar: "97.6%" }
+    label: { en: "of verified answers correct", ar: "من الإجابات الموثّقة صحيحة" }
+    note: { en: "200 Arabic questions it never saw while being built", ar: "200 سؤال عربي لم يرها أثناء البناء" }
+  - display: { en: "10 / 10", ar: "10 / 10" }
+    label: { en: "unclear questions answered with a question, not a guess", ar: "أسئلة غير واضحة رد عليها بسؤال بدل التخمين" }
+  - display: { en: "2 sec", ar: "ثانيتان" }
+    label: { en: "typical time to answer", ar: "الوقت المعتاد للإجابة" }
+  - display: { en: "< 0.1¢", ar: "أقل من 0.1 سنت" }
+    label: { en: "cost per question", ar: "تكلفة السؤال الواحد" }
+    note: { en: "about $0.0003", ar: "حوالي 0.0003 دولار" }
+
+problem:
+  title: { en: "The problem", ar: "المشكلة" }
+  body:
+    en: >-
+      A manager has a question — how much did we sell last month, which agent is slowest to reply,
+      how many follow-ups are overdue. The dashboard answers the questions someone thought of last
+      quarter, not today's. So the question goes to an analyst and waits a day or two. The new AI
+      tools that "talk to your database" are fast, but they have a quiet flaw: they write a query
+      that runs, return a number that looks right, and sometimes it isn't — revenue counted twice,
+      cancelled deals included, the chat bot ranked as the best employee. Nobody notices until a
+      decision has been made on it.
+    ar: >-
+      لدى المدير سؤال — كم بعنا الشهر الماضي، من أبطأ موظف في الرد، كم متابعة متأخرة. لوحة المتابعة
+      تجيب على الأسئلة التي فكّر فيها أحدهم قبل ربع سنة، لا على سؤال اليوم. فيذهب السؤال لمحلل البيانات
+      وينتظر يومًا أو يومين. أدوات الذكاء الاصطناعي الجديدة التي "تتحدث مع قاعدة البيانات" سريعة، لكن
+      فيها عيب صامت: تكتب استعلامًا يعمل، وترجع رقمًا يبدو صحيحًا، وأحيانًا لا يكون كذلك — إيرادات
+      محسوبة مرتين، صفقات ملغاة داخل الحساب، أو البوت يظهر كأفضل موظف. ولا ينتبه أحد إلا بعد اتخاذ القرار.
+
+steps:
+  - icon: chat
+    title: { en: "Ask", ar: "اسأل" }
+    body:
+      en: Type the question the way you'd say it — Saudi dialect, formal Arabic, even with spelling mistakes.
+      ar: اكتب السؤال كما تقوله — باللهجة السعودية أو بالفصحى، حتى مع الأخطاء الإملائية.
+  - icon: spark
+    title: { en: "Understand", ar: "الفهم" }
+    body:
+      en: The AI works out what you're asking for — which number, which period, which agent or destination — and nothing else. It never invents a number.
+      ar: يفهم الذكاء الاصطناعي ما تطلبه — أي رقم، أي فترة، أي موظف أو وجهة — ولا شيء غير ذلك. لا يخترع أي رقم.
+  - icon: shield
+    title: { en: "Use agreed definitions", ar: "تعريفات معتمدة" }
+    body:
+      en: '"Sales", "win rate" and "quality score" are defined once, the way the business means them. Every answer uses the same definition.'
+      ar: '"المبيعات" و"نسبة الإغلاق" و"تقييم الجودة" معرّفة مرة واحدة كما يقصدها العمل. وكل إجابة تستخدم نفس التعريف.'
+  - icon: target
+    title: { en: "Ask back, or decline", ar: "يسأل أو يعتذر" }
+    body:
+      en: If the question is unclear — "best agent" by quality or by sales? — it asks. If it's not about the data, it says so.
+      ar: إذا كان السؤال غير واضح — "أفضل موظف" في الجودة أم في المبيعات؟ — يسأل. وإذا لم يكن عن البيانات يقول ذلك.
+  - icon: chart
+    title: { en: "Answer with proof", ar: "إجابة مع الدليل" }
+    body:
+      en: The number comes straight from the database, with a table, a chart, and the exact query behind it for anyone who wants to check.
+      ar: الرقم يأتي مباشرة من قاعدة البيانات، مع جدول ورسم بياني، والاستعلام الذي خلفه لمن يريد التحقق.
+
+results:
+  title: { en: "Results", ar: "النتائج" }
+  as_of: { en: "Frozen test set · October 2026", ar: "اختبار مغلق · أكتوبر 2026" }
+  points:
+    - en: 200 Arabic questions — formal, Saudi dialect, misspelled and multi-step — written and locked before the assistant existed, then run once.
+      ar: 200 سؤال عربي — فصحى ولهجة سعودية وبأخطاء إملائية ومتعددة الخطوات — كُتبت وأُغلقت قبل بناء المساعد، ثم شُغّلت مرة واحدة.
+    - en: 97.6% of verified answers correct. Every unclear question got a follow-up and every off-topic request was politely declined.
+      ar: 97.6% من الإجابات الموثّقة صحيحة. كل سؤال غير واضح قوبل بسؤال توضيحي، وكل طلب خارج النطاق اعتُذر عنه بلطف.
+    - en: Same score on a copy of a real production database schema — the same queries run on a live Postgres with no changes.
+      ar: نفس النتيجة على نسخة من هيكل قاعدة بيانات حقيقية — نفس الاستعلامات تعمل على قاعدة Postgres حيّة دون أي تعديل.
+    - en: A model eight times more expensive scored the same, so the fast, cheap one is the default — chosen by measurement, not by guess.
+      ar: نموذج أغلى بثماني مرات حقق نفس النتيجة، فاعتُمد النموذج الأسرع والأرخص — اختيار بالقياس لا بالتخمين.
+
+value:
+  title: { en: "How this can help your business", ar: "كيف يفيد هذا شركتك" }
+  items:
+    - icon: chat
+      title: { en: "Answers in seconds, not days", ar: "إجابة في ثوانٍ لا أيام" }
+      body: { en: "Managers ask their own questions without waiting for an analyst or a new dashboard.", ar: "المدير يسأل بنفسه دون انتظار محلل بيانات أو لوحة متابعة جديدة." }
+    - icon: shield
+      title: { en: "One version of the truth", ar: "رقم واحد للجميع" }
+      body: { en: "Sales means the same thing in every answer, because the definition is written once.", ar: "المبيعات تعني نفس الشيء في كل إجابة، لأن التعريف مكتوب مرة واحدة." }
+    - icon: search
+      title: { en: "Nothing hidden", ar: "لا شيء مخفي" }
+      body: { en: "Every number comes with the query that produced it, and anything the AI wrote itself is clearly marked.", ar: "كل رقم يأتي مع الاستعلام الذي أنتجه، وأي شيء كتبه الذكاء الاصطناعي بنفسه يظهر بعلامة واضحة." }
+  fits:
+    en: Companies with a CRM or sales database and managers who ask questions in Arabic — travel, real estate, retail, clinics, call centres.
+    ar: الشركات التي لديها نظام عملاء أو قاعدة مبيعات ومدراء يسألون بالعربي — السفر، العقارات، التجزئة، العيادات، مراكز الاتصال.
+
+limits:
+  title: { en: "Good to know", ar: "من المهم أن تعرف" }
+  items:
+    - en: The demo runs on invented data shaped like a real travel agency's database. Real data will raise questions the definitions don't cover yet — they're added one line at a time.
+      ar: النسخة التجريبية تعمل على بيانات وهمية بنفس شكل قاعدة بيانات وكالة سفر حقيقية. البيانات الحقيقية ستأتي بأسئلة لم تُعرَّف بعد — وتُضاف سطرًا بسطر.
+    - en: For unusual questions the AI writes the query itself; those answers are labelled and were right 10 times out of 12 in the test.
+      ar: في الأسئلة غير المعتادة يكتب الذكاء الاصطناعي الاستعلام بنفسه؛ هذه الإجابات تظهر بعلامة خاصة، وكانت صحيحة 10 مرات من 12 في الاختبار.
+    - en: Tested in Arabic only. English questions work but weren't measured.
+      ar: اختُبر بالعربية فقط. الأسئلة بالإنجليزية تعمل لكن لم تُقَس.
+
+tech:
+  stack: [Python, DeepSeek, Semantic layer, PostgreSQL, DuckDB, sqlglot, Pydantic, Streamlit]
+  points:
+    - en: "Routing like Snowflake Cortex Analyst: a YAML semantic layer (31 metrics, 16 dimensions) the model picks from; verified parameterised queries; free SQL only as a fallback."
+      ar: "توجيه على طريقة Snowflake Cortex Analyst: طبقة دلالية بصيغة YAML (31 مقياسًا و16 بُعدًا) يختار منها النموذج، واستعلامات موثّقة بمعاملات، وSQL حر كخيار أخير فقط."
+    - en: Free SQL is generated three times and answered only when a majority returns the same result; every query passes a read-only guard (single SELECT, known tables).
+      ar: الـ SQL الحر يُولَّد ثلاث مرات ولا يُعرض إلا إذا أعطت الأغلبية نفس النتيجة، وكل استعلام يمر بحماية للقراءة فقط (SELECT واحد وجداول معروفة).
+    - en: Dates and names are resolved in code — Ramadan, "last 3 months", a week that starts on Sunday, "سارا" → the stored "سارة", two agents named Mohammed → a follow-up question.
+      ar: التواريخ والأسماء تُحسب بالكود — رمضان، "آخر 3 شهور"، أسبوع يبدأ الأحد، "سارا" ← "سارة" المخزّنة، وموظفان باسم محمد ← سؤال توضيحي.
+    - en: Graded by code, not by a model. The same 200 questions were re-run on Postgres 16 built from 27 production migrations, which exposed an ENUM-to-text join the demo had hidden.
+      ar: التصحيح بالكود لا بنموذج. أُعيد تشغيل نفس الـ 200 سؤال على Postgres 16 مبني من 27 ملف ترحيل حقيقي، وكشف ذلك ربطًا بين ENUM ونص كانت النسخة التجريبية تخفيه.
+
+links:
+  - kind: github
+    url: https://github.com/Yahia20/ask-your-data
+    label: { en: "Code, test set and results on GitHub", ar: "الكود والاختبار والنتائج على GitHub" }
+
+gallery:
+  - image: cover.png
+    layout: cover-askdata
+    caption: { en: "A question in Saudi dialect, answered from agreed definitions", ar: "سؤال باللهجة السعودية، مُجاب من تعريفات معتمدة" }
+  - image: app-trend.png
+    layout: own
+    caption: { en: "Monthly sales: table, chart and the query behind them", ar: "المبيعات شهريًا: جدول ورسم والاستعلام الذي خلفهما" }
+  - image: app-clarify.png
+    layout: own
+    caption: { en: "\"Who's the best agent?\" — it asks: by quality, sales, win rate or follow-ups?", ar: "\"مين أحسن موظف؟\" — يسأل: في الجودة أم المبيعات أم الإغلاق أم المتابعة؟" }
+  - image: how-it-works.png
+    caption: { en: "How it works", ar: "كيف يعمل" }
+  - image: results.png
+    caption: { en: "Results on the frozen test set", ar: "النتائج في الاختبار المغلق" }

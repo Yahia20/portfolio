@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 · {{ site.title.en }}</title>
+  <style>
+    :root{--bg:#f6f5f1;--ink:#15171a;--muted:#5d636b;--accent:#0b6b62}
+    @media (prefers-color-scheme:dark){:root{--bg:#0f1113;--ink:#eceef0;--muted:#a5acb5;--accent:#3cc4b1}}
+    body{font:17px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px;background:var(--bg);color:var(--ink);text-align:center}
+    h1{font-size:4rem;margin:0;color:var(--accent)} p{color:var(--muted);margin:.25rem 0} a{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>404</h1>
+    <p>{{ ui.not_found.en }}</p>
+    <p dir="rtl" lang="ar">{{ ui.not_found.ar }}</p>
+    <p><a href="/en/">{{ ui.go_home.en }}</a> · <a href="/ar/" lang="ar">{{ ui.go_home.ar }}</a></p>
+  </main>
+</body>
+</html>

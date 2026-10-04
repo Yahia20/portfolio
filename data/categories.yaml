@@ -1,0 +1,47 @@
+# Project categories, in the order they appear on the Projects page.
+# A category with no projects yet is kept here but hidden from the site.
+
+- id: conversation-analytics
+  icon: waveform
+  name:
+    en: Call & conversation analytics
+    ar: تحليل المكالمات والمحادثات
+  description:
+    en: AI that listens to calls and reads chats, then tells you how your team is doing and why customers get in touch.
+    ar: ذكاء اصطناعي يسمع المكالمات ويقرأ المحادثات، ثم يخبرك بأداء فريقك ولماذا يتواصل معك العملاء.
+
+- id: ai-assistants
+  icon: chat
+  name:
+    en: AI assistants & chatbots
+    ar: مساعدات ذكية وروبوتات محادثة
+  description:
+    en: Assistants that answer from your own documents and hand over to a person instead of guessing.
+    ar: مساعدات تجيب من مستنداتك أنت، وتحوّل العميل لموظف بدل أن تخمّن.
+
+- id: data-analysis
+  icon: chart
+  name:
+    en: Data analysis & forecasting
+    ar: تحليل البيانات والتنبؤ
+  description:
+    en: Turning messy business data into clear answers, dashboards and forecasts that support a decision.
+    ar: تحويل بيانات العمل المبعثرة إلى إجابات واضحة ولوحات متابعة وتوقعات تدعم القرار.
+
+- id: machine-learning
+  icon: spark
+  name:
+    en: Deep learning & machine learning
+    ar: التعلم العميق وتعلّم الآلة
+  description:
+    en: Models that read, predict and recognise — trained, tested on messages they have never seen, and explained.
+    ar: نماذج تقرأ وتتنبأ وتتعرف — مدرّبة ومختبرة على رسائل لم ترها من قبل، ومشروحة.
+
+- id: ai-evaluation
+  icon: check
+  name:
+    en: AI evaluation & benchmarks
+    ar: تقييم نماذج الذكاء الاصطناعي
+  description:
+    en: Measuring which AI model is actually good at your task, and what it costs, before you commit to one.
+    ar: قياس أي نموذج ذكاء اصطناعي يؤدي مهمتك فعلًا وبكم، قبل أن تلتزم بواحد.

@@ -1,0 +1,77 @@
+{% from "_icons.html" import icon %}
+<!doctype html>
+<html lang="{{ lang }}" dir="{{ dir }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ t(site.title) }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ t(site.description) }}{% endblock %}">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ self.description() }}">
+  <meta property="og:type" content="website">
+  {% block og_image %}{% endblock %}
+  <link rel="alternate" hreflang="{{ other }}" href="{{ root }}{{ there }}">
+  <link rel="icon" href="{{ root }}static/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ root }}static/css/site.css">
+  <noscript><style>.call-panel[hidden]{display:block}.call-panel+.call-panel{margin-top:16px}</style></noscript>
+  <script>
+    /* Before first paint: saved theme (no flash), and a flag for JS-only styles. */
+    document.documentElement.classList.add("js");
+    try { var th = localStorage.getItem("theme"); if (th) document.documentElement.dataset.theme = th; } catch (e) {}
+  </script>
+</head>
+<body class="page-{{ kind }}">
+  <a class="skip" href="#main">{{ ui("skip") }}</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="{{ root }}{{ lang }}/" aria-label="{{ t(profile.name) }}">
+        <span class="brand-mark" aria-hidden="true">YZ</span>
+        <span class="brand-text">
+          <span class="brand-name">{{ t(profile.name) }}</span>
+          <span class="brand-role">{{ t(profile.role) }}</span>
+        </span>
+      </a>
+      <nav class="tabs" aria-label="{{ t(site.nav.home) }}">
+        {% for key, target in [("home", ""), ("projects", "projects/"), ("about", "about/"), ("contact", "contact/")] %}
+        <a href="{{ root }}{{ lang }}/{{ target }}" {% if kind == key or (key == "projects" and kind == "project") %}aria-current="page"{% endif %}>{{ t(site.nav[key]) }}</a>
+        {% endfor %}
+      </nav>
+      <div class="header-tools">
+        <a class="tool lang-switch" href="{{ root }}{{ there }}" hreflang="{{ other }}" lang="{{ other }}" data-lang="{{ other }}">
+          {{ icon("globe") }}<span>{{ ui("switch_lang") }}</span>
+        </a>
+        <button class="tool theme-toggle" type="button" aria-label="{{ ui('theme') }}" title="{{ ui('theme') }}">
+          {{ icon("sun", "icon icon-sun") }}{{ icon("moon", "icon icon-moon") }}
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    {% block main %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="footer-name">{{ t(profile.name) }} · {{ t(profile.role) }}</p>
+        <p class="muted small">{{ t(profile.location) }}</p>
+      </div>
+      <ul class="footer-links" role="list">
+        <li><a href="mailto:{{ site.contact.email }}">{{ icon("mail") }}<span class="sr-only">Email</span></a></li>
+        {% for l in site.contact.links %}
+        <li><a href="{{ l.url }}" rel="me noopener" target="_blank" title="{{ t(l.label) }}">{{ icon(l.kind) }}<span class="sr-only">{{ t(l.label) }}</span></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="wrap"><p class="muted small">© {{ year }} {{ t(profile.name) }}</p></div>
+  </footer>
+
+  <script src="{{ root }}static/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% from "_icons.html" import icon %}
+
+{% block title %}{{ t(site.nav.about) }} · {{ t(profile.name) }}{% endblock %}
+
+{% block main %}
+<section class="page-head">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      {% if profile.portrait %}
+      <img class="portrait" src="{{ root }}assets/img/profile/{{ profile.portrait }}" alt="{{ t(profile.portrait_alt) }}" width="480" height="560">
+      {% else %}
+      <div class="portrait portrait-placeholder" role="img" aria-label="{{ t(profile.name) }}"><span>YZ</span></div>
+      {% endif %}
+    </div>
+    <div>
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>{{ t(profile.availability) }}</p>
+      <h1>{{ t(profile.name) }}</h1>
+      <p class="about-role">{{ t(profile.role) }} · {{ icon("pin") }} {{ t(profile.location) }}</p>
+      {% for para in profile.about %}<p class="prose">{{ t(para) }}</p>{% endfor %}
+      <div class="actions">
+        <a class="btn btn-primary" href="{{ root }}{{ lang }}/contact/">{{ icon("mail") }} {{ ui("get_in_touch") }}</a>
+        <a class="btn btn-ghost" href="{{ root }}{{ lang }}/projects/">{{ ui("see_work") }} {{ icon("arrow", "icon icon-dir") }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if profile.gallery %}
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">{{ ui("photos") }}</h2>
+    <div class="gallery gallery-photos">
+      {% for g in profile.gallery %}
+      <figure class="reveal">
+        <button class="gallery-btn" type="button" data-lightbox="{{ root }}assets/img/profile/{{ g.image }}" data-caption="{{ t(g.caption) }}" aria-label="{{ ui('open_image') }}: {{ t(g.caption) }}">
+          <img src="{{ root }}assets/img/profile/{{ g.image }}" alt="{{ t(g.caption) }}" loading="lazy">
+        </button>
+        <figcaption>{{ t(g.caption) }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section-tint">
+  <div class="wrap">
+    <h2 class="section-title">{{ ui("experience") }}</h2>
+    <ol class="timeline" role="list">
+      {% for j in profile.experience %}
+      <li class="reveal">
+        <div class="tl-meta"><span class="tl-period">{{ t(j.period) }}</span><span class="muted small">{{ t(j.place) }}</span></div>
+        <div class="tl-body">
+          <h3>{{ t(j.role) }} <span class="muted">· {{ t(j.org) }}</span></h3>
+          {% if j.points %}<ul>{% for x in j.points %}<li>{{ t(x) }}</li>{% endfor %}</ul>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">{{ ui("skills") }}</h2>
+    <div class="grid grid-skills">
+      {% for g in profile.skills %}
+      <div class="skill-group reveal">
+        <h3>{{ t(g.group) }}</h3>
+        <ul class="tech-stack" role="list">{% for s in g.items %}<li>{{ s }}</li>{% endfor %}</ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap grid grid-3 about-facts">
+    <div class="reveal">
+      <h2 class="section-title">{{ ui("certs") }}</h2>
+      <ul class="cert-list" role="list">
+        {% for c in profile.certifications %}
+        <li>{{ icon("check") }}<span><strong lang="en" dir="ltr">{{ c.name }}</strong><span class="muted small" lang="en" dir="ltr">{{ c.issuer }}{% if c.year %} · {{ c.year }}{% endif %}</span></span></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="reveal">
+      <h2 class="section-title">{{ ui("education") }}</h2>
+      {% for e in profile.education %}
+      <div class="edu">
+        <strong>{{ t(e.degree) }}</strong>
+        <span>{{ t(e.org) }}</span>
+        <span class="muted small">{{ t(e.period) }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="reveal">
+      <h2 class="section-title">{{ ui("languages") }}</h2>
+      <ul class="lang-list" role="list">
+        {% for l in profile.languages %}<li><strong>{{ t(l.name) }}</strong><span class="muted">{{ t(l.level) }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<dialog class="lightbox" aria-label="{{ ui('photos') }}">
+  <button class="lightbox-close tool" type="button" aria-label="{{ ui('close') }}">{{ icon("x") }}</button>
+  <img alt="">
+  <p class="lightbox-caption"></p>
+</dialog>
+{% endblock %}

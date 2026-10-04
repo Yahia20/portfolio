@@ -1,0 +1,295 @@
+{% from "_icons.html" import icon %}
+{% from "_parts.html" import stat_value %}
+{% set p = project %}
+<!doctype html>
+<html lang="{{ lang }}" dir="{{ dir }}" data-theme="light">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}static/css/site.css">
+<style>
+  html, body { margin: 0; width: {{ width }}px; height: {{ height }}px; overflow: hidden; }
+  body { font-size: 18px; }
+  .frame { width: {{ width }}px; height: {{ height }}px; padding: 56px 64px; display: flex; flex-direction: column; position: relative; overflow: hidden; background: var(--bg); }
+  .frame-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 15px; }
+  .frame-foot .who { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink-2); }
+  .frame-foot .brand-mark { width: 32px; height: 32px; font-size: 12px; border-radius: 9px; }
+  .kicker { font-size: 15px; font-weight: 700; color: var(--accent); margin: 0 0 12px; }
+  .big { font-size: 44px; line-height: 1.2; margin: 0 0 14px; }
+  :lang(ar) .big { line-height: 1.45; }
+
+  /* cover */
+  .cover { background: radial-gradient(900px 500px at 85% 20%, #0f5a53 0, transparent 60%), linear-gradient(160deg, #111417, #0b0d0f); color: #eef0f2; }
+  [dir="rtl"] .cover { background: radial-gradient(900px 500px at 15% 20%, #0f5a53 0, transparent 60%), linear-gradient(200deg, #111417, #0b0d0f); }
+  .cover .kicker { color: #5fd6c4; }
+  .cover-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; flex: 1; }
+  .cover h1 { font-size: 50px; line-height: 1.15; margin: 0 0 18px; color: #fff; }
+  :lang(ar) .cover h1 { line-height: 1.45; font-size: 46px; }
+  .cover p.sub { color: #b9c1c9; font-size: 20px; margin: 0; }
+  .flow { display: grid; gap: 14px; }
+  .flow-card { background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .12); border-radius: 18px; padding: 16px 18px; }
+  .flow-card h4 { margin: 0 0 10px; font-size: 14px; color: #8fa0ad; font-weight: 600; display: flex; gap: 8px; align-items: center; }
+  .wave { display: flex; gap: 5px; align-items: center; height: 44px; }
+  .wave i { display: block; width: 6px; border-radius: 3px; background: #3cc4b1; }
+  .lines p { margin: 0 0 6px; font-size: 15px; color: #dfe4e8; font-family: "IBM Plex Sans Arabic", sans-serif; line-height: 1.6; }
+  .lines b { color: #5fd6c4; }
+  .mini-score { display: grid; gap: 8px; }
+  .mini-score div { display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: #dfe4e8; }
+  .mini-score .dots > span { width: 11px; height: 11px; background: rgb(255 255 255 / .12); border-color: transparent; }
+  .mini-score .dots > span.on { background: #3cc4b1; }
+  .mini-score .low .dots > span.on { background: #ff8073; }
+  .mini-score .low { color: #ffb3aa; }
+  .cover .frame-foot { color: #8fa0ad; }
+  .cover .frame-foot .who { color: #dfe4e8; }
+  .cover .brand-mark { background: #eef0f2; color: #111417; }
+
+  /* how it works */
+  .steps5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 18px; }
+  .s5 { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px; position: relative; box-shadow: var(--shadow); }
+  .s5 .n { position: absolute; top: 14px; inset-inline-end: 16px; font-weight: 700; color: var(--muted); font-size: 14px; }
+  .s5 h3 { font-size: 21px; margin: 14px 0 8px; }
+  .s5 p { font-size: 15px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+  :lang(ar) .s5 p { line-height: 1.7; font-size: 14.5px; }
+
+  /* caught */
+  .caught-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; flex: 1; align-items: center; }
+  .caught-grid .big { font-size: 40px; }
+  .caught-grid p.body { font-size: 18px; color: var(--ink-2); line-height: 1.6; }
+  :lang(ar) .caught-grid p.body { line-height: 1.8; font-size: 17px; }
+  .sc { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px; box-shadow: var(--shadow-lg); display: grid; gap: 8px; }
+  .sc .score-row { padding: 9px 12px; }
+  .sc .evidence { font-size: 14px; line-height: 1.6; margin-top: 4px; }
+  .sc .score-label { font-size: 15px; }
+  .sc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .sc-head strong { font-size: 18px; }
+  .flagtag { display: inline-flex; gap: 6px; align-items: center; background: var(--bad-soft); color: var(--bad); font-weight: 700; font-size: 14px; padding: 4px 10px; border-radius: 999px; }
+
+  /* team */
+  .team-grid { display: grid; grid-template-columns: 1.4fr .6fr; gap: 40px; flex: 1; align-items: center; }
+  .team-grid .bar-row { grid-template-columns: 220px 1fr 3em; padding: 8px 0; }
+  .team-grid .bar-label { font-size: 17px; }
+  .team-grid .bar-track { height: 30px; }
+  .team-grid .bar-value { font-size: 18px; }
+  .team-grid .bar-axis { grid-template-columns: 220px 1fr 3em; font-size: 14px; }
+  .side-stats { display: grid; gap: 12px; }
+  .side-stats .stat { padding: 16px 18px; }
+  .side-stats .stat-value { font-size: 34px; }
+  .weakest-note { display: inline-flex; gap: 8px; align-items: center; margin-top: 16px; color: var(--accent); font-weight: 600; font-size: 16px; }
+
+  /* results */
+  .res-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+  .res-grid .stat { padding: 24px 22px; box-shadow: var(--shadow); }
+  .res-grid .stat-value { font-size: 40px; color: var(--accent); white-space: nowrap; }
+  .res-grid .stat-label { font-size: 17px; }
+  .res-points { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+  .res-points li { font-size: 16px; }
+
+  /* routing cover */
+  .route { display: grid; gap: 12px; }
+  .route-row { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .12); border-radius: 16px; padding: 14px 16px; }
+  .route-msg { color: #dfe4e8; font-size: 16px; line-height: 1.45; direction: ltr; text-align: left; }
+  .route-tag { display: inline-flex; gap: 8px; align-items: center; background: #3cc4b1; color: #06201d; font-weight: 700; font-size: 14px; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+  .route-tag .icon { width: 16px; height: 16px; }
+
+  /* comparison */
+  .cmp-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 40px; flex: 1; align-items: center; }
+  .cmp-grid { margin-top: -6px; }
+  .cmp-grid .compare-bars { gap: 6px; }
+  .cmp-grid .compare-group { padding: 6px 14px 4px; gap: 2px; }
+  .cmp-grid .compare-name { font-size: 18px; margin-bottom: 0; }
+  .cmp-grid .bar-row { padding: 2px 0; }
+  .cmp-grid .bar-track { height: 22px; }
+  .cmp-grid .bar-value { font-size: 17px; }
+  .cmp-grid .legend { margin-bottom: 10px; }
+  .cmp-take { font-size: 19px; line-height: 1.55; color: var(--ink-2); }
+  :lang(ar) .cmp-take { line-height: 1.8; font-size: 18px; }
+</style>
+</head>
+<body>
+{% if shot == "cover" %}
+<div class="frame cover">
+  <div class="cover-grid">
+    <div>
+      <p class="kicker">{{ t(p.client.name) if p.client else "" }} · {{ ui("status", p.status) }}</p>
+      <h1>{{ t(p.title) }}</h1>
+      <p class="sub">{{ t(p.tagline).split("—")[0].strip() }}</p>
+    </div>
+    <div class="flow">
+      <div class="flow-card">
+        <h4>{{ icon("waveform") }} {{ t(p.steps[1].title) }}</h4>
+        <div class="wave">{% for h in [14,26,40,22,34,44,18,30,40,24,12,28,38,20,32,42,16,26,36,14,22,34,40,18,28,12] %}<i style="height: {{ h }}px"></i>{% endfor %}</div>
+      </div>
+      <div class="flow-card lines" lang="ar" dir="rtl">
+        <p><b>الموظف:</b> هي فعلًا تذكرة غير قابلة للاسترداد…</p>
+        <p><b>الموظف:</b> بس ما عليك، هنرجعلك الفلوس كاملة.</p>
+      </div>
+      <div class="flow-card">
+        <h4>{{ icon("check") }} {{ t(p.steps[2].title) }}</h4>
+        <div class="mini-score">
+          {% set hl = demo.calls | selectattr("id", "equalto", demo.highlight) | first %}
+          {% for s in hl.scores %}
+          <div class="{{ 'low' if s.score <= 1 }}"><span>{{ s.label }}</span><span class="dots">{% for i in range(5) %}<span class="{{ 'on' if i < s.score }}"></span>{% endfor %}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ ui("status", p.status) }} · <bdi>{{ p.date }}</bdi></span></div>
+</div>
+
+{% elif shot == "cover-askdata" %}
+<div class="frame cover">
+  <div class="cover-grid">
+    <div>
+      <p class="kicker">{{ ui("status", p.status) }} · <bdi>{{ p.date }}</bdi></p>
+      <h1>{{ t(p.title) }}</h1>
+      <p class="sub">{{ t(p.tagline).split("—")[0].split(":")[0].strip() }}</p>
+    </div>
+    <div class="flow">
+      <div class="flow-card lines" lang="ar" dir="rtl">
+        <h4>{{ icon("chat") }} {{ t({"en": "The manager asks", "ar": "المدير يسأل"}) }}</h4>
+        <p><b>المدير:</b> كم دخلنا الشهر اللي فات؟</p>
+      </div>
+      <div class="flow-card">
+        <h4>{{ icon("spark") }} {{ t({"en": "Understood as", "ar": "فهمه كالتالي"}) }}</h4>
+        <div class="mini-score">
+          <div><span>{{ t({"en": "Metric", "ar": "المقياس"}) }}</span><span>{{ t({"en": "Sales = won deals", "ar": "المبيعات = الصفقات الناجحة"}) }}</span></div>
+          <div><span>{{ t({"en": "Period", "ar": "الفترة"}) }}</span><span><bdi>2026-09-01 → 2026-09-30</bdi></span></div>
+        </div>
+      </div>
+      <div class="flow-card">
+        <h4>{{ icon("check") }} {{ t({"en": "Answer, from the database", "ar": "الإجابة، من قاعدة البيانات"}) }}</h4>
+        <p style="margin:0;font-size:34px;font-weight:700;color:#5fd6c4"><bdi>{{ t({"en": "SAR 612,500", "ar": "612,500 ريال"}) }}</bdi>
+          <span style="font-size:15px;font-weight:600;color:#8fe3b0;margin-inline-start:10px">✓ {{ t({"en": "verified", "ar": "موثّق"}) }}</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ ui("status", p.status) }} · <bdi>{{ p.date }}</bdi></span></div>
+</div>
+
+{% elif shot == "how-it-works" %}
+<div class="frame">
+  <p class="kicker">{{ t(p.title) }}</p>
+  <h2 class="big">{{ ui("how") }}</h2>
+  <div class="steps5">
+    {% for s in p.steps %}
+    <div class="s5">
+      <span class="n">{{ loop.index }}</span>
+      <span class="service-icon">{{ icon(s.icon) }}</span>
+      <h3>{{ t(s.title) }}</h3>
+      <p>{{ t(s.body) }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ t(p.client.name) if p.client else "" }}</span></div>
+</div>
+
+{% elif shot == "caught" %}
+{% set d = p.demo %}
+{% set hl = demo.calls | selectattr("id", "equalto", demo.highlight) | first %}
+<div class="frame">
+  <div class="caught-grid">
+    <div>
+      <p class="kicker">{{ t(p.title) }}</p>
+      <h2 class="big">{{ t(d.highlight_title) }}</h2>
+      <p class="body">{{ t(d.highlight_body) }}</p>
+    </div>
+    <div class="sc">
+      <div class="sc-head"><strong>{{ hl.title }} · <bdi>{{ hl.percent | round | int }}%</bdi></strong><span class="flagtag">{{ icon("flag") }} {{ ui("flagged") }}</span></div>
+      {% for s in hl.scores %}
+      {% if s.key in ["policy_compliance", "resolution"] %}
+      <div class="score-row{% if s.score <= 1 %} is-low{% endif %}">
+        <div class="score-top"><span class="score-label">{{ s.label }}</span><span class="dots">{% for i in range(5) %}<span class="{{ 'on' if i < s.score }}"></span>{% endfor %}<bdi class="dots-num">{{ s.score }}/5</bdi></span></div>
+        <p class="evidence" lang="ar" dir="rtl">{{ s.evidence }}</p>
+      </div>
+      {% else %}
+      <div class="score-row"><div class="score-top"><span class="score-label">{{ s.label }}</span><span class="dots">{% for i in range(5) %}<span class="{{ 'on' if i < s.score }}"></span>{% endfor %}<bdi class="dots-num">{{ s.score }}/5</bdi></span></div></div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ t(p.title) }}</span></div>
+</div>
+
+{% elif shot == "team-summary" %}
+<div class="frame">
+  <p class="kicker">{{ t(p.title) }}</p>
+  <h2 class="big">{{ ui("team_title") }}</h2>
+  <div class="team-grid">
+    <div>
+      <div class="bars">
+        {% for row in demo.team %}
+        <div class="bar-row"><span class="bar-label">{{ row.label }}</span><span class="bar-track"><span class="bar-fill" style="inline-size: {{ (row.average / 5 * 100) | round(1) }}%"></span><span class="bar-value"><bdi>{{ row.average }}</bdi></span></span><span></span></div>
+        {% endfor %}
+        <div class="bar-axis"><span></span><span class="axis-ticks">{% for i in range(6) %}<span style="inset-inline-start: {{ i * 20 }}%">{{ i }}</span>{% endfor %}</span><span></span></div>
+      </div>
+      <p class="weakest-note">{{ icon("target") }} {{ ui("team_sub") }}</p>
+    </div>
+    <div class="side-stats">
+      <div class="stat"><p class="stat-value">{{ demo.count }}</p><p class="stat-label">{{ ui("calls_scored") }}</p></div>
+      <div class="stat"><p class="stat-value"><bdi>{{ demo.average | round | int }}%</bdi></p><p class="stat-label">{{ ui("avg_score") }}</p></div>
+      <div class="stat"><p class="stat-value">{{ demo.flagged }}</p><p class="stat-label">{{ ui("flagged_n") }}</p></div>
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ t(p.title) }}</span></div>
+</div>
+
+{% elif shot == "results" %}
+<div class="frame">
+  <p class="kicker">{{ t(p.results.as_of) }}</p>
+  <h2 class="big">{{ t(p.results.title) }}</h2>
+  <div class="res-grid">
+    {% for s in p.stats %}
+    <div class="stat">
+      <p class="stat-value">{{ stat_value(s, t) }}</p>
+      <p class="stat-label">{{ t(s.label) }}</p>
+      {% if s.note %}<p class="stat-note">{{ t(s.note) }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <ul class="checks res-points" role="list">
+    {% for r in p.results.points[:4] %}<li>{{ icon("check") }}<span>{{ t(r) }}</span></li>{% endfor %}
+  </ul>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ t(p.title) }}</span></div>
+</div>
+{% elif shot == "cover-routing" %}
+<div class="frame cover">
+  <div class="cover-grid">
+    <div>
+      <p class="kicker">{{ ui("status", p.status) }} · <bdi>{{ p.date }}</bdi></p>
+      <h1>{{ t(p.title) }}</h1>
+      <p class="sub">{{ t(p.tagline).split("—")[0].strip() }}</p>
+    </div>
+    <div class="route">
+      {% for r in examples.rows if (r.answers | last).ok %}{% if loop.index <= 4 %}
+      <div class="route-row"><span class="route-msg">“{{ r.text }}”</span><span class="route-tag">{{ icon("arrow", "icon icon-dir") }}{{ r.expected }}</span></div>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>PyTorch · Transformers</span></div>
+</div>
+
+{% elif shot == "comparison" %}
+{% set c = p.comparison %}
+<div class="frame">
+  <p class="kicker">{{ t(p.title) }}</p>
+  <h2 class="big">{{ t(c.title) }}</h2>
+  <div class="cmp-grid">
+    <div class="bars compare-bars">
+      <ul class="legend" role="list">{% for test in c.tests %}<li><span class="swatch series-{{ loop.index }}"></span><span><strong>{{ t(test.label) }}</strong></span></li>{% endfor %}</ul>
+      {% for m in c.models %}
+      <div class="compare-group{% if m.highlight %} is-highlight{% endif %}">
+        <div class="compare-name"><strong>{{ t(m.name) }}</strong></div>
+        {% for test in c.tests %}{% set v = m.scores[test.id] * 100 %}
+        <div class="bar-row"><span class="bar-track"><span class="bar-fill series-{{ loop.index }}" style="inline-size: {{ v | round(1) }}%"></span><span class="bar-value"><bdi>{{ v | round | int }}%</bdi></span></span></div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    <p class="cmp-take">{{ t(c.takeaway) }}</p>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ t(p.title) }}</span></div>
+</div>
+{% endif %}
+</body>
+</html>

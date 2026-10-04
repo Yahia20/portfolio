@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% from "_icons.html" import icon %}
+
+{% block title %}{{ t(site.nav.contact) }} · {{ t(profile.name) }}{% endblock %}
+
+{% block main %}
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>{{ t(profile.availability) }}</p>
+    <h1>{{ ui("contact_title") }}</h1>
+    <p class="lead">{{ ui("contact_body") }}</p>
+
+    <div class="email-card">
+      <span class="service-icon">{{ icon("mail") }}</span>
+      <a class="email-addr" href="mailto:{{ site.contact.email }}" dir="ltr">{{ site.contact.email }}</a>
+      <div class="email-actions">
+        <button class="btn btn-ghost" type="button" data-copy="{{ site.contact.email }}" data-copied="{{ ui('copied') }}">{{ icon("copy") }} <span>{{ ui("copy") }}</span></button>
+        <a class="btn btn-primary" href="mailto:{{ site.contact.email }}">{{ ui("email_me") }} {{ icon("arrow", "icon icon-dir") }}</a>
+      </div>
+    </div>
+
+    {% if site.contact.phone %}
+    <div class="email-card">
+      <span class="service-icon">{{ icon("phone") }}</span>
+      <a class="email-addr" href="tel:+{{ site.contact.phone_digits() }}" dir="ltr">{{ site.contact.phone }}</a>
+      <div class="email-actions">
+        <a class="btn btn-ghost" href="tel:+{{ site.contact.phone_digits() }}">{{ icon("phone") }} {{ ui("call_me") }}</a>
+        <a class="btn btn-primary" href="https://wa.me/{{ site.contact.phone_digits() }}" target="_blank" rel="noopener">{{ icon("whatsapp") }} {{ ui("whatsapp") }}</a>
+      </div>
+    </div>
+    {% endif %}
+
+    <h2 class="section-title small-title">{{ ui("elsewhere") }}</h2>
+    <ul class="link-cards" role="list">
+      {% for l in site.contact.links %}
+      <li>
+        <a href="{{ l.url }}" target="_blank" rel="me noopener">
+          <span class="service-icon">{{ icon(l.kind) }}</span>
+          <span>{{ t(l.label) }}</span>
+          {{ icon("external") }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

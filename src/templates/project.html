@@ -1,0 +1,347 @@
+{% extends "base.html" %}
+{% from "_icons.html" import icon %}
+{% from "_parts.html" import stat, status_badge %}
+{% set p = project %}
+{% set cat = cat_by_id[p.category] %}
+
+{% block title %}{{ t(p.title) }} · {{ t(profile.name) }}{% endblock %}
+{% block description %}{{ t(p.tagline) }}{% endblock %}
+{% block og_image %}<meta property="og:image" content="{{ root }}assets/projects/{{ p.slug }}/{{ lang }}/{{ p.cover.image }}">{% endblock %}
+
+{% block main %}
+<article class="project">
+  <header class="project-hero">
+    <div class="wrap">
+      <a class="back" href="{{ root }}{{ lang }}/projects/#{{ p.category }}">{{ icon("arrow", "icon icon-back") }} {{ ui("back_projects") }}</a>
+      <div class="card-meta">
+        <span class="chip-static">{{ icon(cat.icon) }}{{ t(cat.name) }}</span>
+        {{ status_badge(p.status, ui) }}
+      </div>
+      <h1 class="project-title">{{ t(p.title) }}</h1>
+      <p class="lead project-tagline">{{ t(p.tagline) }}</p>
+      <dl class="project-facts">
+        {% if p.client %}
+        <div><dt>{{ ui("client") }}</dt><dd>{{ t(p.client.name) }} <span class="muted">· {{ t(p.client.about) }}</span></dd></div>
+        {% endif %}
+        <div><dt>{{ ui("my_role") }}</dt><dd>{{ t(p.role) }}</dd></div>
+      </dl>
+      <figure class="project-cover">
+        <img src="{{ root }}assets/projects/{{ p.slug }}/{{ lang }}/{{ p.cover.image }}" alt="{{ t(p.cover.alt) }}" width="1200" height="675">
+      </figure>
+      {% if p.stats %}
+      <div class="stats">
+        {% for s in p.stats %}{{ stat(s, t) }}{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">{{ t(p.problem.title) }}</h2>
+      <p class="prose">{{ t(p.problem.body) }}</p>
+    </div>
+  </section>
+
+  {% if p.steps %}
+  <section class="section section-tint">
+    <div class="wrap">
+      <h2 class="section-title">{{ ui("how") }}</h2>
+      <div class="stepper" data-stepper>
+        <ol class="step-list" role="list">
+          {% for s in p.steps %}
+          <li>
+            <button class="step-btn" type="button" id="step-tab-{{ loop.index }}" aria-controls="step-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}">
+              <span class="step-num">{{ loop.index }}</span>
+              <span class="step-icon">{{ icon(s.icon) }}</span>
+              <span class="step-name">{{ t(s.title) }}</span>
+            </button>
+          </li>
+          {% endfor %}
+        </ol>
+        <div class="step-panels">
+          {% for s in p.steps %}
+          <div class="step-panel" id="step-panel-{{ loop.index }}" role="tabpanel" aria-labelledby="step-tab-{{ loop.index }}">
+            <p class="step-kicker">{{ ui("step") }} {{ loop.index }} / {{ p.steps | length }}</p>
+            <h3>{{ icon(s.icon) }} {{ t(s.title) }}</h3>
+            <p>{{ t(s.body) }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if p.results %}
+  <section class="section">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">{{ t(p.results.title) }}</h2>
+      <p class="muted">{{ t(p.results.as_of) }}</p>
+      <ul class="checks" role="list">
+        {% for r in p.results.points %}<li>{{ icon("check") }}<span>{{ t(r) }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if p.demo and demo %}
+  {% set d = p.demo %}
+  <section class="section section-tint" id="demo">
+    <div class="wrap">
+      <h2 class="section-title">{{ t(d.title) }}</h2>
+      <p class="lead narrow-text">{{ t(d.intro) }}</p>
+
+      <aside class="callout reveal">
+        <span class="callout-icon">{{ icon("shield") }}</span>
+        <div>
+          <h3>{{ t(d.highlight_title) }}</h3>
+          <p>{{ t(d.highlight_body) }}</p>
+          <button class="link-btn" type="button" data-show-call="{{ d.highlight }}">{{ ui("read_story") }} {{ icon("arrow", "icon icon-dir") }}</button>
+        </div>
+      </aside>
+
+      <div class="explorer" data-explorer>
+        <div class="call-list" role="tablist" aria-label="{{ t(d.title) }}">
+          {% for c in demo.calls %}
+          <button class="call-item" type="button" role="tab" id="tab-{{ c.id }}" aria-controls="panel-{{ c.id }}" aria-selected="{{ 'true' if c.id == demo.highlight else 'false' }}" data-call="{{ c.id }}">
+            <span class="call-item-top">
+              <span class="call-item-title">{{ c.title }}</span>
+              <span class="score-pill tone-{{ 'good' if c.percent >= 75 else ('mid' if c.percent >= 50 else 'bad') }}"><bdi>{{ c.percent | round | int }}%</bdi></span>
+            </span>
+            <span class="meter" aria-hidden="true"><span style="inline-size: {{ c.percent }}%"></span></span>
+            {% if c.flagged %}<span class="flag-note">{{ icon("flag") }} {{ ui("flagged") }}</span>{% endif %}
+          </button>
+          {% endfor %}
+        </div>
+
+        {% for c in demo.calls %}
+        <div class="call-panel" role="tabpanel" id="panel-{{ c.id }}" aria-labelledby="tab-{{ c.id }}" {% if c.id != demo.highlight %}hidden{% endif %}>
+          <div class="call-head">
+            <div>
+              <h3>{{ c.title }}</h3>
+              <p class="muted">{{ c.story }}</p>
+            </div>
+            <div class="ring tone-{{ 'good' if c.percent >= 75 else ('mid' if c.percent >= 50 else 'bad') }}" style="--p: {{ c.percent }}" role="img" aria-label="{{ ui('overall') }} {{ c.percent | round | int }}%">
+              <span><bdi>{{ c.percent | round | int }}%</bdi></span>
+            </div>
+          </div>
+          <dl class="call-facts">
+            <div><dt>{{ ui("call_reason") }}</dt><dd lang="ar" dir="rtl">{{ c.reason }}</dd></div>
+            <div><dt>{{ ui("mood") }}</dt><dd>{{ c.mood }}</dd></div>
+            <div><dt>{{ ui("resolved") }}</dt><dd>{{ ui("yes") if c.resolved else ui("no") }}</dd></div>
+            <div><dt>{{ ui("flagged") }}</dt><dd class="{{ 'is-flagged' if c.flagged }}">{% if c.flagged %}{{ icon("flag") }} {{ ui("yes") }}{% else %}{{ ui("not_flagged") }}{% endif %}</dd></div>
+          </dl>
+          {% if lang == "en" and t(d.note) %}<p class="note">{{ icon("info") }} {{ t(d.note) }}</p>{% endif %}
+          <ul class="scorecard" role="list">
+            {% for s in c.scores %}
+            <li class="score-row{% if s.score <= 1 %} is-low{% endif %}">
+              <div class="score-top">
+                <span class="score-label">{{ s.label }}</span>
+                <span class="dots" role="img" aria-label="{{ s.score }} / 5">{% for i in range(5) %}<span class="{{ 'on' if i < s.score }}"></span>{% endfor %}<bdi class="dots-num">{{ s.score }}/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">{{ s.evidence }}</p>
+            </li>
+            {% endfor %}
+          </ul>
+          <div class="grid grid-2 call-notes">
+            {% if c.strengths %}<div><h4>{{ ui("strengths") }}</h4><ul lang="ar" dir="rtl">{% for x in c.strengths %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+            {% if c.improvements %}<div><h4>{{ ui("improve") }}</h4><ul lang="ar" dir="rtl">{% for x in c.improvements %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+          </div>
+          <details class="transcript">
+            <summary>{{ ui("transcript") }}</summary>
+            <div lang="ar" dir="rtl">{% for line in c.transcript.strip().splitlines() %}{% set parts = line.split(":", 1) %}<p><b>{{ parts[0] }}:</b>{{ parts[1] if parts | length > 1 else "" }}</p>{% endfor %}</div>
+          </details>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="team reveal">
+        <div class="team-head">
+          <div>
+            <h3>{{ ui("team_title") }}</h3>
+            <p class="muted">{{ ui("team_sub") }}</p>
+          </div>
+          <div class="stats stats-inline">
+            <div class="stat"><p class="stat-value">{{ demo.count }}</p><p class="stat-label">{{ ui("calls_scored") }}</p></div>
+            <div class="stat"><p class="stat-value"><bdi>{{ demo.average | round | int }}%</bdi></p><p class="stat-label">{{ ui("avg_score") }}</p></div>
+            <div class="stat"><p class="stat-value">{{ demo.flagged }}</p><p class="stat-label">{{ ui("flagged_n") }}</p></div>
+          </div>
+        </div>
+        <figure class="bars" aria-label="{{ ui('team_title') }}">
+          {% for row in demo.team %}
+          <div class="bar-row" tabindex="0" data-tip="{{ row.label }}: {{ row.average }} / 5">
+            <span class="bar-label">{{ row.label }}</span>
+            <span class="bar-track"><span class="bar-fill" style="inline-size: {{ (row.average / 5 * 100) | round(1) }}%"></span><span class="bar-value"><bdi>{{ row.average }}</bdi></span></span>
+            <span></span>
+          </div>
+          {% endfor %}
+          <div class="bar-axis" aria-hidden="true"><span></span><span class="axis-ticks">{% for i in range(6) %}<span style="inset-inline-start: {{ i * 20 }}%">{{ i }}</span>{% endfor %}</span><span></span></div>
+        </figure>
+        <details class="table-view">
+          <summary>{{ ui("team_table") }}</summary>
+          <table>
+            <thead><tr><th scope="col">{{ ui("skill") }}</th><th scope="col">{{ ui("average") }}</th></tr></thead>
+            <tbody>{% for row in demo.team %}<tr><td>{{ row.label }}</td><td>{{ row.average }}</td></tr>{% endfor %}</tbody>
+          </table>
+        </details>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if p.comparison %}
+  {% set c = p.comparison %}
+  <section class="section" id="comparison">
+    <div class="wrap">
+      <h2 class="section-title">{{ t(c.title) }}</h2>
+      <p class="lead narrow-text">{{ t(c.intro) }}</p>
+      <div class="compare reveal">
+        <ul class="legend" role="list">
+          {% for test in c.tests %}
+          <li><span class="swatch series-{{ loop.index }}" aria-hidden="true"></span><span><strong>{{ t(test.label) }}</strong> <span class="muted small">{{ t(test.note) }}</span></span></li>
+          {% endfor %}
+        </ul>
+        <figure class="bars compare-bars" aria-label="{{ t(c.title) }}">
+          {% for m in c.models %}
+          <div class="compare-group{% if m.highlight %} is-highlight{% endif %}">
+            <div class="compare-name"><strong>{{ t(m.name) }}</strong> <span class="muted small">{{ t(m.kind) }}</span></div>
+            {% for test in c.tests %}
+            {% set v = m.scores[test.id] * 100 %}
+            <div class="bar-row" tabindex="0" data-tip="{{ t(m.name) }} · {{ t(test.label) }}: {{ v | round(1) }}%">
+              <span class="bar-track"><span class="bar-fill series-{{ loop.index }}" style="inline-size: {{ v | round(1) }}%"></span><span class="bar-value"><bdi>{{ v | round | int }}%</bdi></span></span>
+            </div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+          <div class="compare-group compare-axis" aria-hidden="true">
+            <div class="bar-row"><span class="axis-ticks">{% for i in range(6) %}<span style="inset-inline-start: {{ i * 20 }}%"><bdi>{{ i * 20 }}%</bdi></span>{% endfor %}</span><span></span></div>
+          </div>
+        </figure>
+        <details class="table-view">
+          <summary>{{ ui("team_table") }}</summary>
+          <table>
+            <thead><tr><th scope="col"></th>{% for test in c.tests %}<th scope="col">{{ t(test.label) }}</th>{% endfor %}</tr></thead>
+            <tbody>{% for m in c.models %}<tr><th scope="row">{{ t(m.name) }}</th>{% for test in c.tests %}<td><bdi>{{ (m.scores[test.id] * 100) | round(1) }}%</bdi></td>{% endfor %}</tr>{% endfor %}</tbody>
+          </table>
+        </details>
+        <p class="fits">{{ icon("target") }} <span>{{ t(c.takeaway) }}</span></p>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if p.examples and examples %}
+  <section class="section section-tint" id="examples">
+    <div class="wrap">
+      <h2 class="section-title">{{ t(p.examples.title) }}</h2>
+      <p class="lead narrow-text">{{ t(p.examples.intro) }}</p>
+      <div class="ex-totals">
+        {% for m in examples.models %}
+        <div class="stat"><p class="stat-value"><bdi>{{ examples.totals[m.id] }}</bdi> <span class="stat-of">{{ ui("out_of") }} {{ examples.n }}</span></p><p class="stat-label">{{ m.name }}</p></div>
+        {% endfor %}
+      </div>
+      <div class="filters" role="group" aria-label="{{ t(p.examples.title) }}">
+        <button class="chip" type="button" data-ex-filter="all" aria-pressed="true">{{ ui("show_all") }} <span class="count">{{ examples.n }}</span></button>
+        <button class="chip" type="button" data-ex-filter="disagree" aria-pressed="false">{{ ui("show_disagree") }} <span class="count">{{ examples.rows | selectattr("disagree") | list | length }}</span></button>
+      </div>
+      <div class="table-scroll" tabindex="0">
+        <table class="ex-table">
+          <thead><tr><th scope="col">{{ ui("message") }}</th><th scope="col">{{ ui("right_answer") }}</th>{% for m in examples.models %}<th scope="col">{{ m.name }}</th>{% endfor %}</tr></thead>
+          <tbody>
+            {% for r in examples.rows %}
+            <tr data-disagree="{{ 'true' if r.disagree else 'false' }}">
+              <td class="ex-text" lang="en" dir="ltr">{{ r.text }}</td>
+              <td class="ex-expected">{{ r.expected }}</td>
+              {% for a in r.answers %}<td class="ex-answer {{ 'is-ok' if a.ok else 'is-miss' }}">{{ icon("check" if a.ok else "x") }}<span>{{ a.label }}</span></td>{% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if p.value %}
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">{{ t(p.value.title) }}</h2>
+      <div class="grid grid-3">
+        {% for v in p.value.items %}
+        <div class="service reveal">
+          <span class="service-icon">{{ icon(v.icon) }}</span>
+          <h3>{{ t(v.title) }}</h3>
+          <p>{{ t(v.body) }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="fits reveal">{{ icon("target") }} <span>{{ t(p.value.fits) }}</span></p>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if p.limits %}
+  <section class="section section-tint">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">{{ t(p.limits.title) }}</h2>
+      <ul class="checks checks-info" role="list">
+        {% for r in p.limits.items %}<li>{{ icon("info") }}<span>{{ t(r) }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if p.gallery %}
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">{{ ui("gallery") }}</h2>
+      <div class="gallery">
+        {% for g in p.gallery %}
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="{{ root }}assets/projects/{{ p.slug }}/{{ lang }}/{{ g.image }}" data-caption="{{ t(g.caption) }}" aria-label="{{ ui('open_image') }}: {{ t(g.caption) }}">
+            <img src="{{ root }}assets/projects/{{ p.slug }}/{{ lang }}/{{ g.image }}" alt="{{ t(g.caption) }}" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>{{ t(g.caption) }}</figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if p.tech %}
+  <section class="section">
+    <div class="wrap narrow">
+      <details class="tech">
+        <summary><span>{{ ui("tech_title") }}</span><span class="muted small">{{ ui("tech_hint") }}</span></summary>
+        <ul class="tech-stack" role="list">{% for s in p.tech.stack %}<li>{{ s }}</li>{% endfor %}</ul>
+        <ul class="tech-points">{% for x in p.tech.points %}<li>{{ t(x) }}</li>{% endfor %}</ul>
+        {% if p.links %}
+        <div class="actions">
+          {% for l in p.links %}<a class="btn btn-ghost" href="{{ l.url }}" target="_blank" rel="noopener">{{ icon(l.kind) }} {{ t(l.label) }} {{ icon("external") }}</a>{% endfor %}
+        </div>
+        {% endif %}
+      </details>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="section">
+    <div class="wrap cta-band reveal">
+      <div>
+        <h2>{{ ui("contact_title") }}</h2>
+        <p>{{ ui("contact_body") }}</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="{{ root }}{{ lang }}/contact/">{{ ui("get_in_touch") }} {{ icon("arrow", "icon icon-dir") }}</a>
+    </div>
+  </section>
+</article>
+
+<dialog class="lightbox" aria-label="{{ ui('gallery') }}">
+  <button class="lightbox-close tool" type="button" aria-label="{{ ui('close') }}">{{ icon("x") }}</button>
+  <img alt="">
+  <p class="lightbox-caption"></p>
+</dialog>
+<div class="tooltip" role="status" hidden></div>
+{% endblock %}

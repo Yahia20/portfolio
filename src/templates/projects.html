@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% from "_icons.html" import icon %}
+{% from "_parts.html" import project_card %}
+
+{% block title %}{{ t(site.nav.projects) }} · {{ t(profile.name) }}{% endblock %}
+
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>{{ t(site.nav.projects) }}</h1>
+    <p class="lead">{{ ui("projects_intro") }}</p>
+    {% if categories | length > 1 %}
+    <div class="filters" role="group" aria-label="{{ t(site.nav.projects) }}">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">{{ ui("all") }} <span class="count">{{ projects | length }}</span></button>
+      {% for c in categories %}
+      <button class="chip" type="button" data-filter="{{ c.id }}" aria-pressed="false">{{ icon(c.icon) }}{{ t(c.name) }} <span class="count">{{ projects | selectattr("category", "equalto", c.id) | list | length }}</span></button>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% for c in categories %}
+<section class="section category-block" id="{{ c.id }}" data-category-block="{{ c.id }}">
+  <div class="wrap">
+    <header class="category-head">
+      <span class="service-icon">{{ icon(c.icon) }}</span>
+      <div>
+        <h2>{{ t(c.name) }}</h2>
+        <p class="muted">{{ t(c.description) }}</p>
+      </div>
+    </header>
+    <div class="grid grid-cards">
+      {% for p in projects if p.category == c.id %}
+      {{ project_card(p, t, ui, root, lang, cat_by_id) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

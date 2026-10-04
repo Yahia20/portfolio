@@ -1,0 +1,151 @@
+# Written for a non-technical reader. Technical detail lives only under `tech`.
+
+slug: hotel-cancellation-analytics
+category: data-analysis
+status: completed
+featured: false
+order: 2
+date: 2026-10
+
+title:
+  en: Stop losing money to hotel cancellations
+  ar: أوقف خسارة الأموال بسبب إلغاء حجوزات الفنادق
+tagline:
+  en: "I analysed 119,000 hotel bookings to find out what cancellations cost, who cancels, and what the hotel should do about it."
+  ar: "حلّلت 119 ألف حجز فندقي لأعرف كم تكلّف الإلغاءات، ومن الذي يلغي، وماذا يجب أن يفعل الفندق."
+
+role:
+  en: I built the whole project, from the raw data to the recommendation and the dashboard.
+  ar: بنيت المشروع بالكامل، من البيانات الخام حتى التوصية ولوحة المتابعة.
+
+cover:
+  image: cover.png
+  alt:
+    en: "Summary: 37% of bookings cancelled, worth €16.7M; a deposit for risky bookings earns €399k, a deposit for everyone loses €199k"
+    ar: "الخلاصة: 37% من الحجوزات أُلغيت بقيمة 16.7 مليون يورو؛ العربون للحجوزات الخطرة يربح 399 ألف يورو، والعربون للجميع يخسر 199 ألف يورو"
+
+stats:
+  - display: { en: "€399k", ar: "399 ألف €" }
+    label: { en: "earned by asking only risky bookings for a deposit", ar: "ربح عند طلب العربون من الحجوزات الخطرة فقط" }
+    note: { en: "8 months of 2017, a period the model never saw", ar: "8 أشهر من 2017، فترة لم يرها النموذج" }
+  - display: { en: "−€199k", ar: "−199 ألف €" }
+    label: { en: "lost by asking every guest instead", ar: "خسارة عند طلبه من كل الضيوف بدلًا من ذلك" }
+  - display: { en: "37%", ar: "37%" }
+    label: { en: "of bookings are cancelled", ar: "من الحجوزات تُلغى" }
+  - display: { en: "0", ar: "0" }
+    label: { en: "errors in 28 automatic data checks", ar: "أخطاء في 28 فحصًا تلقائيًا للبيانات" }
+
+problem:
+  title: { en: "The problem", ar: "المشكلة" }
+  body:
+    en: >-
+      More than a third of hotel bookings are cancelled. While a booking is active, the hotel can't sell
+      that room to anyone else, so a cancellation can leave it empty. At the two hotels in this data,
+      cancelled bookings were worth €16.7M over 26 months. Asking every guest for a deposit looks like
+      the fix, but many guests then book somewhere else. The hotel needs to know which guests to ask.
+    ar: >-
+      يُلغى أكثر من ثلث حجوزات الفنادق. وطالما الحجز قائم لا يستطيع الفندق بيع الغرفة لأحد آخر، فقد يتركها
+      الإلغاء فارغة. في الفندقين في هذه البيانات، بلغت قيمة الحجوزات الملغاة 16.7 مليون يورو خلال 26 شهرًا.
+      طلب عربون من كل الضيوف يبدو حلًا، لكن كثيرًا منهم يحجزون عندها في مكان آخر. يحتاج الفندق أن يعرف
+      من يطلب منه العربون.
+
+steps:
+  - icon: shield
+    title: { en: "Check the data", ar: "مراجعة البيانات" }
+    body:
+      en: "28 automatic checks confirm that no booking is lost and no euro is counted twice. Clear errors, like a €5,400 night, are removed and listed."
+      ar: "28 فحصًا تلقائيًا تتأكد أنه لا يضيع حجز ولا يُحسب يورو مرتين. والأخطاء الواضحة، مثل ليلة بسعر 5,400 يورو، تُستبعد وتُوثَّق."
+  - icon: search
+    title: { en: "Find who cancels", ar: "معرفة من يلغي" }
+    body:
+      en: "Bookings made a year ahead cancel 68% of the time; bookings made in the last week, 10%. Guests who cancelled before cancel again 92% of the time."
+      ar: "الحجوزات قبل الوصول بسنة تُلغى بنسبة 68%، والحجوزات في آخر أسبوع بنسبة 10%. والضيف الذي ألغى من قبل يلغي مرة أخرى بنسبة 92%."
+  - icon: spark
+    title: { en: "Score every booking", ar: "تقييم كل حجز" }
+    body:
+      en: A model gives each new booking a risk score from 0% to 100%. It uses only what the hotel knows at the moment of booking.
+      ar: يعطي النموذج كل حجز جديد درجة خطر من 0% إلى 100%، باستخدام ما يعرفه الفندق لحظة الحجز فقط.
+  - icon: target
+    title: { en: "Test the rule", ar: "اختبار القاعدة" }
+    body:
+      en: "Rule: if the risk score is 26% or higher, ask for the first night in advance. The rule was tested on 2017 bookings under 12 different scenarios."
+      ar: "القاعدة: إذا كانت درجة الخطر 26% أو أكثر، اطلب الليلة الأولى مقدمًا. اختُبرت القاعدة على حجوزات 2017 تحت 12 احتمالًا مختلفًا."
+  - icon: chart
+    title: { en: "Show the answer", ar: "عرض النتيجة" }
+    body:
+      en: A dashboard in English and Arabic. Every number comes from the data, and every chart has a table behind it.
+      ar: لوحة متابعة بالعربية والإنجليزية. كل رقم فيها ناتج من البيانات، وخلف كل رسم جدول بالأرقام.
+
+results:
+  title: { en: "Results", ar: "النتائج" }
+  as_of: { en: "Tested on Jan–Aug 2017 bookings · October 2026", ar: "مُختبر على حجوزات يناير–أغسطس 2017 · أكتوبر 2026" }
+  points:
+    - en: Asking only the riskiest 45% of bookings for the first night would have earned €399k in eight months. Asking every guest would have lost €199k.
+      ar: طلب الليلة الأولى من أخطر 45% فقط من الحجوزات كان سيربح 399 ألف يورو في ثمانية أشهر. أما طلبه من كل الضيوف فكان سيخسر 199 ألف يورو.
+    - en: The rule makes money in all 12 scenarios tested, from €147k to €1.2M.
+      ar: القاعدة تربح في كل الاحتمالات الـ 12 المُختبرة، من 147 ألفًا إلى 1.2 مليون يورو.
+    - en: The model predicts the number of cancellations each week with a 9% average error. Hotels use this number to decide how many extra rooms they can safely sell.
+      ar: يتوقع النموذج عدد الإلغاءات كل أسبوع بمتوسط خطأ 9%. تستخدم الفنادق هذا الرقم لتقرر كم غرفة إضافية يمكنها بيعها بأمان.
+    - en: The model is right 78 times out of 100 on bookings it never saw. Many published versions of this analysis claim 95–99% because they use information that only exists after the guest arrives. This project measures that gap.
+      ar: يصيب النموذج 78 مرة من كل 100 في حجوزات لم يرها. تحليلات منشورة كثيرة على هذه البيانات تذكر 95–99% لأنها تستخدم معلومات لا توجد إلا بعد وصول الضيف. هذا المشروع يقيس هذا الفرق.
+
+value:
+  title: { en: "How this can help your business", ar: "كيف يفيد هذا شركتك" }
+  items:
+    - icon: target
+      title: { en: "Ask the right guests", ar: "اطلب من الضيوف المناسبين" }
+      body: { en: "A deposit only where the risk is high, so you keep the guests who were going to come.", ar: "عربون فقط حيث الخطر مرتفع، فتحتفظ بالضيوف الذين كانوا سيحضرون." }
+    - icon: chart
+      title: { en: "Plan overbooking on a number", ar: "خطّط للحجز الزائد على رقم" }
+      body: { en: "Expected cancellations per week, per hotel, from the bookings you already have.", ar: "الإلغاءات المتوقعة لكل أسبوع ولكل فندق، من الحجوزات الموجودة لديك." }
+    - icon: shield
+      title: { en: "Numbers you can defend", ar: "أرقام يمكنك الدفاع عنها" }
+      body: { en: "Every number is checked automatically, so finance and operations see the same figures.", ar: "كل رقم مُراجَع آليًا، فترى المالية والتشغيل نفس الأرقام." }
+  fits:
+    en: Hotels, travel agencies, clinics, event venues and car rental — any business that holds a place for a customer who might not come.
+    ar: الفنادق ووكالات السفر والعيادات وقاعات المناسبات وتأجير السيارات — أي نشاط يحجز مكانًا لعميل قد لا يحضر.
+
+limits:
+  title: { en: "Good to know", ar: "من المهم أن تعرف" }
+  items:
+    - en: The data is public — two hotels in Portugal, 2015–2017, in euros. The method works for any similar business; the numbers come from each business's own data.
+      ar: البيانات عامة — فندقان في البرتغال بين 2015 و2017، باليورو. الطريقة تصلح لأي نشاط مشابه، أما الأرقام فتُحسب من بيانات كل نشاط.
+    - en: How many guests refuse a deposit is an assumption, because the data can't show it. That is why results cover 12 scenarios. Before a full rollout, try the rule on a share of bookings first.
+      ar: عدد الضيوف الذين يرفضون العربون افتراض، لأن البيانات لا تُظهره. لذلك عُرضت النتائج تحت 12 احتمالًا. قبل التطبيق الكامل، جرّب القاعدة على جزء من الحجوزات أولًا.
+
+tech:
+  stack: [Python, SQL, dbt, DuckDB, LightGBM, scikit-learn, Plotly, pytest]
+  points:
+    - en: "dbt warehouse on DuckDB (staging, facts, marts) with 28 data tests, including reconciliation tests: every source row is kept or excluded by a named rule, and revenue agrees to the cent by booking, night and month."
+      ar: "مستودع dbt على DuckDB (طبقات staging وfacts وmarts) مع 28 اختبار بيانات، منها اختبارات مطابقة: كل صف أصلي إما محفوظ أو مستبعد بقاعدة مسمّاة، والإيرادات متطابقة حتى السنت بالحجز وبالليلة وبالشهر."
+    - en: "Leakage audit: columns filled in after booking (parking, assigned room, booking changes, corrected country) are excluded. The score inflation from leaky columns and random splits is measured and published (77.6% honest vs 88.7%)."
+      ar: "تدقيق التسريب: الأعمدة التي تُملأ بعد الحجز (المواقف، والغرفة المخصصة، وتعديلات الحجز، والدولة المصححة) مستبعدة. تضخّم النتيجة بسببها وبسبب التقسيم العشوائي مُقاس ومنشور (77.6% صادقة مقابل 88.7%)."
+    - en: "Monthly walk-forward scoring: each 2017 month is scored by a LightGBM model retrained on all earlier arrivals. ROC AUC 0.850, Brier 0.150, calibration checked per risk band."
+      ar: "تقييم شهري متتابع (walk-forward): كل شهر في 2017 يقيّمه نموذج LightGBM أُعيد تدريبه على كل الوصولات السابقة. ROC AUC بقيمة 0.850، وBrier بقيمة 0.150، مع فحص المعايرة لكل شريحة خطر."
+    - en: "Policy backtest: threshold chosen on Sep–Dec 2016, applied unchanged to 2017, with a sensitivity grid over walk-away and resale rates. One command rebuilds everything in about two minutes on a laptop."
+      ar: "اختبار السياسة تاريخيًا: الحد اختير على سبتمبر–ديسمبر 2016 وطُبّق دون تغيير على 2017، مع شبكة حساسية لنسب الرفض وإعادة البيع. أمر واحد يعيد بناء كل شيء في حوالي دقيقتين على لابتوب."
+
+links:
+  - kind: live
+    url: https://yahia20.github.io/hotel-revenue-analytics/
+    label: { en: "Open the dashboard (English and Arabic)", ar: "افتح لوحة المتابعة (عربي وإنجليزي)" }
+  - kind: github
+    url: https://github.com/Yahia20/hotel-revenue-analytics
+    label: { en: "Code and tests on GitHub", ar: "الكود والاختبارات على GitHub" }
+
+gallery:
+  - image: cover.png
+    layout: own
+    caption: { en: "The short answer and the headline numbers", ar: "الخلاصة والأرقام الرئيسية" }
+  - image: drivers.png
+    layout: own
+    caption: { en: "Who cancels: how early they booked, past cancellations, how they booked", ar: "من يلغي: متى حجز، والإلغاءات السابقة، وطريقة الحجز" }
+  - image: model.png
+    layout: own
+    caption: { en: "Cancellations each week in 2017: predicted vs actual", ar: "الإلغاءات كل أسبوع في 2017: المتوقَّع مقابل الفعلي" }
+  - image: policy.png
+    layout: own
+    caption: { en: "The recommendation, and how it holds up under 12 scenarios", ar: "التوصية، وكيف تصمد تحت 12 احتمالًا" }
+  - image: trust.png
+    layout: own
+    caption: { en: "Why the numbers can be trusted", ar: "لماذا يمكن الوثوق بالأرقام" }

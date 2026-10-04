@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% from "_icons.html" import icon %}
+{% from "_parts.html" import stat, project_card, status_badge %}
+
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>{{ t(profile.availability) }}</p>
+      <h1 class="hero-title">{{ t(profile.headline) }}</h1>
+      <p class="lead">{{ t(profile.intro) }}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="{{ root }}{{ lang }}/projects/">{{ ui("see_work") }} {{ icon("arrow", "icon icon-dir") }}</a>
+        <a class="btn btn-ghost" href="{{ root }}{{ lang }}/contact/">{{ icon("mail") }} {{ ui("get_in_touch") }}</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      {% if profile.portrait %}
+      <img class="portrait" src="{{ root }}assets/img/profile/{{ profile.portrait }}" alt="{{ t(profile.portrait_alt) }}" width="480" height="560">
+      {% else %}
+      <div class="portrait portrait-placeholder" role="img" aria-label="{{ t(profile.name) }}"><span>YZ</span></div>
+      {% endif %}
+      <div class="portrait-tag">
+        <strong>{{ t(profile.name) }}</strong>
+        <span>{{ t(profile.role) }} · {{ icon("pin") }} {{ t(profile.location).split("·")[0] }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if featured %}
+<section class="section">
+  <div class="wrap">
+    <p class="section-kicker">{{ ui("featured") }}</p>
+    <article class="feature reveal">
+      <a class="feature-media" href="{{ root }}{{ lang }}/projects/{{ featured.slug }}/">
+        <img src="{{ root }}assets/projects/{{ featured.slug }}/{{ lang }}/{{ featured.cover.image }}" alt="{{ t(featured.cover.alt) }}" width="1200" height="675">
+      </a>
+      <div class="feature-body">
+        <div class="card-meta">
+          <span class="chip-static">{{ icon(cat_by_id[featured.category].icon) }}{{ t(cat_by_id[featured.category].name) }}</span>
+          {{ status_badge(featured.status, ui) }}
+        </div>
+        <h2 class="feature-title"><a href="{{ root }}{{ lang }}/projects/{{ featured.slug }}/">{{ t(featured.title) }}</a></h2>
+        <p class="lead">{{ t(featured.tagline) }}</p>
+        <div class="stats stats-compact">
+          {% for s in featured.stats %}{{ stat(s, t) }}{% endfor %}
+        </div>
+        <a class="btn btn-primary" href="{{ root }}{{ lang }}/projects/{{ featured.slug }}/">{{ ui("read_story") }} {{ icon("arrow", "icon icon-dir") }}</a>
+      </div>
+    </article>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section-tint">
+  <div class="wrap">
+    <h2 class="section-title">{{ ui("what_i_do") }}</h2>
+    <div class="grid grid-4">
+      {% for s in profile.services %}
+      <div class="service reveal">
+        <span class="service-icon">{{ icon(s.icon) }}</span>
+        <h3>{{ t(s.title) }}</h3>
+        <p>{{ t(s.body) }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap cta-band reveal">
+    <div>
+      <h2>{{ ui("contact_title") }}</h2>
+      <p>{{ ui("contact_body") }}</p>
+    </div>
+    <a class="btn btn-primary btn-lg" href="{{ root }}{{ lang }}/contact/">{{ ui("get_in_touch") }} {{ icon("arrow", "icon icon-dir") }}</a>
+  </div>
+</section>
+{% endblock %}

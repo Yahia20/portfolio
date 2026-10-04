@@ -1,0 +1,59 @@
+{
+  "calls": 6,
+  "average_percent": 60.0,
+  "resolved_percent": 33.3,
+  "flagged": [
+    {
+      "file": "call_02_refund_promise.txt",
+      "percent": 40.0,
+      "reason": "طلب إلغاء تذكرة سفر واسترداد المبلغ كاملًا"
+    },
+    {
+      "file": "call_03_lost_baggage.txt",
+      "percent": 12.0,
+      "reason": "عدم وصول الحقيبة بعد الرحلة ومتابعة بلاغ العفش"
+    },
+    {
+      "file": "call_04_visa_inquiry.txt",
+      "percent": 44.0,
+      "reason": "استفسار عن استخراج تأشيرة شنغن سياحية لإيطاليا والأوراق والرسوم"
+    },
+    {
+      "file": "call_06_hotel_complaint.txt",
+      "percent": 80.0,
+      "reason": "شكوى عدم مطابقة الغرفة لنوع الحجز (sea view) في فندق بإسطنبول"
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "resolution",
+      "label": "حل المشكلة",
+      "average": 2.67,
+      "max": 5
+    },
+    {
+      "criterion": "policy_compliance",
+      "label": "الالتزام بسياسة الشركة",
+      "average": 2.67,
+      "max": 5
+    },
+    {
+      "criterion": "closing",
+      "label": "إنهاء المكالمة",
+      "average": 2.67,
+      "max": 5
+    },
+    {
+      "criterion": "greeting",
+      "label": "التحية والافتتاح",
+      "average": 3.5,
+      "max": 5
+    },
+    {
+      "criterion": "listening",
+      "label": "الإنصات وفهم المشكلة",
+      "average": 3.5,
+      "max": 5
+    }
+  ]
+}

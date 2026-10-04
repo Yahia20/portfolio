@@ -1,0 +1,145 @@
+# Who I am. Feeds the Home hero and the About page.
+# Source of truth for facts: My profile/MASTER_PROFILE.md — keep the two in step.
+
+name:
+  en: Yahia Zakaria
+  ar: يحيى زكريا
+role:
+  en: AI Engineer
+  ar: مهندس ذكاء اصطناعي
+location:
+  en: Cairo, Egypt · working remotely with teams in Saudi Arabia
+  ar: القاهرة، مصر · أعمل عن بُعد مع فرق في السعودية
+availability:
+  en: Open to freelance projects and full-time roles
+  ar: متاح لمشاريع العمل الحر والوظائف بدوام كامل
+
+# Photos live in assets/img/profile/. Leave `portrait` empty to show initials instead.
+portrait: portrait.jpg
+portrait_alt:
+  en: Portrait of Yahia Zakaria
+  ar: صورة يحيى زكريا
+gallery:
+  - image: nti.jpg
+    caption: { en: "At the National Telecommunication Institute (NTI), during the AI Engineer programme", ar: "في المعهد القومي للاتصالات (NTI) أثناء برنامج هندسة الذكاء الاصطناعي" }
+
+headline:
+  en: I build AI that listens to your customers and tells your team what to fix next.
+  ar: أبني ذكاءً اصطناعيًا يسمع عملاءك ويقول لفريقك ما الذي يجب إصلاحه أولًا.
+
+intro:
+  en: >-
+    Most companies already have the answers they need — buried in thousands of calls, chats and
+    spreadsheets that nobody has time to go through. I build the systems that go through them:
+    they transcribe, read, score and summarise, then hand a person a short, clear report they can
+    act on the same day.
+  ar: >-
+    معظم الشركات تملك الإجابات التي تحتاجها بالفعل، لكنها مدفونة في آلاف المكالمات والمحادثات
+    والجداول التي لا يجد أحد وقتًا لمراجعتها. أنا أبني الأنظمة التي تراجعها: تفرّغ وتقرأ وتقيّم
+    وتلخّص، ثم تسلّم الشخص المسؤول تقريرًا قصيرًا واضحًا يستطيع أن يتصرف بناءً عليه في نفس اليوم.
+
+about:
+  - en: >-
+      I'm an AI engineer based in Cairo. Since November 2025 I've worked with Travel Gate, a travel
+      agency in Saudi Arabia, where I built the system that now transcribes and reviews every
+      customer call and chat — work that used to depend on a supervisor listening to a few calls
+      at random.
+    ar: >-
+      أنا مهندس ذكاء اصطناعي من القاهرة. منذ نوفمبر 2025 أعمل مع ترافل جيت، وكالة سفر في
+      السعودية، حيث بنيت النظام الذي يفرّغ ويراجع الآن كل مكالمة ومحادثة مع العملاء — وهو عمل
+      كان يعتمد على مشرف يستمع لعدد قليل من المكالمات يختارها عشوائيًا.
+  - en: >-
+      Before that I trained for 540 hours in AI and data engineering at Egypt's National
+      Telecommunication Institute, and studied Information Systems at Fayoum University's
+      Faculty of Computers & AI.
+    ar: >-
+      قبل ذلك تدرّبت 540 ساعة في الذكاء الاصطناعي وهندسة البيانات في المعهد القومي
+      للاتصالات، ودرست نظم المعلومات في كلية الحاسبات والذكاء الاصطناعي بجامعة الفيوم.
+  - en: >-
+      I care about AI that ships and pays for itself. That means being honest about what a model
+      can't do, checking its work against a person's, and explaining the result in plain words
+      to the people who have to use it.
+    ar: >-
+      يهمني الذكاء الاصطناعي الذي يُستخدم فعلًا ويغطي تكلفته. وهذا يعني أن أكون صريحًا فيما لا
+      يستطيع النموذج فعله، وأن أراجع عمله مقارنة بعمل إنسان، وأن أشرح النتيجة بكلمات بسيطة لمن
+      سيستخدمها.
+
+services:
+  - icon: waveform
+    title: { en: "Call & chat quality review", ar: "مراجعة جودة المكالمات والمحادثات" }
+    body:
+      en: Every conversation transcribed and scored against your own checklist, with the evidence quoted.
+      ar: كل محادثة تُفرَّغ وتُقيَّم حسب معاييرك أنت، مع اقتباس الدليل.
+  - icon: chat
+    title: { en: "Assistants that know your business", ar: "مساعد ذكي يعرف شركتك" }
+    body:
+      en: A chatbot that answers from your policies and documents, and hands over to a person when it isn't sure.
+      ar: روبوت محادثة يجيب من سياساتك ومستنداتك، ويحوّل لموظف عندما لا يكون متأكدًا.
+  - icon: chart
+    title: { en: "Dashboards & forecasts", ar: "لوحات متابعة وتوقعات" }
+    body:
+      en: Clean numbers, clear dashboards and demand forecasts your management can decide on.
+      ar: أرقام نظيفة ولوحات واضحة وتوقعات للطلب تستطيع إدارتك أن تتخذ قرارها بناءً عليها.
+  - icon: check
+    title: { en: "Choosing the right AI model", ar: "اختيار نموذج الذكاء الاصطناعي المناسب" }
+    body:
+      en: A fair test of which model does your task best and what it will cost you each month.
+      ar: اختبار عادل لأي نموذج يؤدي مهمتك بأفضل شكل، وكم سيكلفك شهريًا.
+
+experience:
+  - org: { en: "OrenGreenberg", ar: "OrenGreenberg" }
+    role: { en: "Data Analyst / AI Researcher", ar: "محلل بيانات / باحث ذكاء اصطناعي" }
+    period: { en: "Jul 2026 – present", ar: "يوليو 2026 – الآن" }
+    place: { en: "Remote · Serbia", ar: "عن بُعد · صربيا" }
+    points: []
+  - org: { en: "Travel Gate KSA", ar: "ترافل جيت" }
+    role: { en: "AI Engineer", ar: "مهندس ذكاء اصطناعي" }
+    period: { en: "Nov 2025 – present", ar: "نوفمبر 2025 – الآن" }
+    place: { en: "Remote · Riyadh, Saudi Arabia", ar: "عن بُعد · الرياض، السعودية" }
+    points:
+      - en: Built the system that transcribes and scores every customer call and chat, live since September 2026.
+        ar: بنيت النظام الذي يفرّغ ويقيّم كل مكالمة ومحادثة مع العملاء، ويعمل فعليًا منذ سبتمبر 2026.
+      - en: Built sales, agent-performance and marketing dashboards covering more than 9,000 customer contacts.
+        ar: بنيت لوحات متابعة للمبيعات وأداء الموظفين والتسويق تغطي أكثر من 9,000 جهة اتصال.
+      - en: Wrote a demand analysis and 3-month forecast that supported a partnership decision with a major airline.
+        ar: أعددت تحليل طلب وتوقعات لثلاثة أشهر دعمت قرار شراكة مع شركة طيران كبرى.
+      - en: Found and fixed reporting errors caused by bad data, including an inflated conversion rate.
+        ar: اكتشفت وصححت أخطاء في التقارير سببها بيانات غير سليمة، منها نسبة تحويل مبالغ فيها.
+  - org: { en: "National Telecommunication Institute (NTI)", ar: "المعهد القومي للاتصالات (NTI)" }
+    role: { en: "AI Engineer Trainee", ar: "متدرب هندسة ذكاء اصطناعي" }
+    period: { en: "Jul 2025 – Oct 2025", ar: "يوليو 2025 – أكتوبر 2025" }
+    place: { en: "Alexandria, Egypt", ar: "الإسكندرية، مصر" }
+    points:
+      - en: 540-hour "Hire Ready" programme in AI and data engineering.
+        ar: برنامج "Hire Ready" لمدة 540 ساعة في الذكاء الاصطناعي وهندسة البيانات.
+      - en: Built the charts layer of a team project that gathers competitor information from the web and turns it into market insights.
+        ar: بنيت طبقة الرسوم البيانية في مشروع جماعي يجمع معلومات المنافسين من الإنترنت ويحولها إلى رؤى عن السوق.
+
+education:
+  - org: { en: "Fayoum University — Faculty of Computers & AI", ar: "جامعة الفيوم — كلية الحاسبات والذكاء الاصطناعي" }
+    degree: { en: "Bachelor's in Information Systems", ar: "بكالوريوس نظم المعلومات" }
+    period: { en: "Graduated 2024", ar: "تخرج 2024" }
+
+certifications:
+  - { name: AWS Certified Cloud Practitioner, issuer: Amazon Web Services }
+  - { name: HCCDA-AI — Huawei Certified Cloud Developer Associate in AI, issuer: Huawei, year: 2025 }
+  - { name: Machine Learning Specialization, issuer: Stanford Online · Coursera }
+  - { name: Getting Started with Deep Learning, issuer: NVIDIA, year: 2025 }
+  - { name: Data Scientist Associate, issuer: DataCamp, year: 2025 }
+  - { name: Data Analyst Associate, issuer: DataCamp, year: 2026 }
+
+skills:
+  - group: { en: "AI & language models", ar: "الذكاء الاصطناعي ونماذج اللغة" }
+    items: [LLMs, RAG, AI agents, LangChain, LangGraph, Prompt design, LLM evaluation]
+  - group: { en: "Speech & language", ar: "الكلام واللغة" }
+    items: [Arabic speech-to-text, NLP, Hugging Face Transformers, Sentiment analysis]
+  - group: { en: "Machine learning", ar: "تعلّم الآلة" }
+    items: [PyTorch, scikit-learn, XGBoost, Computer vision, Forecasting]
+  - group: { en: "Data & dashboards", ar: "البيانات ولوحات المتابعة" }
+    items: [Python, pandas, SQL, PostgreSQL, Power BI, Apache Superset, Plotly]
+  - group: { en: "Shipping it", ar: "التشغيل والنشر" }
+    items: [FastAPI, Docker, n8n, AWS, Railway, Modal, Git]
+
+languages:
+  - { name: { en: Arabic, ar: العربية }, level: { en: Native, ar: اللغة الأم } }
+  - { name: { en: English, ar: الإنجليزية }, level: { en: Professional working, ar: مستوى عمل احترافي } }

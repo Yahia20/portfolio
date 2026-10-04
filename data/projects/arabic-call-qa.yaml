@@ -1,0 +1,212 @@
+# One file per project. The file name (without .yaml) is the page's URL: /projects/arabic-call-qa/
+# Written for a non-technical reader. Technical detail lives only under `tech`, which the page
+# shows collapsed.
+
+slug: arabic-call-qa
+category: conversation-analytics
+status: live            # live | completed | in-progress
+featured: true
+order: 1                # lower comes first inside its category
+date: 2026-09
+
+title:
+  en: Every customer call, reviewed automatically
+  ar: كل مكالمة عميل تُراجَع تلقائيًا
+tagline:
+  en: An AI quality supervisor for Arabic call centres — it listens to every call, scores it against your checklist, and shows the evidence.
+  ar: مشرف جودة ذكي لمراكز الاتصال العربية — يسمع كل مكالمة ويقيّمها حسب معاييرك ويعرض الدليل.
+
+client:
+  name: { en: "Travel Gate KSA", ar: "ترافل جيت" }
+  about: { en: "Travel agency · Saudi Arabia", ar: "وكالة سفر · السعودية" }
+role:
+  en: Designed and built the whole system, from recordings to reports.
+  ar: صمّمت وبنيت النظام بالكامل، من التسجيلات حتى التقارير.
+
+cover:
+  image: cover.png
+  alt:
+    en: A call recording turning into a transcript and a scorecard with evidence
+    ar: تسجيل مكالمة يتحول إلى نص ثم إلى بطاقة تقييم مع الدليل
+
+# Headline numbers. `count` animates from 0; `display` is shown as-is.
+stats:
+  - display: { en: "2% → 100%", ar: "2% ← 100%" }
+    label: { en: "of calls reviewed", ar: "من المكالمات تُراجَع" }
+    note: { en: "before → after", ar: "قبل ← بعد" }
+  - count: 830
+    suffix: "+"
+    label: { en: "calls transcribed in production", ar: "مكالمة فُرّغت فعليًا" }
+  - count: 1790
+    label: { en: "calls and chats in one place", ar: "مكالمة ومحادثة في مكان واحد" }
+  - display: { en: "< 1¢", ar: "أقل من سنت" }
+    label: { en: "cost to analyse one conversation", ar: "تكلفة تحليل المحادثة الواحدة" }
+    note: { en: "about $0.008", ar: "حوالي 0.008 دولار" }
+
+problem:
+  title: { en: "The problem", ar: "المشكلة" }
+  body:
+    en: >-
+      In most call centres, quality control means a supervisor listening to a handful of calls —
+      about 2 in every 100, picked at random. The other 98 are never heard. A promise that breaks
+      company policy, a customer who hung up angry, an agent who needs coaching: none of it shows
+      up unless the supervisor happens to pick that exact call. And when feedback does happen, it
+      is one person's impression against another's.
+    ar: >-
+      في أغلب مراكز الاتصال، مراقبة الجودة تعني مشرفًا يستمع لعدد قليل من المكالمات — حوالي 2 من
+      كل 100، يختارها عشوائيًا. الـ 98 الباقية لا يسمعها أحد. وعدٌ يخالف سياسة الشركة، عميل أنهى
+      المكالمة غاضبًا، موظف يحتاج توجيهًا: لا شيء من هذا يظهر إلا إذا صادف المشرف تلك المكالمة
+      بالذات. وحتى عندما يحدث التقييم، يكون رأي شخص مقابل رأي شخص آخر.
+
+steps:
+  - icon: inbox
+    title: { en: "Collect", ar: "التجميع" }
+    body:
+      en: Every night, call recordings from the phone system and chats from the CRM are gathered into one place — no one has to export anything.
+      ar: كل ليلة تُجمع تسجيلات المكالمات من نظام الهاتف والمحادثات من نظام العملاء في مكان واحد — دون أن يصدّر أحد أي شيء يدويًا.
+  - icon: waveform
+    title: { en: "Transcribe", ar: "التفريغ" }
+    body:
+      en: A speech model built for Arabic turns each call into text. It copes with Gulf and Egyptian dialects, formal Arabic, and English words dropped in mid-sentence.
+      ar: نموذج مصمَّم للغة العربية يحوّل كل مكالمة إلى نص. يتعامل مع اللهجات الخليجية والمصرية والفصحى، ومع الكلمات الإنجليزية وسط الكلام.
+  - icon: check
+    title: { en: "Score", ar: "التقييم" }
+    body:
+      en: The AI scores the agent on the same five things a good supervisor checks — greeting, listening, solving the problem, following policy, closing — from 0 to 5.
+      ar: يقيّم الذكاء الاصطناعي الموظف على نفس الخمس نقاط التي يراجعها المشرف الجيد — التحية، الإنصات، حل المشكلة، الالتزام بالسياسة، إنهاء المكالمة — من 0 إلى 5.
+  - icon: search
+    title: { en: "Show the evidence", ar: "عرض الدليل" }
+    body:
+      en: Every score quotes the sentence it is based on. An agent can see exactly why, and a supervisor can check any score in seconds.
+      ar: كل درجة مرفق بها الجملة التي بُنيت عليها. يرى الموظف السبب بالضبط، ويستطيع المشرف التحقق من أي درجة في ثوانٍ.
+  - icon: chart
+    title: { en: "Report", ar: "التقرير" }
+    body:
+      en: One report per call, plus a team summary that ranks the weakest skill first — that is next week's training plan.
+      ar: تقرير لكل مكالمة، وملخص للفريق يرتّب المهارات من الأضعف — وهذه هي خطة تدريب الأسبوع القادم.
+
+results:
+  title: { en: "Results in production", ar: "النتائج على أرض الواقع" }
+  as_of: { en: "Travel Gate, September 2026", ar: "ترافل جيت، سبتمبر 2026" }
+  points:
+    - en: Live since September 2026. It runs by itself every night at 11:30 pm Riyadh time.
+      ar: يعمل فعليًا منذ سبتمبر 2026، ويشتغل تلقائيًا كل ليلة الساعة 11:30 مساءً بتوقيت الرياض.
+    - en: More than 830 calls transcribed and 1,790 calls and chats brought together in one database, each linked to its customer.
+      ar: أكثر من 830 مكالمة فُرّغت، و1,790 مكالمة ومحادثة اجتمعت في قاعدة بيانات واحدة، كلٌّ منها مربوط بعميله.
+    - en: Analysing a conversation costs less than one cent. A quiet night with nothing new to process costs almost nothing.
+      ar: تحليل المحادثة الواحدة يكلف أقل من سنت. والليلة الهادئة التي لا جديد فيها لا تكلف شيئًا تقريبًا.
+    - en: Recordings that contain no real speech are recognised and set aside, so an empty call never drags an agent's average down.
+      ar: التسجيلات التي لا تحتوي على كلام حقيقي تُكتشف وتُستبعد، فلا تُنزل مكالمةٌ فارغة متوسطَ الموظف.
+
+demo:
+  kind: call-qa
+  source: arabic-call-qa          # folder under data/demos/
+  title: { en: "Try it — six sample calls", ar: "جرّبه — ست مكالمات تجريبية" }
+  intro:
+    en: >-
+      These six calls are made up — I wrote them to cover the situations a supervisor cares about —
+      but the scores are the system's real, unedited output. Pick a call to see its scorecard.
+    ar: >-
+      هذه المكالمات الست مؤلَّفة — كتبتها لتغطي المواقف التي تهم المشرف — لكن الدرجات هي مخرجات
+      النظام الحقيقية دون أي تعديل. اختر مكالمة لترى بطاقة تقييمها.
+  note:
+    en: The calls are in Arabic, so the evidence quotes are too.
+    ar: ""
+  highlight: call_02_refund_promise
+  highlight_title:
+    en: "Caught: a promise that would have cost 1,300 SAR"
+    ar: "تم رصده: وعد كان سيكلف الشركة 1,300 ريال"
+  highlight_body:
+    en: >-
+      The agent admits the ticket can't be refunded — then promises a full refund anyway, to calm
+      the customer down. The system gives policy compliance 0 out of 5, quotes both sentences, and
+      flags the call for a supervisor. In the old process, this is only caught if someone happens
+      to pick this call.
+    ar: >-
+      الموظف يعترف بأن التذكرة غير قابلة للاسترداد — ثم يعد العميل باسترداد كامل ليهدّئه. النظام
+      يعطي الالتزام بالسياسة 0 من 5، ويقتبس الجملتين، ويحوّل المكالمة للمشرف. في الطريقة القديمة، لا
+      يُكتشف هذا إلا إذا صادف أحدٌ هذه المكالمة.
+  calls:
+    - file: call_05_umrah_package
+      title: { en: "Umrah package booking", ar: "حجز باقة عمرة" }
+      story: { en: "Confirms what the customer needs, offers two options, explains the deposit rule, asks if there's anything else.", ar: "يتأكد من طلب العميل، يعرض خيارين، يوضح سياسة العربون، ويسأل إن كان هناك شيء آخر." }
+    - file: call_01_date_change
+      title: { en: "Changing a flight date", ar: "تغيير موعد رحلة" }
+      story: { en: "A clean, correct change — but the agent never checks if there's anything else.", ar: "تغيير سليم وصحيح — لكن الموظف لم يسأل إن كان هناك استفسار آخر." }
+    - file: call_06_hotel_complaint
+      title: { en: "Wrong hotel room", ar: "غرفة فندق غير مطابقة" }
+      story: { en: "Arabic and English mixed; tonight can't be fixed, so the agent asks the hotel for compensation.", ar: "عربي وإنجليزي مختلطان؛ الليلة لا يمكن إصلاحها، فيطلب الموظف تعويضًا من الفندق." }
+    - file: call_04_visa_inquiry
+      title: { en: "Visa question", ar: "استفسار عن تأشيرة" }
+      story: { en: "The agent doesn't know the fees or the document list and promises a call back — with no time given.", ar: "الموظف لا يعرف الرسوم ولا قائمة الأوراق، ويعد بالاتصال لاحقًا — دون تحديد موعد." }
+    - file: call_02_refund_promise
+      title: { en: "Refund request", ar: "طلب استرداد" }
+      story: { en: "The agent says the ticket is non-refundable, then promises a full refund anyway.", ar: "الموظف يقول إن التذكرة غير قابلة للاسترداد، ثم يعد باسترداد كامل." }
+    - file: call_03_lost_baggage
+      title: { en: "Lost suitcase", ar: "حقيبة مفقودة" }
+      story: { en: "The agent interrupts, blames the airline, takes no details and gives no follow-up time.", ar: "الموظف يقاطع، يلوم شركة الطيران، لا يأخذ أي بيانات ولا يحدد موعدًا للمتابعة." }
+
+value:
+  title: { en: "How this can help your business", ar: "كيف يفيد هذا شركتك" }
+  items:
+    - icon: ear
+      title: { en: "Hear every call, not 2%", ar: "اسمع كل المكالمات، لا 2% منها" }
+      body: { en: "Nothing slips through because nobody happened to pick that call.", ar: "لا شيء يفوتك لمجرد أن أحدًا لم يصادف تلك المكالمة." }
+    - icon: scale
+      title: { en: "Fair, consistent feedback", ar: "تقييم عادل وثابت" }
+      body: { en: "Every agent is judged on the same checklist, and every score shows its proof.", ar: "كل موظف يُقيَّم بنفس المعايير، وكل درجة يظهر دليلها." }
+    - icon: shield
+      title: { en: "Catch costly promises early", ar: "اكتشف الوعود المكلفة مبكرًا" }
+      body: { en: "Calls that break policy are flagged the next morning, before the customer comes back to collect.", ar: "المكالمات المخالفة للسياسة تُرصد صباح اليوم التالي، قبل أن يعود العميل مطالبًا بما وُعد به." }
+    - icon: target
+      title: { en: "Train on what matters", ar: "درّب على ما يهم فعلًا" }
+      body: { en: "See which skill the whole team is weakest at, instead of guessing.", ar: "اعرف المهارة الأضعف عند الفريق كله، بدل التخمين." }
+    - icon: compass
+      title: { en: "Know why customers call", ar: "اعرف لماذا يتصل العملاء" }
+      body: { en: "Call reasons and customer mood, counted across thousands of calls.", ar: "أسباب الاتصال ومزاج العملاء، محسوبة على آلاف المكالمات." }
+    - icon: coin
+      title: { en: "Low running cost", ar: "تكلفة تشغيل منخفضة" }
+      body: { en: "Under a cent per conversation, and the speech model is open-source — no per-minute fees.", ar: "أقل من سنت للمحادثة، ونموذج تحويل الكلام مفتوح المصدر — بلا رسوم بالدقيقة." }
+  fits:
+    en: Call centres, travel agencies, clinics, online stores, banks — any team that takes calls in Arabic.
+    ar: مراكز الاتصال، وكالات السفر، العيادات، المتاجر الإلكترونية، البنوك — أي فريق يستقبل مكالمات بالعربية.
+
+limits:
+  title: { en: "Good to know", ar: "من المهم أن تعرف" }
+  items:
+    - en: Transcripts are not word-perfect — in noisy dialect calls roughly one word in four can be off. That is fine for judging how an agent behaved, not for quoting in a legal dispute.
+      ar: النص المفرَّغ ليس مطابقًا حرفيًا — في المكالمات المزدحمة باللهجة قد تخطئ كلمة من كل أربع تقريبًا. هذا كافٍ للحكم على سلوك الموظف، لا للاستشهاد به في نزاع قانوني.
+    - en: Before using the scores in performance reviews, a supervisor should score around 50 calls by hand so we can check that the AI agrees with them.
+      ar: قبل استخدام الدرجات في تقييم الأداء، يُفضَّل أن يقيّم المشرف حوالي 50 مكالمة يدويًا لنتأكد أن الذكاء الاصطناعي يتفق معه.
+    - en: When the phone system records both voices on one track, the AI works out who is speaking from context. Recording each side separately makes that exact.
+      ar: عندما يسجّل نظام الهاتف الصوتين على مسار واحد، يستنتج الذكاء الاصطناعي من المتحدث من سياق الكلام. تسجيل كل طرف على حدة يجعل ذلك دقيقًا.
+
+tech:
+  stack: [Cohere Transcribe Arabic, DeepSeek, LangChain, Pydantic, FastAPI, n8n, PostgreSQL, Modal (serverless GPU), Railway, Docker]
+  points:
+    - en: "Speech-to-text: an open-source 2-billion-parameter Arabic model (Cohere Transcribe Arabic) running on a serverless GPU that only switches on when there is work."
+      ar: "التفريغ: نموذج عربي مفتوح المصدر بحجم 2 مليار معامل (Cohere Transcribe Arabic) يعمل على كرت شاشة سحابي لا يشتغل إلا عند وجود عمل."
+    - en: "Scoring: two independent AI passes — one reads the customer's side, one grades the agent — with structured output, so every score arrives with its evidence in a fixed shape."
+      ar: "التقييم: مرحلتان مستقلتان — واحدة تقرأ جانب العميل وأخرى تقيّم الموظف — بمخرجات منظمة، فتصل كل درجة ومعها دليلها بشكل ثابت."
+    - en: "Plumbing: n8n schedules the work, a tested Python service does the transcription and the maths, and PostgreSQL (25 tables) holds every customer, call and score."
+      ar: "البنية: n8n يجدول العمل، وخدمة بايثون مختبرة تقوم بالتفريغ والحسابات، وقاعدة PostgreSQL (25 جدولًا) تحفظ كل عميل ومكالمة ودرجة."
+    - en: "The open-source version on GitHub runs the same scoring on your own recordings or transcripts, with 13 automated tests."
+      ar: "النسخة مفتوحة المصدر على GitHub تشغّل نفس التقييم على تسجيلاتك أو نصوصك، ومعها 13 اختبارًا آليًا."
+
+links:
+  - kind: github
+    url: https://github.com/Yahia20/arabic-call-analyzer
+    label: { en: "Open-source version on GitHub", ar: "النسخة مفتوحة المصدر على GitHub" }
+
+# Images for Mostaql / LinkedIn, generated by `python src/build.py --shots` into assets/projects/<slug>/.
+gallery:
+  - image: cover.png
+    caption: { en: "From recording to scorecard", ar: "من التسجيل إلى بطاقة التقييم" }
+  - image: how-it-works.png
+    caption: { en: "How it works, in five steps", ar: "كيف يعمل، في خمس خطوات" }
+  - image: caught.png
+    caption: { en: "The refund promise it caught", ar: "الوعد بالاسترداد الذي رصده" }
+  - image: team-summary.png
+    caption: { en: "The team summary — weakest skill first", ar: "ملخص الفريق — المهارة الأضعف أولًا" }
+  - image: results.png
+    caption: { en: "Results in production", ar: "النتائج على أرض الواقع" }

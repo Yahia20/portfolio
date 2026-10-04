@@ -2,14 +2,14 @@
 # the build refuses to run if one is missing.
 
 base_url: "https://yahia20.github.io/portfolio"   # hosted on GitHub Pages (gh-pages branch = dist/)
-default_lang: ar
+default_lang: en
 
 title:
   en: Yahia Zakaria — AI Engineer
   ar: يحيى زكريا — مهندس ذكاء اصطناعي
 description:
-  en: I build AI that listens to your customers, reads your data, and tells your team what to fix next.
-  ar: أبني أنظمة ذكاء اصطناعي تسمع عملاءك وتقرأ بياناتك وتقول لفريقك ما الذي يجب إصلاحه أولًا.
+  en: I turn your company's data and customer calls into clear decisions — dashboards, forecasts and AI your team can act on.
+  ar: أحوّل بيانات شركتك ومكالمات عملائك إلى قرارات واضحة — لوحات متابعة وتوقعات وذكاء اصطناعي يستطيع فريقك التصرف بناءً عليه.
 
 nav:
   home:     { en: Home,      ar: الرئيسية }

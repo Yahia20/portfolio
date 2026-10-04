@@ -9,14 +9,11 @@
   <link rel="alternate" hreflang="ar" href="ar/">
   <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
   <script>
-    /* Remembered choice first, then the browser's language, then the site default. */
+    /* The reader's remembered choice, otherwise the site default (English). */
     (function () {
       var lang = null;
       try { lang = localStorage.getItem("lang"); } catch (e) {}
-      if (lang !== "en" && lang !== "ar") {
-        var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-        lang = /^ar\b/i.test(nav) ? "ar" : (/^en\b/i.test(nav) ? "en" : "{{ site.default_lang }}");
-      }
+      if (lang !== "en" && lang !== "ar") lang = "{{ site.default_lang }}";
       location.replace(lang + "/");
     })();
   </script>

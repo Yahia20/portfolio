@@ -15,7 +15,7 @@ availability:
   ar: متاح لمشاريع العمل الحر والوظائف بدوام كامل
 
 # Photos live in assets/img/profile/. Leave `portrait` empty to show initials instead.
-portrait: portrait.jpg
+portrait: portrait-clean.jpg   # background replaced; original kept as portrait.jpg
 portrait_alt:
   en: Portrait of Yahia Zakaria
   ar: صورة يحيى زكريا
@@ -24,19 +24,19 @@ gallery:
     caption: { en: "At the National Telecommunication Institute (NTI), during the AI Engineer programme", ar: "في المعهد القومي للاتصالات (NTI) أثناء برنامج هندسة الذكاء الاصطناعي" }
 
 headline:
-  en: I build AI that listens to your customers and tells your team what to fix next.
-  ar: أبني ذكاءً اصطناعيًا يسمع عملاءك ويقول لفريقك ما الذي يجب إصلاحه أولًا.
+  en: I turn your company's data and customer calls into clear decisions.
+  ar: أحوّل بيانات شركتك ومكالمات عملائك إلى قرارات واضحة.
 
 intro:
   en: >-
     Most companies already have the answers they need — buried in thousands of calls, chats and
     spreadsheets that nobody has time to go through. I build the systems that go through them:
-    they transcribe, read, score and summarise, then hand a person a short, clear report they can
+    they transcribe, read, analyse and forecast, then hand a person a short, clear report they can
     act on the same day.
   ar: >-
     معظم الشركات تملك الإجابات التي تحتاجها بالفعل، لكنها مدفونة في آلاف المكالمات والمحادثات
-    والجداول التي لا يجد أحد وقتًا لمراجعتها. أنا أبني الأنظمة التي تراجعها: تفرّغ وتقرأ وتقيّم
-    وتلخّص، ثم تسلّم الشخص المسؤول تقريرًا قصيرًا واضحًا يستطيع أن يتصرف بناءً عليه في نفس اليوم.
+    والجداول التي لا يجد أحد وقتًا لمراجعتها. أنا أبني الأنظمة التي تراجعها: تفرّغ وتقرأ وتحلّل
+    وتتوقّع، ثم تسلّم الشخص المسؤول تقريرًا قصيرًا واضحًا يستطيع أن يتصرف بناءً عليه في نفس اليوم.
 
 about:
   - en: >-

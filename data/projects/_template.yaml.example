@@ -7,7 +7,7 @@
 slug: my-new-project
 category: ai-assistants          # an id from data/categories.yaml
 status: completed                # live | completed | in-progress
-featured: false                  # true puts it on the home page (only one project should be featured)
+featured: false                  # not shown on the site at the moment; kept as data
 order: 10                        # lower comes first within its category
 date: 2026-10
 

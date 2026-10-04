@@ -16,7 +16,6 @@ from schema import Project  # noqa: E402
 def test_real_data_is_valid():
     site, profile, categories, projects = build.load_all()
     assert projects, "no projects found"
-    assert sum(p.featured for p in projects) == 1  # the home page shows exactly one
 
 
 def test_template_matches_the_schema():

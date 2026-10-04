@@ -5,7 +5,7 @@
 slug: arabic-call-qa
 category: conversation-analytics
 status: live            # live | completed | in-progress
-featured: true
+featured: false
 order: 1                # lower comes first inside its category
 date: 2026-09
 

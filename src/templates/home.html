@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% from "_icons.html" import icon %}
-{% from "_parts.html" import stat, project_card, status_badge %}
+{% from "_parts.html" import stat, project_card %}
 
 {% block main %}
 <section class="hero">
@@ -27,31 +27,6 @@
     </div>
   </div>
 </section>
-
-{% if featured %}
-<section class="section">
-  <div class="wrap">
-    <p class="section-kicker">{{ ui("featured") }}</p>
-    <article class="feature reveal">
-      <a class="feature-media" href="{{ root }}{{ lang }}/projects/{{ featured.slug }}/">
-        <img src="{{ root }}assets/projects/{{ featured.slug }}/{{ lang }}/{{ featured.cover.image }}" alt="{{ t(featured.cover.alt) }}" width="1200" height="675">
-      </a>
-      <div class="feature-body">
-        <div class="card-meta">
-          <span class="chip-static">{{ icon(cat_by_id[featured.category].icon) }}{{ t(cat_by_id[featured.category].name) }}</span>
-          {{ status_badge(featured.status, ui) }}
-        </div>
-        <h2 class="feature-title"><a href="{{ root }}{{ lang }}/projects/{{ featured.slug }}/">{{ t(featured.title) }}</a></h2>
-        <p class="lead">{{ t(featured.tagline) }}</p>
-        <div class="stats stats-compact">
-          {% for s in featured.stats %}{{ stat(s, t) }}{% endfor %}
-        </div>
-        <a class="btn btn-primary" href="{{ root }}{{ lang }}/projects/{{ featured.slug }}/">{{ ui("read_story") }} {{ icon("arrow", "icon icon-dir") }}</a>
-      </div>
-    </article>
-  </div>
-</section>
-{% endif %}
 
 <section class="section section-tint">
   <div class="wrap">

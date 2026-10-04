@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yahia Zakaria — AI Engineer</title>
+  <meta name="description" content="I build AI that listens to your customers, reads your data, and tells your team what to fix next.">
+  <link rel="alternate" hreflang="en" href="en/">
+  <link rel="alternate" hreflang="ar" href="ar/">
+  <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
+  <script>
+    /* Remembered choice first, then the browser's language, then the site default. */
+    (function () {
+      var lang = null;
+      try { lang = localStorage.getItem("lang"); } catch (e) {}
+      if (lang !== "en" && lang !== "ar") {
+        var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+        lang = /^ar\b/i.test(nav) ? "ar" : (/^en\b/i.test(nav) ? "en" : "ar");
+      }
+      location.replace(lang + "/");
+    })();
+  </script>
+  <style>body{font:16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#f6f5f1;color:#15171a}a{color:#0b6b62;margin:0 .75rem}</style>
+</head>
+<body>
+  <p><a href="ar/">العربية</a> · <a href="en/">English</a></p>
+</body>
+</html>

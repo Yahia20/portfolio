@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Every customer call, reviewed automatically · Yahia Zakaria</title>
+  <meta name="description" content="An AI quality supervisor for Arabic call centres — it listens to every call, scores it against your checklist, and shows the evidence.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Every customer call, reviewed automatically · Yahia Zakaria">
+  <meta property="og:description" content="An AI quality supervisor for Arabic call centres — it listens to every call, scores it against your checklist, and shows the evidence.">
+  <meta property="og:type" content="website">
+<meta property="og:image" content="../../../assets/projects/arabic-call-qa/en/cover.png">  <link rel="alternate" hreflang="ar" href="../../../ar/projects/arabic-call-qa/">
+  <link rel="icon" href="../../../static/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../static/css/site.css">
+  <noscript><style>.call-panel[hidden]{display:block}.call-panel+.call-panel{margin-top:16px}</style></noscript>
+  <script>
+    /* Before first paint: saved theme (no flash), and a flag for JS-only styles. */
+    document.documentElement.classList.add("js");
+    try { var th = localStorage.getItem("theme"); if (th) document.documentElement.dataset.theme = th; } catch (e) {}
+  </script>
+</head>
+<body class="page-project">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="../../../en/" aria-label="Yahia Zakaria">
+        <span class="brand-mark" aria-hidden="true">YZ</span>
+        <span class="brand-text">
+          <span class="brand-name">Yahia Zakaria</span>
+          <span class="brand-role">AI Engineer</span>
+        </span>
+      </a>
+      <nav class="tabs" aria-label="Home">
+        <a href="../../../en/" >Home</a>
+        <a href="../../../en/projects/" aria-current="page">Projects</a>
+        <a href="../../../en/about/" >About me</a>
+        <a href="../../../en/contact/" >Contact</a>
+      </nav>
+      <div class="header-tools">
+        <a class="tool lang-switch" href="../../../ar/projects/arabic-call-qa/" hreflang="ar" lang="ar" data-lang="ar">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span>العربية</span>
+        </a>
+        <button class="tool theme-toggle" type="button" aria-label="Switch light / dark" title="Switch light / dark">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<article class="project">
+  <header class="project-hero">
+    <div class="wrap">
+      <a class="back" href="../../../en/projects/#conversation-analytics"><svg class="icon icon-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg> All projects</a>
+      <div class="card-meta">
+        <span class="chip-static"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h2M7 8v8M11 4v16M15 7v10M19 10v4M21 12h0"/></svg>Call &amp; conversation analytics</span>
+        <span class="badge badge-live"><span class="pulse" aria-hidden="true"></span>Live</span>
+      </div>
+      <h1 class="project-title">Every customer call, reviewed automatically</h1>
+      <p class="lead project-tagline">An AI quality supervisor for Arabic call centres — it listens to every call, scores it against your checklist, and shows the evidence.</p>
+      <dl class="project-facts">
+        <div><dt>Client</dt><dd>Travel Gate KSA <span class="muted">· Travel agency · Saudi Arabia</span></dd></div>
+        <div><dt>My role</dt><dd>Designed and built the whole system, from recordings to reports.</dd></div>
+      </dl>
+      <figure class="project-cover">
+        <img src="../../../assets/projects/arabic-call-qa/en/cover.png" alt="A call recording turning into a transcript and a scorecard with evidence" width="1200" height="675">
+      </figure>
+      <div class="stats">
+<div class="stat">
+  <p class="stat-value"><bdi dir="ltr">2% → 100%</bdi></p>
+  <p class="stat-label">of calls reviewed</p>
+<p class="stat-note">before → after</p></div><div class="stat">
+  <p class="stat-value"><span data-count="830">830</span>+</p>
+  <p class="stat-label">calls transcribed in production</p>
+</div><div class="stat">
+  <p class="stat-value"><span data-count="1790">1,790</span></p>
+  <p class="stat-label">calls and chats in one place</p>
+</div><div class="stat">
+  <p class="stat-value"><bdi dir="ltr">&lt; 1¢</bdi></p>
+  <p class="stat-label">cost to analyse one conversation</p>
+<p class="stat-note">about $0.008</p></div>      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">The problem</h2>
+      <p class="prose">In most call centres, quality control means a supervisor listening to a handful of calls — about 2 in every 100, picked at random. The other 98 are never heard. A promise that breaks company policy, a customer who hung up angry, an agent who needs coaching: none of it shows up unless the supervisor happens to pick that exact call. And when feedback does happen, it is one person&#39;s impression against another&#39;s.</p>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap">
+      <h2 class="section-title">How it works</h2>
+      <div class="stepper" data-stepper>
+        <ol class="step-list" role="list">
+          <li>
+            <button class="step-btn" type="button" id="step-tab-1" aria-controls="step-panel-1" aria-selected="true">
+              <span class="step-num">1</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13 6.5 5h11L20 13v6H4z"/><path d="M4 13h4.5l1.2 2.5h4.6L15.5 13H20"/></svg></span>
+              <span class="step-name">Collect</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-2" aria-controls="step-panel-2" aria-selected="false">
+              <span class="step-num">2</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h2M7 8v8M11 4v16M15 7v10M19 10v4M21 12h0"/></svg></span>
+              <span class="step-name">Transcribe</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-3" aria-controls="step-panel-3" aria-selected="false">
+              <span class="step-num">3</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg></span>
+              <span class="step-name">Score</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-4" aria-controls="step-panel-4" aria-selected="false">
+              <span class="step-num">4</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3M8.5 11h5"/></svg></span>
+              <span class="step-name">Show the evidence</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-5" aria-controls="step-panel-5" aria-selected="false">
+              <span class="step-num">5</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>
+              <span class="step-name">Report</span>
+            </button>
+          </li>
+        </ol>
+        <div class="step-panels">
+          <div class="step-panel" id="step-panel-1" role="tabpanel" aria-labelledby="step-tab-1">
+            <p class="step-kicker">Step 1 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13 6.5 5h11L20 13v6H4z"/><path d="M4 13h4.5l1.2 2.5h4.6L15.5 13H20"/></svg> Collect</h3>
+            <p>Every night, call recordings from the phone system and chats from the CRM are gathered into one place — no one has to export anything.</p>
+          </div>
+          <div class="step-panel" id="step-panel-2" role="tabpanel" aria-labelledby="step-tab-2">
+            <p class="step-kicker">Step 2 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h2M7 8v8M11 4v16M15 7v10M19 10v4M21 12h0"/></svg> Transcribe</h3>
+            <p>A speech model built for Arabic turns each call into text. It copes with Gulf and Egyptian dialects, formal Arabic, and English words dropped in mid-sentence.</p>
+          </div>
+          <div class="step-panel" id="step-panel-3" role="tabpanel" aria-labelledby="step-tab-3">
+            <p class="step-kicker">Step 3 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg> Score</h3>
+            <p>The AI scores the agent on the same five things a good supervisor checks — greeting, listening, solving the problem, following policy, closing — from 0 to 5.</p>
+          </div>
+          <div class="step-panel" id="step-panel-4" role="tabpanel" aria-labelledby="step-tab-4">
+            <p class="step-kicker">Step 4 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3M8.5 11h5"/></svg> Show the evidence</h3>
+            <p>Every score quotes the sentence it is based on. An agent can see exactly why, and a supervisor can check any score in seconds.</p>
+          </div>
+          <div class="step-panel" id="step-panel-5" role="tabpanel" aria-labelledby="step-tab-5">
+            <p class="step-kicker">Step 5 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg> Report</h3>
+            <p>One report per call, plus a team summary that ranks the weakest skill first — that is next week&#39;s training plan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">Results in production</h2>
+      <p class="muted">Travel Gate, September 2026</p>
+      <ul class="checks" role="list">
+<li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>Live since September 2026. It runs by itself every night at 11:30 pm Riyadh time.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>More than 830 calls transcribed and 1,790 calls and chats brought together in one database, each linked to its customer.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>Analysing a conversation costs less than one cent. A quiet night with nothing new to process costs almost nothing.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>Recordings that contain no real speech are recognised and set aside, so an empty call never drags an agent&#39;s average down.</span></li>      </ul>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="demo">
+    <div class="wrap">
+      <h2 class="section-title">Try it — six sample calls</h2>
+      <p class="lead narrow-text">These six calls are made up — I wrote them to cover the situations a supervisor cares about — but the scores are the system&#39;s real, unedited output. Pick a call to see its scorecard.</p>
+
+      <aside class="callout reveal">
+        <span class="callout-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div>
+          <h3>Caught: a promise that would have cost 1,300 SAR</h3>
+          <p>The agent admits the ticket can&#39;t be refunded — then promises a full refund anyway, to calm the customer down. The system gives policy compliance 0 out of 5, quotes both sentences, and flags the call for a supervisor. In the old process, this is only caught if someone happens to pick this call.</p>
+          <button class="link-btn" type="button" data-show-call="call_02_refund_promise">Read the full story <svg class="icon icon-dir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </aside>
+
+      <div class="explorer" data-explorer>
+        <div class="call-list" role="tablist" aria-label="Try it — six sample calls">
+          <button class="call-item" type="button" role="tab" id="tab-call_05_umrah_package" aria-controls="panel-call_05_umrah_package" aria-selected="false" data-call="call_05_umrah_package">
+            <span class="call-item-top">
+              <span class="call-item-title">Umrah package booking</span>
+              <span class="score-pill tone-good"><bdi>96%</bdi></span>
+            </span>
+            <span class="meter" aria-hidden="true"><span style="inline-size: 96.0%"></span></span>
+          </button>
+          <button class="call-item" type="button" role="tab" id="tab-call_01_date_change" aria-controls="panel-call_01_date_change" aria-selected="false" data-call="call_01_date_change">
+            <span class="call-item-top">
+              <span class="call-item-title">Changing a flight date</span>
+              <span class="score-pill tone-good"><bdi>88%</bdi></span>
+            </span>
+            <span class="meter" aria-hidden="true"><span style="inline-size: 88.0%"></span></span>
+          </button>
+          <button class="call-item" type="button" role="tab" id="tab-call_06_hotel_complaint" aria-controls="panel-call_06_hotel_complaint" aria-selected="false" data-call="call_06_hotel_complaint">
+            <span class="call-item-top">
+              <span class="call-item-title">Wrong hotel room</span>
+              <span class="score-pill tone-good"><bdi>80%</bdi></span>
+            </span>
+            <span class="meter" aria-hidden="true"><span style="inline-size: 80.0%"></span></span>
+<span class="flag-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg> Sent to a supervisor</span>          </button>
+          <button class="call-item" type="button" role="tab" id="tab-call_04_visa_inquiry" aria-controls="panel-call_04_visa_inquiry" aria-selected="false" data-call="call_04_visa_inquiry">
+            <span class="call-item-top">
+              <span class="call-item-title">Visa question</span>
+              <span class="score-pill tone-bad"><bdi>44%</bdi></span>
+            </span>
+            <span class="meter" aria-hidden="true"><span style="inline-size: 44.0%"></span></span>
+<span class="flag-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg> Sent to a supervisor</span>          </button>
+          <button class="call-item" type="button" role="tab" id="tab-call_02_refund_promise" aria-controls="panel-call_02_refund_promise" aria-selected="true" data-call="call_02_refund_promise">
+            <span class="call-item-top">
+              <span class="call-item-title">Refund request</span>
+              <span class="score-pill tone-bad"><bdi>40%</bdi></span>
+            </span>
+            <span class="meter" aria-hidden="true"><span style="inline-size: 40.0%"></span></span>
+<span class="flag-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg> Sent to a supervisor</span>          </button>
+          <button class="call-item" type="button" role="tab" id="tab-call_03_lost_baggage" aria-controls="panel-call_03_lost_baggage" aria-selected="false" data-call="call_03_lost_baggage">
+            <span class="call-item-top">
+              <span class="call-item-title">Lost suitcase</span>
+              <span class="score-pill tone-bad"><bdi>12%</bdi></span>
+            </span>
+            <span class="meter" aria-hidden="true"><span style="inline-size: 12.0%"></span></span>
+<span class="flag-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg> Sent to a supervisor</span>          </button>
+        </div>
+
+        <div class="call-panel" role="tabpanel" id="panel-call_05_umrah_package" aria-labelledby="tab-call_05_umrah_package" hidden>
+          <div class="call-head">
+            <div>
+              <h3>Umrah package booking</h3>
+              <p class="muted">Confirms what the customer needs, offers two options, explains the deposit rule, asks if there&#39;s anything else.</p>
+            </div>
+            <div class="ring tone-good" style="--p: 96.0" role="img" aria-label="Overall 96%">
+              <span><bdi>96%</bdi></span>
+            </div>
+          </div>
+          <dl class="call-facts">
+            <div><dt>Why they called</dt><dd lang="ar" dir="rtl">حجز باقة عمرة لشخصين في العشر الأواخر من رمضان بفندق قريب من الحرم</dd></div>
+            <div><dt>Customer mood</dt><dd>Positive</dd></div>
+            <div><dt>Resolved</dt><dd>Yes</dd></div>
+            <div><dt>Sent to a supervisor</dt><dd class="">No review needed</dd></div>
+          </dl>
+<p class="note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg> The calls are in Arabic, so the evidence quotes are too.</p>          <ul class="scorecard" role="list">
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Greeting</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">الموظف: &#34;السلام عليكم ورحمة الله، معك خالد من خدمة العملاء، أسعد الله مساك، كيف أقدر أخدمك؟&#34; — تحية كاملة مع تعريف بالاسم والقسم وسؤال عن الخدمة.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Listening</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">لخّص الطلب للتأكد: &#34;عشان أفهم طلبك صح: شخصين، حضرتك والوالدة، العشر الأواخر من رمضان، صح؟&#34; واستجاب لتفضيل الفندق القريب من الحرم.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Solving the problem</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">قدّم خيارين محددين بالأسعار والمسافات، وأكد توفّر كرسي متحرك مجانًا وتسجيل ملاحظة في الحجز، ثم أكمل الحجز المبدئي برقم TG-5520.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Following policy</span>
+                <span class="dots" role="img" aria-label="4 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><bdi class="dots-num">4/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">أوضح سياسة الشركة: &#34;الحجز يتأكد بعربون ثلاثين في المئة، والباقي قبل السفر بأسبوعين&#34; دون أن يَعِد بأي استثناءات مخالفة.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Closing the call</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">سأل: &#34;هل فيه أي شي ثاني أقدر أساعدك فيه؟&#34; ثم أنهى بلطف: &#34;الله يتقبل منكم ويوصلكم بالسلامة. مع السلامة.&#34;</p>
+            </li>
+          </ul>
+          <div class="grid grid-2 call-notes">
+<div><h4>What went well</h4><ul lang="ar" dir="rtl"><li>تحية افتتاحية مهنية كاملة تضمنت الاسم والقسم</li><li>تلخيص الطلب للتأكد من الفهم قبل تقديم الحل</li><li>تقديم خيارين واضحين مع الأسعار والمسافات لتمكين العميل من القرار</li><li>الالتزام باحتياج العميل الخاص (كرسي متحرك) وتسجيله في الحجز</li><li>الشفافية في شرح سياسة العربون والدفع</li></ul></div><div><h4>What to improve</h4><ul lang="ar" dir="rtl"><li>تأكيد بيانات التواصل مع العميل (رقم الجوال أو البريد) قبل إرسال رابط الدفع لضمان وصوله</li><li>ذكر مدة صلاحية الحجز المبدئي TG-5520 والموعد النهائي لدفع العربون بشكل صريح</li><li>عرض بديل احتياطي في حال عدم توفّر الكرسي المتحرك أو الغرف القريبة في تلك الفترة</li></ul></div>          </div>
+          <details class="transcript">
+            <summary>Read the call</summary>
+            <div lang="ar" dir="rtl"><p><b>الموظف:</b> السلام عليكم ورحمة الله، معك خالد من خدمة العملاء، أسعد الله مساك، كيف أقدر أخدمك؟</p><p><b>العميل:</b> وعليكم السلام، مساك الله بالخير. أبغى باقة عمرة لي ولأمي في رمضان، العشر الأواخر إذا أمكن.</p><p><b>الموظف:</b> الله يتقبل منكم. عشان أفهم طلبك صح: شخصين، حضرتك والوالدة، العشر الأواخر من رمضان، صح؟ وفي أي تفضيل للفندق؟</p><p><b>العميل:</b> صح. أبغى فندق قريب من الحرم لأن أمي كبيرة وما تقدر تمشي كثير.</p><p><b>الموظف:</b> فاهم عليك تمامًا. عندي خيارين: الأول فندق على بعد مئة متر من ساحة الحرم، سبع ليالي بثمانية آلاف وخمسمية ريال للشخصين شامل الإفطار. والثاني على بعد أربعمية متر بستة آلاف ومية، مع توصيل مجاني للحرم كل ساعة.</p><p><b>العميل:</b> الأول أحسن عشان أمي. هل فيه كرسي متحرك؟</p><p><b>الموظف:</b> أيوه، الفندق يوفر كرسي متحرك مجانًا، وبسجل ملاحظة في الحجز عشان يكون جاهز أول ما توصلون. وحسب سياسة الشركة، الحجز يتأكد بعربون ثلاثين في المية، والباقي قبل السفر بأسبوعين.</p><p><b>العميل:</b> ممتاز، اعتمد الخيار الأول.</p><p><b>الموظف:</b> تم الحجز المبدئي برقم TG-5520، وبيوصلك رابط الدفع ورسالة فيها كل التفاصيل خلال دقائق. هل فيه أي شي ثاني أقدر أساعدك فيه؟</p><p><b>العميل:</b> لا، جزاك الله خير، ما قصرت.</p><p><b>الموظف:</b> وإياك، الله يتقبل منكم ويوصلكم بالسلامة. مع السلامة.</p></div>
+          </details>
+        </div>
+        <div class="call-panel" role="tabpanel" id="panel-call_01_date_change" aria-labelledby="tab-call_01_date_change" hidden>
+          <div class="call-head">
+            <div>
+              <h3>Changing a flight date</h3>
+              <p class="muted">A clean, correct change — but the agent never checks if there&#39;s anything else.</p>
+            </div>
+            <div class="ring tone-good" style="--p: 88.0" role="img" aria-label="Overall 88%">
+              <span><bdi>88%</bdi></span>
+            </div>
+          </div>
+          <dl class="call-facts">
+            <div><dt>Why they called</dt><dd lang="ar" dir="rtl">الاستفسار عن إمكانية تغيير تاريخ الرحلة وتنفيذ التغيير</dd></div>
+            <div><dt>Customer mood</dt><dd>Positive</dd></div>
+            <div><dt>Resolved</dt><dd>Yes</dd></div>
+            <div><dt>Sent to a supervisor</dt><dd class="">No review needed</dd></div>
+          </dl>
+<p class="note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg> The calls are in Arabic, so the evidence quotes are too.</p>          <ul class="scorecard" role="list">
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Greeting</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">«أهلًا وسهلًا معك أحمد من خدمة عملاء الشركة، كيف أقدر أساعدك؟» — ترحيب واضح مع ذكر الاسم والقسم.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Listening</span>
+                <span class="dots" role="img" aria-label="4 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><bdi class="dots-num">4/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">ترك العميل يشرح طلبه كاملًا ثم طلب رقم الحجز وراجعه، لكنه لم يلخّص المشكلة أو يؤكد الفهم بصياغة مثل «إذن حضرتك عايز تغيّر تاريخ الرحلة».</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Solving the problem</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">قدّم حلًا فعليًا ونفّذ التغيير: «تم التغيير ليوم 23. هيوصلك إيميل تأكيد خلال دقائق»، ورد على استفسار السعر: «لا، مفيش أي فرق».</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Following policy</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">التزم بشروط التذكرة بدقة: «بتسمح بتغيير التاريخ مرة واحدة من غير رسوم لو التغيير قبل الرحلة بـ 48 ساعة على الأقل» ولم يَعِد بأي استثناء مخالف.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Closing the call</span>
+                <span class="dots" role="img" aria-label="3 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><bdi class="dots-num">3/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">أنهى بلطف «العفو، مع السلامة» لكنه لم يسأل إن كان هناك استفسار آخر قبل الإنهاء.</p>
+            </li>
+          </ul>
+          <div class="grid grid-2 call-notes">
+<div><h4>What went well</h4><ul lang="ar" dir="rtl"><li>ترحيب مهني واضح يتضمن الاسم والقسم</li><li>معرفة دقيقة بشروط التذكرة وتطبيقها بشكل صحيح</li><li>حل عملي وفوري: نفّذ التغيير فعليًا بدل الاكتفاء بالوعد</li><li>وضوح في الخطوات التالية (إيميل التأكيد) وفي الرد على استفسار السعر</li></ul></div><div><h4>What to improve</h4><ul lang="ar" dir="rtl"><li>إضافة خطوة تلخيص للمشكلة قبل الحل، مثل: «إذن حضرتك عايز تغيّر تاريخ رحلتك من 15 لـ22، صح؟» للتأكد من الفهم</li><li>عرض بدائل بشكل أوسع عند عدم توفر يوم 22، مثل السؤال عن مرونة العميل في التواريخ أو خط سير بديل</li><li>إنهاء المكالمة بسؤال صريح: «هل فيه أي حاجة تانية أقدر أساعدك فيها؟» قبل السلام</li><li>تأكيد بيانات التواصل مع العميل (البريد المسجل) عند الوعد بإرسال إيميل التأكيد</li></ul></div>          </div>
+          <details class="transcript">
+            <summary>Read the call</summary>
+            <div lang="ar" dir="rtl"><p><b>الموظف:</b> أهلًا وسهلًا معك أحمد من خدمة عملاء الشركة، كيف أقدر أساعدك؟</p><p><b>العميل:</b> السلام عليكم، أنا حاجز رحلة الأسبوع الجاي وعايز أعرف أقدر أغيّر التاريخ ولا لأ.</p><p><b>الموظف:</b> أكيد، ممكن رقم الحجز لو سمحت؟</p><p><b>العميل:</b> تمام، الرقم TG-4471.</p><p><b>الموظف:</b> لحظة واحدة بس أراجع الحجز... طيب حضرتك حاجز تذكرة اقتصادي مرن، ودي بتسمح بتغيير التاريخ مرة واحدة من غير رسوم لو التغيير قبل الرحلة بـ 48 ساعة على الأقل.</p><p><b>العميل:</b> يعني أقدر أغيّرها دلوقتي؟</p><p><b>الموظف:</b> أيوة، رحلتك بعد ستة أيام فإنت داخل المدة المسموحة. تحب أغيّرها لتاريخ إيه؟</p><p><b>العميل:</b> خليها يوم 22 بدل 15 لو ينفع.</p><p><b>الموظف:</b> للأسف يوم 22 مفيهوش مقاعد متاحة على نفس خط السير. أقرب تاريخ متاح هو 23 أو 24.</p><p><b>العميل:</b> طب خليها 23 يبقى.</p><p><b>الموظف:</b> تمام، تم التغيير ليوم 23. هيوصلك إيميل تأكيد خلال دقائق على نفس البريد المسجل.</p><p><b>العميل:</b> طيب هل فيه أي فرق في السعر؟</p><p><b>الموظف:</b> لا، مفيش أي فرق، التغيير الأول مجاني حسب شروط التذكرة.</p><p><b>العميل:</b> تمام شكرًا.</p><p><b>الموظف:</b> العفو، مع السلامة.</p></div>
+          </details>
+        </div>
+        <div class="call-panel" role="tabpanel" id="panel-call_06_hotel_complaint" aria-labelledby="tab-call_06_hotel_complaint" hidden>
+          <div class="call-head">
+            <div>
+              <h3>Wrong hotel room</h3>
+              <p class="muted">Arabic and English mixed; tonight can&#39;t be fixed, so the agent asks the hotel for compensation.</p>
+            </div>
+            <div class="ring tone-good" style="--p: 80.0" role="img" aria-label="Overall 80%">
+              <span><bdi>80%</bdi></span>
+            </div>
+          </div>
+          <dl class="call-facts">
+            <div><dt>Why they called</dt><dd lang="ar" dir="rtl">شكوى عدم مطابقة الغرفة لنوع الحجز (sea view) في فندق بإسطنبول</dd></div>
+            <div><dt>Customer mood</dt><dd>Negative</dd></div>
+            <div><dt>Resolved</dt><dd>No</dd></div>
+            <div><dt>Sent to a supervisor</dt><dd class="is-flagged"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg> Yes</dd></div>
+          </dl>
+<p class="note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg> The calls are in Arabic, so the evidence quotes are too.</p>          <ul class="scorecard" role="list">
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Greeting</span>
+                <span class="dots" role="img" aria-label="4 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><bdi class="dots-num">4/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">&#34;Good evening، معك ريم من خدمة العملاء، تفضلي.&#34; — تحية وافتتاح مهني مع ذكر الاسم والقسم، لكن دون ذكر اسم الشركة أو عرض المساعدة بشكل كامل.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Listening</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">تركت العميلة تشرح المشكلة كاملة، ثم لخّصت: &#34;خليني أتأكد: حضرتك حاجزة sea view من خلالنا، ورقم الحجز كام؟&#34; وطلبت رقم الحجز للتحقق.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Solving the problem</span>
+                <span class="dots" role="img" aria-label="3 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><bdi class="dots-num">3/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">قدّمت خطة واضحة: &#34;هكلّم الفندق حالًا وأطلب upgrade أو نقل لغرفة sea view من بكرة، ولو مش متاح هطلب تعويض عن فرق السعر&#34;، لكنها لم تُحل المشكلة فعليًا واكتفت بالوعد بالرد خلال ساعة، ولم توضّح للعميلة خطواتها البديلة إن رفض الفندق التعويض.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Following policy</span>
+                <span class="dots" role="img" aria-label="4 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><bdi class="dots-num">4/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">ربطت التعويض بشروط الحجز: &#34;هطلب تعويض عن فرق السعر حسب شروط الحجز&#34;، ولم تَعِد بما يخالف السياسة، وامتنعت عن الوعد بتغيير غرفة الليلة لأن &#34;الفندق full فعلًا&#34;.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Closing the call</span>
+                <span class="dots" role="img" aria-label="4 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><bdi class="dots-num">4/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">&#34;هرجعلك برسالة واتساب خلال ساعة بالرد النهائي. في أي حاجة تانية؟&#34; ثم &#34;العفو، أتمنالك إقامة سعيدة.&#34; — تأكدت من عدم وجود استفسار آخر وأنهت بلطف، مع غياب رقم مرجعي أو قناة تواصل بديلة.</p>
+            </li>
+          </ul>
+          <div class="grid grid-2 call-notes">
+<div><h4>What went well</h4><ul lang="ar" dir="rtl"><li>افتتاح مهني مع ذكر الاسم والقسم وتحية مناسبة للوقت</li><li>إنصات كامل ولخّصت المشكلة وطلبت رقم الحجز للتحقق قبل أي إجراء</li><li>خطة حل واضحة ومتدرجة: upgrade أو نقل من الغد ثم تعويض عن فرق السعر</li><li>التزمت بشروط الحجز ولم تَعِد بما لا تستطيع تنفيذه (تغيير غرفة الليلة)</li><li>حدّدت إطارًا زمنيًا للرد (خلال ساعة) عبر قناة واضحة (واتساب)</li></ul></div><div><h4>What to improve</h4><ul lang="ar" dir="rtl"><li>إضافة اسم الشركة في الافتتاح: &#34;معك ريم من خدمة عملاء [اسم الشركة]&#34;</li><li>توضيح الخطوة التالية للعميلة بشكل ملموس: متى بالضبط ستتواصل مع الفندق، وماذا سيحدث إن رفض التعويض، وما البديل المتاح (نقل لفندق آخر مثلًا)</li><li>تقديم تعويض فوري أو إجراء مؤقت لليلة الحالية بدل تركها دون أي حل: &#34;سأرسل لك تأكيدًا مكتوبًا بالتعويض عن الليلة الأولى&#34;</li><li>تزويد العميلة برقم مرجعي للشكوى أو رقم تواصل مباشر بدل الاعتماد على واتساب فقط</li><li>إبلاغ العميلة بإجراء تصعيدي واضح إن لم يستجب الفندق خلال المدة المحددة</li></ul></div>          </div>
+          <details class="transcript">
+            <summary>Read the call</summary>
+            <div lang="ar" dir="rtl"><p><b>الموظف:</b> Good evening، معك ريم من خدمة العملاء، تفضلي.</p><p><b>العميل:</b> هاي ريم. أنا حاليًا في الفندق بإسطنبول، عملت check-in من ساعة، والغرفة مش زي اللي في الـ booking. كنت حاجزة sea view وأعطوني غرفة على الشارع.</p><p><b>الموظف:</b> آسفة جدًا على الإزعاج. خليني أتأكد: حضرتك حاجزة sea view من خلالنا، ورقم الحجز كام؟</p><p><b>العميل:</b> TG-3307.</p><p><b>الموظف:</b> تمام، الحجز عندي فعلًا sea view لأربع ليالي. الفندق أكّد لك سبب التغيير؟</p><p><b>العميل:</b> قالوا الفندق full ومفيش غرف sea view الليلة.</p><p><b>الموظف:</b> فاهمة. هكلّم الفندق حالًا وأطلب upgrade أو نقل لغرفة sea view من بكرة، ولو مش متاح هطلب تعويض عن فرق السعر حسب شروط الحجز.</p><p><b>العميل:</b> طيب والليلة دي؟</p><p><b>الموظف:</b> الليلة للأسف مش هقدر أوعدك بتغيير لأن الفندق full فعلًا، بس هطلب منهم تعويض عن الليلة دي كمان.</p><p><b>العميل:</b> أوكي، هستنى.</p><p><b>الموظف:</b> هرجعلك برسالة واتساب خلال ساعة بالرد النهائي. في أي حاجة تانية؟</p><p><b>العميل:</b> لا، thanks.</p><p><b>الموظف:</b> العفو، أتمنالك إقامة سعيدة.</p></div>
+          </details>
+        </div>
+        <div class="call-panel" role="tabpanel" id="panel-call_04_visa_inquiry" aria-labelledby="tab-call_04_visa_inquiry" hidden>
+          <div class="call-head">
+            <div>
+              <h3>Visa question</h3>
+              <p class="muted">The agent doesn&#39;t know the fees or the document list and promises a call back — with no time given.</p>
+            </div>
+            <div class="ring tone-bad" style="--p: 44.0" role="img" aria-label="Overall 44%">
+              <span><bdi>44%</bdi></span>
+            </div>
+          </div>
+          <dl class="call-facts">
+            <div><dt>Why they called</dt><dd lang="ar" dir="rtl">استفسار عن استخراج تأشيرة شنغن سياحية لإيطاليا والأوراق والرسوم</dd></div>
+            <div><dt>Customer mood</dt><dd>Neutral</dd></div>
+            <div><dt>Resolved</dt><dd>No</dd></div>
+            <div><dt>Sent to a supervisor</dt><dd class="is-flagged"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg> Yes</dd></div>
+          </dl>
+<p class="note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg> The calls are in Arabic, so the evidence quotes are too.</p>          <ul class="scorecard" role="list">
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Greeting</span>
+                <span class="dots" role="img" aria-label="5 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><bdi class="dots-num">5/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">&#34;أهلًا وسهلًا، معك سارة من خدمة العملاء، كيف أقدر أساعدك؟&#34; — تحية كاملة مع ذكر الاسم والقسم وعرض المساعدة.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Listening</span>
+                <span class="dots" role="img" aria-label="3 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><bdi class="dots-num">3/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">طرحت أسئلة توضيحية جيدة (&#34;سياحة ولا زيارة عائلية؟&#34;، &#34;كم المدة المتبقية قبل السفر؟&#34;) لكنها لم تلخّص المشكلة أو تؤكد فهمها، ولم تُكمل سماع بقية استفسارات العميل عن الأوراق والرسوم.</p>
+            </li>
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Solving the problem</span>
+                <span class="dots" role="img" aria-label="1 / 5"><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">1/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">لم تقدّم حلًا واضحًا: قالت &#34;مواعيد السفارة هالفترة زحمة ومش متأكدة إذا خمس أسابيع تكفي&#34;، وعن الأوراق &#34;أظن خطاب من جهة العمل، بس خليني أتأكد&#34;، وعن الرسوم &#34;ما عندي الرقم الحين، بتأكد وأرجع لك&#34; — وعود مؤجلة دون أي معلومة مؤكدة.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Following policy</span>
+                <span class="dots" role="img" aria-label="2 / 5"><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">2/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">لم تُخالف سياسة صريحة، لكنها قدّمت معلومات غير مؤكدة عن الأوراق المطلوبة (&#34;وأظن خطاب من جهة العمل&#34;) ووعدت بالعودة دون التزام موعد محدد (&#34;بكلمك إن شاء الله&#34;)، وهو وعد غير منضبط.</p>
+            </li>
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Closing the call</span>
+                <span class="dots" role="img" aria-label="0 / 5"><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">0/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">أنهت المكالمة بـ&#34;باي&#34; فقط دون التأكد من وجود استفسار آخر ودون تلخيص أو شكر أو توجيه لخطوة تالية.</p>
+            </li>
+          </ul>
+          <div class="grid grid-2 call-notes">
+<div><h4>What went well</h4><ul lang="ar" dir="rtl"><li>افتتاحية مهنية كاملة: تحية، تعريف بالاسم والقسم، وعرض المساعدة</li><li>طرح أسئلة توضيحية لتصنيف الطلب (نوع التأشيرة ومدة الرحلة)</li></ul></div><div><h4>What to improve</h4><ul lang="ar" dir="rtl"><li>تحديد موعد دقيق للعودة بالعميل بدل &#34;بكلمك إن شاء الله&#34;، مثل: &#34;سأعاود الاتصال بك اليوم قبل الساعة الخامسة&#34;</li><li>التحقق من قائمة الأوراق والرسوم قبل المكالمة أو استخدام مصدر موثوق بدل التخمين بـ&#34;أظن&#34;</li><li>تقديم بديل عملي لمشكلة ضيق الوقت، مثل تحديد أقرب موعد متاح أو تحويل العميل لقسم التأشيرات المختص</li><li>إنهاء المكالمة بسؤال &#34;هل هناك أي استفسار آخر؟&#34; مع الشكر وتلخيص الخطوة التالية</li><li>تلخيص طلب العميل في نهاية الحديث للتأكد من فهمه بالكامل</li></ul></div>          </div>
+          <details class="transcript">
+            <summary>Read the call</summary>
+            <div lang="ar" dir="rtl"><p><b>الموظف:</b> أهلًا وسهلًا، معك سارة من خدمة العملاء، كيف أقدر أساعدك؟</p><p><b>العميل:</b> أهلين سارة، أنا ناوي أسافر إيطاليا الشهر الجاي مع زوجتي، وأبغى أعرف إذا تطلعون لنا الفيزا.</p><p><b>الموظف:</b> أكيد نقدر نساعدك في الشنغن. حضرتك تبغى سياحة ولا زيارة عائلية؟</p><p><b>العميل:</b> سياحة، عشرة أيام تقريبًا.</p><p><b>الموظف:</b> تمام. وكم المدة المتبقية قبل السفر بالضبط؟</p><p><b>العميل:</b> تقريبًا خمس أسابيع.</p><p><b>الموظف:</b> الصراحة مواعيد السفارة هالفترة زحمة ومش متأكدة إذا خمس أسابيع تكفي ولا لا.</p><p><b>العميل:</b> طيب والأوراق المطلوبة إيش؟</p><p><b>الموظف:</b> جواز سفر، كشف حساب، حجز فندق وطيران، وأظن خطاب من جهة العمل، بس خليني أتأكد من القائمة الكاملة.</p><p><b>العميل:</b> طيب والرسوم كم؟</p><p><b>الموظف:</b> والله ما عندي الرقم الحين، بتأكد وأرجع لك.</p><p><b>العميل:</b> متى ترجعين لي؟</p><p><b>الموظف:</b> بكلمك إن شاء الله.</p><p><b>العميل:</b> طيب.</p><p><b>الموظف:</b> باي.</p></div>
+          </details>
+        </div>
+        <div class="call-panel" role="tabpanel" id="panel-call_02_refund_promise" aria-labelledby="tab-call_02_refund_promise" >
+          <div class="call-head">
+            <div>
+              <h3>Refund request</h3>
+              <p class="muted">The agent says the ticket is non-refundable, then promises a full refund anyway.</p>
+            </div>
+            <div class="ring tone-bad" style="--p: 40.0" role="img" aria-label="Overall 40%">
+              <span><bdi>40%</bdi></span>
+            </div>
+          </div>
+          <dl class="call-facts">
+            <div><dt>Why they called</dt><dd lang="ar" dir="rtl">طلب إلغاء تذكرة سفر واسترداد المبلغ كاملًا</dd></div>
+            <div><dt>Customer mood</dt><dd>Positive</dd></div>
+            <div><dt>Resolved</dt><dd>No</dd></div>
+            <div><dt>Sent to a supervisor</dt><dd class="is-flagged"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg> Yes</dd></div>
+          </dl>
+<p class="note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg> The calls are in Arabic, so the evidence quotes are too.</p>          <ul class="scorecard" role="list">
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Greeting</span>
+                <span class="dots" role="img" aria-label="2 / 5"><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">2/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">قال فقط: &#34;مساء الخير، خدمة العملاء، تفضل&#34; دون ذكر اسمه أو أي ترحيب مهني إضافي.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Listening</span>
+                <span class="dots" role="img" aria-label="3 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><bdi class="dots-num">3/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">سأل عن رقم الحجز واستفسر عن سبب الإلغاء (&#34;حضرتك ليه حابب تلغي؟&#34;)، لكنه لم يلخّص المشكلة أو يؤكد فهمه لطلب الاسترداد الكامل.</p>
+            </li>
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Solving the problem</span>
+                <span class="dots" role="img" aria-label="1 / 5"><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">1/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">اكتفى بالوعد: &#34;أنا هرفع الطلب وهنرجعلك الفلوس كاملة، خلال أسبوع بالكتير&#34; دون تقديم حل نظامي أو توضيح إجراءات بديلة.</p>
+            </li>
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Following policy</span>
+                <span class="dots" role="img" aria-label="0 / 5"><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">0/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">أقرّ بأن التذكرة &#34;اقتصادي لايت وغير قابلة للاسترداد&#34; ثم وعد بالاسترداد الكامل، وهو وعد مخالف لسياسة الشركة المعلنة.</p>
+            </li>
+            <li class="score-row">
+              <div class="score-top">
+                <span class="score-label">Closing the call</span>
+                <span class="dots" role="img" aria-label="4 / 5"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><bdi class="dots-num">4/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">سأل &#34;في أي خدمة تانية؟&#34; وأنهى بـ&#34;مع السلامة&#34; بعد تأكيد العميل عدم وجود استفسار آخر.</p>
+            </li>
+          </ul>
+          <div class="grid grid-2 call-notes">
+<div><h4>What went well</h4><ul lang="ar" dir="rtl"><li>افتتح المكالمة بتحية مناسبة وذكر القسم (&#34;مساء الخير، خدمة العملاء&#34;)</li><li>طلب رقم الحجز مباشرة للوصول إلى بيانات العميل</li><li>استفسر عن سبب الإلغاء لإظهار الاهتمام</li><li>أنهى المكالمة بالسؤال عن وجود خدمة أخرى</li></ul></div><div><h4>What to improve</h4><ul lang="ar" dir="rtl"><li>عدم تقديم وعود مخالفة للسياسة: كان يجب توضيح أن التذكرة اقتصادي لايت غير قابلة للاسترداد والاعتذار عن الاسترداد الكامل بدلًا من تأكيده</li><li>عرض بدائل نظامية بدل الوعد المطلق، مثل إمكانية تغيير التاريخ أو استرداد الرسوم القابلة للاسترداد فقط، أو تحويل الطلب للجهة المختصة</li><li>الاعتذار عن عدم ذكر الاسم عند الافتتاح وذكر اسمه وقسمه بشكل واضح</li><li>تلخيص طلب العميل (إلغاء + استرداد كامل) قبل الانتقال للحل للتأكد من الفهم</li><li>تجنّب عبارات التأكيد الشخصي مثل &#34;اعتمد عليا&#34; عند عدم وجود صلاحية مؤكدة، واستخدام صياغة مهنية واضحة حول الخطوات التالية</li></ul></div>          </div>
+          <details class="transcript">
+            <summary>Read the call</summary>
+            <div lang="ar" dir="rtl"><p><b>الموظف:</b> مساء الخير، خدمة العملاء، تفضل.</p><p><b>العميل:</b> مساء النور. أنا حاجز تذكرة للرياض–دبي يوم الخميس وأبغى ألغيها وأسترد فلوسي كاملة.</p><p><b>الموظف:</b> طيب، رقم الحجز؟</p><p><b>العميل:</b> TG-8812.</p><p><b>الموظف:</b> لحظة... إيه، التذكرة موجودة. حضرتك ليه حابب تلغي؟</p><p><b>العميل:</b> ظرف عائلي، ما أقدر أسافر. وأنا دافع ألف وثلاثمية ريال وأبغاها كاملة.</p><p><b>الموظف:</b> تمام، ولا يهمك، هنرجعلك المبلغ كامل إن شاء الله.</p><p><b>العميل:</b> متأكد؟ لأن واحد قالي إن التذكرة ذي ما تنسترد.</p><p><b>الموظف:</b> هي فعلًا تذكرة اقتصادي لايت وغير قابلة للاسترداد، بس ما عليك، أنا هرفع الطلب وهنرجعلك الفلوس كاملة، خلال أسبوع بالكتير.</p><p><b>العميل:</b> طيب ممتاز، يعني أعتمد على كلامك؟</p><p><b>الموظف:</b> أيوه اعتمد عليا.</p><p><b>العميل:</b> خلاص تمام، مشكور.</p><p><b>الموظف:</b> العفو، في أي خدمة تانية؟</p><p><b>العميل:</b> لا شكرًا.</p><p><b>الموظف:</b> مع السلامة.</p></div>
+          </details>
+        </div>
+        <div class="call-panel" role="tabpanel" id="panel-call_03_lost_baggage" aria-labelledby="tab-call_03_lost_baggage" hidden>
+          <div class="call-head">
+            <div>
+              <h3>Lost suitcase</h3>
+              <p class="muted">The agent interrupts, blames the airline, takes no details and gives no follow-up time.</p>
+            </div>
+            <div class="ring tone-bad" style="--p: 12.0" role="img" aria-label="Overall 12%">
+              <span><bdi>12%</bdi></span>
+            </div>
+          </div>
+          <dl class="call-facts">
+            <div><dt>Why they called</dt><dd lang="ar" dir="rtl">عدم وصول الحقيبة بعد الرحلة ومتابعة بلاغ العفش</dd></div>
+            <div><dt>Customer mood</dt><dd>Negative</dd></div>
+            <div><dt>Resolved</dt><dd>No</dd></div>
+            <div><dt>Sent to a supervisor</dt><dd class="is-flagged"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg> Yes</dd></div>
+          </dl>
+<p class="note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg> The calls are in Arabic, so the evidence quotes are too.</p>          <ul class="scorecard" role="list">
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Greeting</span>
+                <span class="dots" role="img" aria-label="0 / 5"><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">0/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">افتتح الموظف بـ«ألو، نعم» فقط، دون سلام أو تعريف بنفسه أو باسم الشركة.</p>
+            </li>
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Listening</span>
+                <span class="dots" role="img" aria-label="1 / 5"><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">1/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">قاطع العميل مرتين («أيوه بس إحنا مالناش علاقة بالعفش» و«طيب طيب») قبل أن يكمل شرحه، ولم يلخّص المشكلة أو يتأكد من فهمها.</p>
+            </li>
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Solving the problem</span>
+                <span class="dots" role="img" aria-label="1 / 5"><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">1/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">اكتفى بوعد غامض: «أنا هبلّغ القسم المختص وهم يكلموك»، وعند سؤاله عن الموعد قال «ما أقدر أحدد، على حسب القسم» دون رقم بلاغ أو إجراء واضح.</p>
+            </li>
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Following policy</span>
+                <span class="dots" role="img" aria-label="1 / 5"><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">1/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">رفض المسؤولية بشكل قاطع («إحنا مالناش علاقة بالعفش») رغم أن العميل حجز من الشركة، ولم يوجّهه لإجراء رسمي لتسجيل بلاغ العفش.</p>
+            </li>
+            <li class="score-row is-low">
+              <div class="score-top">
+                <span class="score-label">Closing the call</span>
+                <span class="dots" role="img" aria-label="0 / 5"><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><bdi class="dots-num">0/5</bdi></span>
+              </div>
+              <p class="evidence" lang="ar" dir="rtl">لم يسأل إن كان هناك استفسار آخر ولم يقدّم أي صيغة إنهاء لائقة؛ انتهت المكالمة بعبارة «استنى اتصالهم».</p>
+            </li>
+          </ul>
+          <div class="grid grid-2 call-notes">
+<div><h4>What went well</h4><ul lang="ar" dir="rtl"><li>سأل عن رقم البلاغ («عندك رقم البلاغ؟») في محاولة لجمع معلومة أساسية للمتابعة.</li></ul></div><div><h4>What to improve</h4><ul lang="ar" dir="rtl"><li>الافتتاح: ابدأ بتحية واضحة وتعريف مهني، مثل «السلام عليكم، معك [الاسم] من خدمة عملاء [الشركة]، كيف أقدر أساعدك؟» بدلًا من «ألو، نعم».</li><li>الإنصات: اترك العميل يكمل دون مقاطعة، ثم لخّص المشكلة بصيغة تأكيدية: «إذا فهمت صح، حضرتك وصلت أمس وحقيبتك لم تصل ولم يتم تسجيل بلاغ — صح؟».</li><li>الحل: بدل إحالة غامضة، سجّل بلاغًا فوريًا واعطِ العميل رقم البلاغ ومدة المعالجة المتوقعة، واشرح الخطوات التالية بوضوح.</li><li>الالتزام بالسياسة: لا تنفِ المسؤولية بعبارة «مالناش علاقة»؛ اشرح حدود دور الشركة والإجراء الصحيح لتسجيل بلاغ العفش ومتابعته نيابة عن العميل.</li><li>التصعيد: عند طلب العميل التحدث مع مسؤول، لا تكتفِ بـ«المسؤول مش موجود»؛ اعرض تسجيل طلب معاودة اتصال من مشرف مع تحديد إطار زمني.</li><li>الإغلاق: اختم بسؤال «هل فيه أي شي ثاني أقدر أساعدك فيه؟» وتأكيد الخطوات التالية قبل إنهاء المكالمة.</li></ul></div>          </div>
+          <details class="transcript">
+            <summary>Read the call</summary>
+            <div lang="ar" dir="rtl"><p><b>الموظف:</b> ألو، نعم.</p><p><b>العميل:</b> السلام عليكم، أنا وصلت من القاهرة أمس وشنطتي ما وصلت، ولي يومين أتصل وما أحد يرد!</p><p><b>الموظف:</b> الشنط دي مسؤولية شركة الطيران مش إحنا يا فندم.</p><p><b>العميل:</b> بس أنا حاجز من عندكم، وأنتم قلتوا لي كلموا خدمة العملاء عندنا لو صار أي شي!</p><p><b>الموظف:</b> أيوه بس إحنا مالناش علاقة بالعفش، لازم تروح مكتب...</p><p><b>العميل:</b> لحظة خليني أكمل، أنا رحت المطار وقالوا لي قدّم بلاغ عن طريق الوكالة اللي حجزت منها.</p><p><b>الموظف:</b> طيب طيب، عندك رقم البلاغ؟</p><p><b>العميل:</b> ما عطوني رقم، عشان كذا أتصل عليكم.</p><p><b>الموظف:</b> خلاص أنا هبلّغ القسم المختص وهم يكلموك.</p><p><b>العميل:</b> متى؟ فيها أغراض شغل وأحتاجها بكرة.</p><p><b>الموظف:</b> ما أقدر أحدد، على حسب القسم.</p><p><b>العميل:</b> هذا ما يرضيني أبدًا، أبغى أكلم المسؤول.</p><p><b>الموظف:</b> المسؤول مش موجود دلوقتي.</p><p><b>العميل:</b> يعني أسوي إيش أنا الحين؟</p><p><b>الموظف:</b> استنى اتصالهم.</p></div>
+          </details>
+        </div>
+      </div>
+
+      <div class="team reveal">
+        <div class="team-head">
+          <div>
+            <h3>The team summary</h3>
+            <p class="muted">Average score for each skill across the six calls, weakest first. The top of this list is next week&#39;s training.</p>
+          </div>
+          <div class="stats stats-inline">
+            <div class="stat"><p class="stat-value">6</p><p class="stat-label">calls scored</p></div>
+            <div class="stat"><p class="stat-value"><bdi>60%</bdi></p><p class="stat-label">average score</p></div>
+            <div class="stat"><p class="stat-value">4</p><p class="stat-label">sent to a supervisor</p></div>
+          </div>
+        </div>
+        <figure class="bars" aria-label="The team summary">
+          <div class="bar-row" tabindex="0" data-tip="Solving the problem: 2.67 / 5">
+            <span class="bar-label">Solving the problem</span>
+            <span class="bar-track"><span class="bar-fill" style="inline-size: 53.4%"></span><span class="bar-value"><bdi>2.67</bdi></span></span>
+            <span></span>
+          </div>
+          <div class="bar-row" tabindex="0" data-tip="Following policy: 2.67 / 5">
+            <span class="bar-label">Following policy</span>
+            <span class="bar-track"><span class="bar-fill" style="inline-size: 53.4%"></span><span class="bar-value"><bdi>2.67</bdi></span></span>
+            <span></span>
+          </div>
+          <div class="bar-row" tabindex="0" data-tip="Closing the call: 2.67 / 5">
+            <span class="bar-label">Closing the call</span>
+            <span class="bar-track"><span class="bar-fill" style="inline-size: 53.4%"></span><span class="bar-value"><bdi>2.67</bdi></span></span>
+            <span></span>
+          </div>
+          <div class="bar-row" tabindex="0" data-tip="Greeting: 3.5 / 5">
+            <span class="bar-label">Greeting</span>
+            <span class="bar-track"><span class="bar-fill" style="inline-size: 70.0%"></span><span class="bar-value"><bdi>3.5</bdi></span></span>
+            <span></span>
+          </div>
+          <div class="bar-row" tabindex="0" data-tip="Listening: 3.5 / 5">
+            <span class="bar-label">Listening</span>
+            <span class="bar-track"><span class="bar-fill" style="inline-size: 70.0%"></span><span class="bar-value"><bdi>3.5</bdi></span></span>
+            <span></span>
+          </div>
+          <div class="bar-axis" aria-hidden="true"><span></span><span class="axis-ticks"><span style="inset-inline-start: 0%">0</span><span style="inset-inline-start: 20%">1</span><span style="inset-inline-start: 40%">2</span><span style="inset-inline-start: 60%">3</span><span style="inset-inline-start: 80%">4</span><span style="inset-inline-start: 100%">5</span></span><span></span></div>
+        </figure>
+        <details class="table-view">
+          <summary>Show as a table</summary>
+          <table>
+            <thead><tr><th scope="col">Skill</th><th scope="col">Average (out of 5)</th></tr></thead>
+            <tbody><tr><td>Solving the problem</td><td>2.67</td></tr><tr><td>Following policy</td><td>2.67</td></tr><tr><td>Closing the call</td><td>2.67</td></tr><tr><td>Greeting</td><td>3.5</td></tr><tr><td>Listening</td><td>3.5</td></tr></tbody>
+          </table>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">How this can help your business</h2>
+      <div class="grid grid-3">
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 9a5 5 0 0 1 10 0c0 3-3 4-3 7a3 3 0 0 1-6 0"/><path d="M10 10a2 2 0 0 1 4 0"/></svg></span>
+          <h3>Hear every call, not 2%</h3>
+          <p>Nothing slips through because nobody happened to pick that call.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></svg></span>
+          <h3>Fair, consistent feedback</h3>
+          <p>Every agent is judged on the same checklist, and every score shows its proof.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Catch costly promises early</h3>
+          <p>Calls that break policy are flagged the next morning, before the customer comes back to collect.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+          <h3>Train on what matters</h3>
+          <p>See which skill the whole team is weakest at, instead of guessing.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+          <h3>Know why customers call</h3>
+          <p>Call reasons and customer mood, counted across thousands of calls.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.4-.9-1.4-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2s1 1.6 2.5 2 2.5.9 2.5 2-1 2-2.5 2c-1.1 0-2.1-.6-2.5-1.5M12 6.5V8M12 16v1.5"/></svg></span>
+          <h3>Low running cost</h3>
+          <p>Under a cent per conversation, and the speech model is open-source — no per-minute fees.</p>
+        </div>
+      </div>
+      <p class="fits reveal"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg> <span>Call centres, travel agencies, clinics, online stores, banks — any team that takes calls in Arabic.</span></p>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">Good to know</h2>
+      <ul class="checks checks-info" role="list">
+<li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><span>Transcripts are not word-perfect — in noisy dialect calls roughly one word in four can be off. That is fine for judging how an agent behaved, not for quoting in a legal dispute.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><span>Before using the scores in performance reviews, a supervisor should score around 50 calls by hand so we can check that the AI agrees with them.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><span>When the phone system records both voices on one track, the AI works out who is speaking from context. Recording each side separately makes that exact.</span></li>      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">Images</h2>
+      <div class="gallery">
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/arabic-call-qa/en/cover.png" data-caption="From recording to scorecard" aria-label="Open image: From recording to scorecard">
+            <img src="../../../assets/projects/arabic-call-qa/en/cover.png" alt="From recording to scorecard" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>From recording to scorecard</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/arabic-call-qa/en/how-it-works.png" data-caption="How it works, in five steps" aria-label="Open image: How it works, in five steps">
+            <img src="../../../assets/projects/arabic-call-qa/en/how-it-works.png" alt="How it works, in five steps" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>How it works, in five steps</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/arabic-call-qa/en/caught.png" data-caption="The refund promise it caught" aria-label="Open image: The refund promise it caught">
+            <img src="../../../assets/projects/arabic-call-qa/en/caught.png" alt="The refund promise it caught" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>The refund promise it caught</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/arabic-call-qa/en/team-summary.png" data-caption="The team summary — weakest skill first" aria-label="Open image: The team summary — weakest skill first">
+            <img src="../../../assets/projects/arabic-call-qa/en/team-summary.png" alt="The team summary — weakest skill first" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>The team summary — weakest skill first</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/arabic-call-qa/en/results.png" data-caption="Results in production" aria-label="Open image: Results in production">
+            <img src="../../../assets/projects/arabic-call-qa/en/results.png" alt="Results in production" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>Results in production</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <details class="tech">
+        <summary><span>Technical details</span><span class="muted small">For engineers and recruiters</span></summary>
+        <ul class="tech-stack" role="list"><li>Cohere Transcribe Arabic</li><li>DeepSeek</li><li>LangChain</li><li>Pydantic</li><li>FastAPI</li><li>n8n</li><li>PostgreSQL</li><li>Modal (serverless GPU)</li><li>Railway</li><li>Docker</li></ul>
+        <ul class="tech-points"><li>Speech-to-text: an open-source 2-billion-parameter Arabic model (Cohere Transcribe Arabic) running on a serverless GPU that only switches on when there is work.</li><li>Scoring: two independent AI passes — one reads the customer&#39;s side, one grades the agent — with structured output, so every score arrives with its evidence in a fixed shape.</li><li>Plumbing: n8n schedules the work, a tested Python service does the transcription and the maths, and PostgreSQL (25 tables) holds every customer, call and score.</li><li>The open-source version on GitHub runs the same scoring on your own recordings or transcripts, with 13 automated tests.</li></ul>
+        <div class="actions">
+<a class="btn btn-ghost" href="https://github.com/Yahia20/arabic-call-analyzer" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> Open-source version on GitHub <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cta-band reveal">
+      <div>
+        <h2>Let&#39;s talk about your project</h2>
+        <p>Tell me what you&#39;re trying to fix or find out. I&#39;ll reply with a clear plan: the steps, the timeline, and what it would cost to run.</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="../../../en/contact/">Get in touch <svg class="icon icon-dir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+</article>
+
+<dialog class="lightbox" aria-label="Images">
+  <button class="lightbox-close tool" type="button" aria-label="Close"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <img alt="">
+  <p class="lightbox-caption"></p>
+</dialog>
+<div class="tooltip" role="status" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="footer-name">Yahia Zakaria · AI Engineer</p>
+        <p class="muted small">Cairo, Egypt · working remotely with teams in Saudi Arabia</p>
+      </div>
+      <ul class="footer-links" role="list">
+        <li><a href="mailto:yahiazakaria412@gmail.com"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="sr-only">Email</span></a></li>
+        <li><a href="https://www.linkedin.com/in/yahia-zakaria-a27384213" rel="me noopener" target="_blank" title="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><span class="sr-only">LinkedIn</span></a></li>
+        <li><a href="https://github.com/Yahia20" rel="me noopener" target="_blank" title="GitHub"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span class="sr-only">GitHub</span></a></li>
+        <li><a href="https://mostaql.com/u/Yehia_Z_Ali" rel="me noopener" target="_blank" title="Mostaql (freelance)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></svg><span class="sr-only">Mostaql (freelance)</span></a></li>
+        <li><a href="https://www.kaggle.com/yahiazakaria20" rel="me noopener" target="_blank" title="Kaggle"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3v18M17 4l-7 8 7 8M10 12l2-2"/></svg><span class="sr-only">Kaggle</span></a></li>
+      </ul>
+    </div>
+    <div class="wrap"><p class="muted small">© 2026 Yahia Zakaria</p></div>
+  </footer>
+
+  <script src="../../../static/js/site.js" defer></script>
+</body>
+</html>

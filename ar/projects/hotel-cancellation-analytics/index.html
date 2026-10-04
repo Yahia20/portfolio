@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أوقف خسارة الأموال بسبب إلغاء حجوزات الفنادق · يحيى زكريا</title>
+  <meta name="description" content="حلّلت 119 ألف حجز فندقي لأعرف كم تكلّف الإلغاءات، ومن الذي يلغي، وماذا يجب أن يفعل الفندق.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="أوقف خسارة الأموال بسبب إلغاء حجوزات الفنادق · يحيى زكريا">
+  <meta property="og:description" content="حلّلت 119 ألف حجز فندقي لأعرف كم تكلّف الإلغاءات، ومن الذي يلغي، وماذا يجب أن يفعل الفندق.">
+  <meta property="og:type" content="website">
+<meta property="og:image" content="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png">  <link rel="alternate" hreflang="en" href="../../../en/projects/hotel-cancellation-analytics/">
+  <link rel="icon" href="../../../static/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../static/css/site.css">
+  <noscript><style>.call-panel[hidden]{display:block}.call-panel+.call-panel{margin-top:16px}</style></noscript>
+  <script>
+    /* Before first paint: saved theme (no flash), and a flag for JS-only styles. */
+    document.documentElement.classList.add("js");
+    try { var th = localStorage.getItem("theme"); if (th) document.documentElement.dataset.theme = th; } catch (e) {}
+  </script>
+</head>
+<body class="page-project">
+  <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="../../../ar/" aria-label="يحيى زكريا">
+        <span class="brand-mark" aria-hidden="true">YZ</span>
+        <span class="brand-text">
+          <span class="brand-name">يحيى زكريا</span>
+          <span class="brand-role">مهندس ذكاء اصطناعي</span>
+        </span>
+      </a>
+      <nav class="tabs" aria-label="الرئيسية">
+        <a href="../../../ar/" >الرئيسية</a>
+        <a href="../../../ar/projects/" aria-current="page">المشاريع</a>
+        <a href="../../../ar/about/" >من أنا</a>
+        <a href="../../../ar/contact/" >تواصل</a>
+      </nav>
+      <div class="header-tools">
+        <a class="tool lang-switch" href="../../../en/projects/hotel-cancellation-analytics/" hreflang="en" lang="en" data-lang="en">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span>English</span>
+        </a>
+        <button class="tool theme-toggle" type="button" aria-label="تبديل الوضع الفاتح / الداكن" title="تبديل الوضع الفاتح / الداكن">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<article class="project">
+  <header class="project-hero">
+    <div class="wrap">
+      <a class="back" href="../../../ar/projects/#data-analysis"><svg class="icon icon-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg> كل المشاريع</a>
+      <div class="card-meta">
+        <span class="chip-static"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg>تحليل البيانات والتنبؤ</span>
+        <span class="badge badge-completed">مكتمل</span>
+      </div>
+      <h1 class="project-title">أوقف خسارة الأموال بسبب إلغاء حجوزات الفنادق</h1>
+      <p class="lead project-tagline">حلّلت 119 ألف حجز فندقي لأعرف كم تكلّف الإلغاءات، ومن الذي يلغي، وماذا يجب أن يفعل الفندق.</p>
+      <dl class="project-facts">
+        <div><dt>دوري</dt><dd>بنيت المشروع بالكامل، من البيانات الخام حتى التوصية ولوحة المتابعة.</dd></div>
+      </dl>
+      <figure class="project-cover">
+        <img src="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" alt="الخلاصة: 37% من الحجوزات أُلغيت بقيمة 16.7 مليون يورو؛ العربون للحجوزات الخطرة يربح 399 ألف يورو، والعربون للجميع يخسر 199 ألف يورو" width="1200" height="675">
+      </figure>
+      <div class="stats">
+<div class="stat">
+  <p class="stat-value"><bdi dir="rtl">399 ألف €</bdi></p>
+  <p class="stat-label">ربح عند طلب العربون من الحجوزات الخطرة فقط</p>
+<p class="stat-note">8 أشهر من 2017، فترة لم يرها النموذج</p></div><div class="stat">
+  <p class="stat-value"><bdi dir="rtl">−199 ألف €</bdi></p>
+  <p class="stat-label">خسارة عند طلبه من كل الضيوف بدلًا من ذلك</p>
+</div><div class="stat">
+  <p class="stat-value"><bdi dir="ltr">37%</bdi></p>
+  <p class="stat-label">من الحجوزات تُلغى</p>
+</div><div class="stat">
+  <p class="stat-value"><bdi dir="ltr">0</bdi></p>
+  <p class="stat-label">أخطاء في 28 فحصًا تلقائيًا للبيانات</p>
+</div>      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">المشكلة</h2>
+      <p class="prose">يُلغى أكثر من ثلث حجوزات الفنادق. وطالما الحجز قائم لا يستطيع الفندق بيع الغرفة لأحد آخر، فقد يتركها الإلغاء فارغة. في الفندقين في هذه البيانات، بلغت قيمة الحجوزات الملغاة 16.7 مليون يورو خلال 26 شهرًا. طلب عربون من كل الضيوف يبدو حلًا، لكن كثيرًا منهم يحجزون عندها في مكان آخر. يحتاج الفندق أن يعرف من يطلب منه العربون.</p>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap">
+      <h2 class="section-title">كيف يعمل</h2>
+      <div class="stepper" data-stepper>
+        <ol class="step-list" role="list">
+          <li>
+            <button class="step-btn" type="button" id="step-tab-1" aria-controls="step-panel-1" aria-selected="true">
+              <span class="step-num">1</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span class="step-name">مراجعة البيانات</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-2" aria-controls="step-panel-2" aria-selected="false">
+              <span class="step-num">2</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3M8.5 11h5"/></svg></span>
+              <span class="step-name">معرفة من يلغي</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-3" aria-controls="step-panel-3" aria-selected="false">
+              <span class="step-num">3</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></span>
+              <span class="step-name">تقييم كل حجز</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-4" aria-controls="step-panel-4" aria-selected="false">
+              <span class="step-num">4</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="step-name">اختبار القاعدة</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-5" aria-controls="step-panel-5" aria-selected="false">
+              <span class="step-num">5</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>
+              <span class="step-name">عرض النتيجة</span>
+            </button>
+          </li>
+        </ol>
+        <div class="step-panels">
+          <div class="step-panel" id="step-panel-1" role="tabpanel" aria-labelledby="step-tab-1">
+            <p class="step-kicker">الخطوة 1 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg> مراجعة البيانات</h3>
+            <p>28 فحصًا تلقائيًا تتأكد أنه لا يضيع حجز ولا يُحسب يورو مرتين. والأخطاء الواضحة، مثل ليلة بسعر 5,400 يورو، تُستبعد وتُوثَّق.</p>
+          </div>
+          <div class="step-panel" id="step-panel-2" role="tabpanel" aria-labelledby="step-tab-2">
+            <p class="step-kicker">الخطوة 2 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3M8.5 11h5"/></svg> معرفة من يلغي</h3>
+            <p>الحجوزات قبل الوصول بسنة تُلغى بنسبة 68%، والحجوزات في آخر أسبوع بنسبة 10%. والضيف الذي ألغى من قبل يلغي مرة أخرى بنسبة 92%.</p>
+          </div>
+          <div class="step-panel" id="step-panel-3" role="tabpanel" aria-labelledby="step-tab-3">
+            <p class="step-kicker">الخطوة 3 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg> تقييم كل حجز</h3>
+            <p>يعطي النموذج كل حجز جديد درجة خطر من 0% إلى 100%، باستخدام ما يعرفه الفندق لحظة الحجز فقط.</p>
+          </div>
+          <div class="step-panel" id="step-panel-4" role="tabpanel" aria-labelledby="step-tab-4">
+            <p class="step-kicker">الخطوة 4 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg> اختبار القاعدة</h3>
+            <p>القاعدة: إذا كانت درجة الخطر 26% أو أكثر، اطلب الليلة الأولى مقدمًا. اختُبرت القاعدة على حجوزات 2017 تحت 12 احتمالًا مختلفًا.</p>
+          </div>
+          <div class="step-panel" id="step-panel-5" role="tabpanel" aria-labelledby="step-tab-5">
+            <p class="step-kicker">الخطوة 5 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg> عرض النتيجة</h3>
+            <p>لوحة متابعة بالعربية والإنجليزية. كل رقم فيها ناتج من البيانات، وخلف كل رسم جدول بالأرقام.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">النتائج</h2>
+      <p class="muted">مُختبر على حجوزات يناير–أغسطس 2017 · أكتوبر 2026</p>
+      <ul class="checks" role="list">
+<li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>طلب الليلة الأولى من أخطر 45% فقط من الحجوزات كان سيربح 399 ألف يورو في ثمانية أشهر. أما طلبه من كل الضيوف فكان سيخسر 199 ألف يورو.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>القاعدة تربح في كل الاحتمالات الـ 12 المُختبرة، من 147 ألفًا إلى 1.2 مليون يورو.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>يتوقع النموذج عدد الإلغاءات كل أسبوع بمتوسط خطأ 9%. تستخدم الفنادق هذا الرقم لتقرر كم غرفة إضافية يمكنها بيعها بأمان.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>يصيب النموذج 78 مرة من كل 100 في حجوزات لم يرها. تحليلات منشورة كثيرة على هذه البيانات تذكر 95–99% لأنها تستخدم معلومات لا توجد إلا بعد وصول الضيف. هذا المشروع يقيس هذا الفرق.</span></li>      </ul>
+    </div>
+  </section>
+
+
+
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">كيف يفيد هذا شركتك</h2>
+      <div class="grid grid-3">
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+          <h3>اطلب من الضيوف المناسبين</h3>
+          <p>عربون فقط حيث الخطر مرتفع، فتحتفظ بالضيوف الذين كانوا سيحضرون.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>
+          <h3>خطّط للحجز الزائد على رقم</h3>
+          <p>الإلغاءات المتوقعة لكل أسبوع ولكل فندق، من الحجوزات الموجودة لديك.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>أرقام يمكنك الدفاع عنها</h3>
+          <p>كل رقم مُراجَع آليًا، فترى المالية والتشغيل نفس الأرقام.</p>
+        </div>
+      </div>
+      <p class="fits reveal"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg> <span>الفنادق ووكالات السفر والعيادات وقاعات المناسبات وتأجير السيارات — أي نشاط يحجز مكانًا لعميل قد لا يحضر.</span></p>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">من المهم أن تعرف</h2>
+      <ul class="checks checks-info" role="list">
+<li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><span>البيانات عامة — فندقان في البرتغال بين 2015 و2017، باليورو. الطريقة تصلح لأي نشاط مشابه، أما الأرقام فتُحسب من بيانات كل نشاط.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><span>عدد الضيوف الذين يرفضون العربون افتراض، لأن البيانات لا تُظهره. لذلك عُرضت النتائج تحت 12 احتمالًا. قبل التطبيق الكامل، جرّب القاعدة على جزء من الحجوزات أولًا.</span></li>      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">الصور</h2>
+      <div class="gallery">
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" data-caption="الخلاصة والأرقام الرئيسية" aria-label="افتح الصورة: الخلاصة والأرقام الرئيسية">
+            <img src="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" alt="الخلاصة والأرقام الرئيسية" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>الخلاصة والأرقام الرئيسية</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/hotel-cancellation-analytics/ar/drivers.png" data-caption="من يلغي: متى حجز، والإلغاءات السابقة، وطريقة الحجز" aria-label="افتح الصورة: من يلغي: متى حجز، والإلغاءات السابقة، وطريقة الحجز">
+            <img src="../../../assets/projects/hotel-cancellation-analytics/ar/drivers.png" alt="من يلغي: متى حجز، والإلغاءات السابقة، وطريقة الحجز" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>من يلغي: متى حجز، والإلغاءات السابقة، وطريقة الحجز</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/hotel-cancellation-analytics/ar/model.png" data-caption="الإلغاءات كل أسبوع في 2017: المتوقَّع مقابل الفعلي" aria-label="افتح الصورة: الإلغاءات كل أسبوع في 2017: المتوقَّع مقابل الفعلي">
+            <img src="../../../assets/projects/hotel-cancellation-analytics/ar/model.png" alt="الإلغاءات كل أسبوع في 2017: المتوقَّع مقابل الفعلي" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>الإلغاءات كل أسبوع في 2017: المتوقَّع مقابل الفعلي</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/hotel-cancellation-analytics/ar/policy.png" data-caption="التوصية، وكيف تصمد تحت 12 احتمالًا" aria-label="افتح الصورة: التوصية، وكيف تصمد تحت 12 احتمالًا">
+            <img src="../../../assets/projects/hotel-cancellation-analytics/ar/policy.png" alt="التوصية، وكيف تصمد تحت 12 احتمالًا" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>التوصية، وكيف تصمد تحت 12 احتمالًا</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/hotel-cancellation-analytics/ar/trust.png" data-caption="لماذا يمكن الوثوق بالأرقام" aria-label="افتح الصورة: لماذا يمكن الوثوق بالأرقام">
+            <img src="../../../assets/projects/hotel-cancellation-analytics/ar/trust.png" alt="لماذا يمكن الوثوق بالأرقام" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>لماذا يمكن الوثوق بالأرقام</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <details class="tech">
+        <summary><span>التفاصيل التقنية</span><span class="muted small">للمهندسين ومسؤولي التوظيف</span></summary>
+        <ul class="tech-stack" role="list"><li>Python</li><li>SQL</li><li>dbt</li><li>DuckDB</li><li>LightGBM</li><li>scikit-learn</li><li>Plotly</li><li>pytest</li></ul>
+        <ul class="tech-points"><li>مستودع dbt على DuckDB (طبقات staging وfacts وmarts) مع 28 اختبار بيانات، منها اختبارات مطابقة: كل صف أصلي إما محفوظ أو مستبعد بقاعدة مسمّاة، والإيرادات متطابقة حتى السنت بالحجز وبالليلة وبالشهر.</li><li>تدقيق التسريب: الأعمدة التي تُملأ بعد الحجز (المواقف، والغرفة المخصصة، وتعديلات الحجز، والدولة المصححة) مستبعدة. تضخّم النتيجة بسببها وبسبب التقسيم العشوائي مُقاس ومنشور (77.6% صادقة مقابل 88.7%).</li><li>تقييم شهري متتابع (walk-forward): كل شهر في 2017 يقيّمه نموذج LightGBM أُعيد تدريبه على كل الوصولات السابقة. ROC AUC بقيمة 0.850، وBrier بقيمة 0.150، مع فحص المعايرة لكل شريحة خطر.</li><li>اختبار السياسة تاريخيًا: الحد اختير على سبتمبر–ديسمبر 2016 وطُبّق دون تغيير على 2017، مع شبكة حساسية لنسب الرفض وإعادة البيع. أمر واحد يعيد بناء كل شيء في حوالي دقيقتين على لابتوب.</li></ul>
+        <div class="actions">
+<a class="btn btn-ghost" href="https://yahia20.github.io/hotel-revenue-analytics/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M6.3 6.3a8 8 0 0 0 0 11.4M17.7 6.3a8 8 0 0 1 0 11.4"/></svg> افتح لوحة المتابعة (عربي وإنجليزي) <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><a class="btn btn-ghost" href="https://github.com/Yahia20/hotel-revenue-analytics" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> الكود والاختبارات على GitHub <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cta-band reveal">
+      <div>
+        <h2>لنتحدث عن مشروعك</h2>
+        <p>أخبرني بما تحاول إصلاحه أو معرفته. سأرد عليك بخطة واضحة: الخطوات، والمدة، وتكلفة التشغيل.</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="../../../ar/contact/">تواصل معي <svg class="icon icon-dir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+</article>
+
+<dialog class="lightbox" aria-label="الصور">
+  <button class="lightbox-close tool" type="button" aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <img alt="">
+  <p class="lightbox-caption"></p>
+</dialog>
+<div class="tooltip" role="status" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="footer-name">يحيى زكريا · مهندس ذكاء اصطناعي</p>
+        <p class="muted small">القاهرة، مصر · أعمل عن بُعد مع فرق في السعودية</p>
+      </div>
+      <ul class="footer-links" role="list">
+        <li><a href="mailto:yahiazakaria412@gmail.com"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="sr-only">Email</span></a></li>
+        <li><a href="https://www.linkedin.com/in/yahia-zakaria-a27384213" rel="me noopener" target="_blank" title="لينكدإن"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><span class="sr-only">لينكدإن</span></a></li>
+        <li><a href="https://github.com/Yahia20" rel="me noopener" target="_blank" title="جيت هب"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span class="sr-only">جيت هب</span></a></li>
+        <li><a href="https://mostaql.com/u/Yehia_Z_Ali" rel="me noopener" target="_blank" title="مستقل (عمل حر)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></svg><span class="sr-only">مستقل (عمل حر)</span></a></li>
+        <li><a href="https://www.kaggle.com/yahiazakaria20" rel="me noopener" target="_blank" title="كاجل"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3v18M17 4l-7 8 7 8M10 12l2-2"/></svg><span class="sr-only">كاجل</span></a></li>
+      </ul>
+    </div>
+    <div class="wrap"><p class="muted small">© 2026 يحيى زكريا</p></div>
+  </footer>
+
+  <script src="../../../static/js/site.js" defer></script>
+</body>
+</html>

@@ -176,8 +176,8 @@ limits:
   items:
     - en: Transcripts are not word-perfect — in noisy dialect calls roughly one word in four can be off. That is fine for judging how an agent behaved, not for quoting in a legal dispute.
       ar: النص المفرَّغ ليس مطابقًا حرفيًا — في المكالمات المزدحمة باللهجة قد تخطئ كلمة من كل أربع تقريبًا. هذا كافٍ للحكم على سلوك الموظف، لا للاستشهاد به في نزاع قانوني.
-    - en: Before using the scores in performance reviews, a supervisor should score around 50 calls by hand so we can check that the AI agrees with them.
-      ar: قبل استخدام الدرجات في تقييم الأداء، يُفضَّل أن يقيّم المشرف حوالي 50 مكالمة يدويًا لنتأكد أن الذكاء الاصطناعي يتفق معه.
+    - en: Before using the scores in performance reviews, a supervisor should score around 50 calls by hand so I can check that the AI agrees with them.
+      ar: قبل استخدام الدرجات في تقييم الأداء، يُفضَّل أن يقيّم المشرف حوالي 50 مكالمة يدويًا لأتأكد أن الذكاء الاصطناعي يتفق معه.
     - en: When the phone system records both voices on one track, the AI works out who is speaking from context. Recording each side separately makes that exact.
       ar: عندما يسجّل نظام الهاتف الصوتين على مسار واحد، يستنتج الذكاء الاصطناعي من المتحدث من سياق الكلام. تسجيل كل طرف على حدة يجعل ذلك دقيقًا.
 

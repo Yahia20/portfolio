@@ -18,9 +18,8 @@
 </div>
 {%- endmacro %}
 
-{% macro status_badge(status, ui) -%}
-<span class="badge badge-{{ status }}">{% if status == "live" %}<span class="pulse" aria-hidden="true"></span>{% endif %}{{ ui("status", status) }}</span>
-{%- endmacro %}
+{# Status badges ("Live" / "Completed") are not shown on the site; `status` stays in the YAML as data. #}
+{% macro status_badge(status, ui) -%}{%- endmacro %}
 
 {% macro project_card(p, t, ui, root, lang, cat_by_id) -%}
 <article class="card project-card reveal" data-category="{{ p.category }}">

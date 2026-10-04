@@ -110,7 +110,7 @@
 <div class="frame cover">
   <div class="cover-grid">
     <div>
-      <p class="kicker">{{ t(p.client.name) if p.client else "" }} · {{ ui("status", p.status) }}</p>
+      <p class="kicker">{{ t(p.client.name) if p.client else "" }}</p>
       <h1>{{ t(p.title) }}</h1>
       <p class="sub">{{ t(p.tagline).split("—")[0].strip() }}</p>
     </div>
@@ -134,14 +134,14 @@
       </div>
     </div>
   </div>
-  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ ui("status", p.status) }} · <bdi>{{ p.date }}</bdi></span></div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span><bdi>{{ p.date }}</bdi></span></div>
 </div>
 
 {% elif shot == "cover-askdata" %}
 <div class="frame cover">
   <div class="cover-grid">
     <div>
-      <p class="kicker">{{ ui("status", p.status) }} · <bdi>{{ p.date }}</bdi></p>
+      <p class="kicker"><bdi>{{ p.date }}</bdi></p>
       <h1>{{ t(p.title) }}</h1>
       <p class="sub">{{ t(p.tagline).split("—")[0].split(":")[0].strip() }}</p>
     </div>
@@ -164,7 +164,7 @@
       </div>
     </div>
   </div>
-  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span>{{ ui("status", p.status) }} · <bdi>{{ p.date }}</bdi></span></div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span><bdi>{{ p.date }}</bdi></span></div>
 </div>
 
 {% elif shot == "how-it-works" %}
@@ -256,7 +256,7 @@
 <div class="frame cover">
   <div class="cover-grid">
     <div>
-      <p class="kicker">{{ ui("status", p.status) }} · <bdi>{{ p.date }}</bdi></p>
+      <p class="kicker"><bdi>{{ p.date }}</bdi></p>
       <h1>{{ t(p.title) }}</h1>
       <p class="sub">{{ t(p.tagline).split("—")[0].strip() }}</p>
     </div>

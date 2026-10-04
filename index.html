@@ -1,22 +1,19 @@
 <!doctype html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yahia Zakaria — AI Engineer</title>
-  <meta name="description" content="I build AI that listens to your customers, reads your data, and tells your team what to fix next.">
+  <meta name="description" content="I turn your company&#39;s data and customer calls into clear decisions — dashboards, forecasts and AI your team can act on.">
   <link rel="alternate" hreflang="en" href="en/">
   <link rel="alternate" hreflang="ar" href="ar/">
   <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
   <script>
-    /* Remembered choice first, then the browser's language, then the site default. */
+    /* The reader's remembered choice, otherwise the site default (English). */
     (function () {
       var lang = null;
       try { lang = localStorage.getItem("lang"); } catch (e) {}
-      if (lang !== "en" && lang !== "ar") {
-        var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-        lang = /^ar\b/i.test(nav) ? "ar" : (/^en\b/i.test(nav) ? "en" : "ar");
-      }
+      if (lang !== "en" && lang !== "ar") lang = "en";
       location.replace(lang + "/");
     })();
   </script>

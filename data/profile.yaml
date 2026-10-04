@@ -15,7 +15,7 @@ availability:
   ar: متاح لمشاريع العمل الحر والوظائف بدوام كامل
 
 # Photos live in assets/img/profile/. Leave `portrait` empty to show initials instead.
-portrait: portrait-clean.jpg   # background replaced; original kept as portrait.jpg
+portrait: portrait.jpg
 portrait_alt:
   en: Portrait of Yahia Zakaria
   ar: صورة يحيى زكريا
@@ -24,8 +24,8 @@ gallery:
     caption: { en: "At the National Telecommunication Institute (NTI), during the AI Engineer programme", ar: "في المعهد القومي للاتصالات (NTI) أثناء برنامج هندسة الذكاء الاصطناعي" }
 
 headline:
-  en: I turn your company's data and customer calls into clear decisions.
-  ar: أحوّل بيانات شركتك ومكالمات عملائك إلى قرارات واضحة.
+  en: I turn your company's data and documents into clear decisions.
+  ar: أحوّل بيانات شركتك ومستنداتها إلى قرارات واضحة.
 
 intro:
   en: >-

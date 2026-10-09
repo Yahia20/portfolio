@@ -34,7 +34,7 @@ stats:
     label: { en: "of verified passport fields correct on real phone video", ar: "من بيانات الجوازات المُثبتة صحيحة في فيديوهات جوال حقيقية" }
     note: { en: "9,066 fields from 3,315 frames", ar: "9,066 معلومة من 3,315 لقطة" }
   - display: { en: "4.3 s", ar: "4.3 ث" }
-    label: { en: "per document on an ordinary laptop, no paid service", ar: "لكل مستند على لابتوب عادي، دون أي خدمة مدفوعة" }
+    label: { en: "to read a document, on average", ar: "لقراءة المستند الواحد في المتوسط" }
 
 problem:
   title: { en: "The problem", ar: "المشكلة" }
@@ -120,8 +120,8 @@ limits:
 tech:
   stack: [Python, OpenCV, RapidOCR, ONNX Runtime, PP-OCRv6, zxing-cpp, Playwright, pytest]
   points:
-    - en: "OCR on CPU with RapidOCR: PP-OCRv6 small for detection and Latin recognition, PP-OCRv5 Arabic for Arabic (PP-OCRv6 does not cover Arabic yet). Each line keeps both readings, and on the MRZ the check digits choose between them."
-      ar: "قراءة النص على المعالج بمكتبة RapidOCR: نموذج PP-OCRv6 للكشف والتعرف اللاتيني، وPP-OCRv5 للعربية (PP-OCRv6 لا يدعم العربية بعد). كل سطر يحتفظ بالقراءتين، وفي المنطقة الآلية تختار أرقام التحقق بينهما."
+    - en: "OCR with RapidOCR: PP-OCRv6 small for detection and Latin recognition, PP-OCRv5 Arabic for Arabic (PP-OCRv6 does not cover Arabic yet). Each line keeps both readings, and on the MRZ the check digits choose between them."
+      ar: "قراءة النص بمكتبة RapidOCR: نموذج PP-OCRv6 للكشف والتعرف اللاتيني، وPP-OCRv5 للعربية (PP-OCRv6 لا يدعم العربية بعد). كل سطر يحتفظ بالقراءتين، وفي المنطقة الآلية تختار أرقام التحقق بينهما."
     - en: "Standards implemented from the specifications: ICAO 9303 MRZ (TD1, TD2, TD3, MRV-A/B), ZATCA e-invoice QR (TLV, phases 1 and 2), IATA BCBP boarding passes. Perspective correction with Canny edges and a four-corner contour search (OpenCV)."
       ar: "معايير مطبّقة من مواصفاتها: المنطقة الآلية ICAO 9303 (TD1 وTD2 وTD3 وMRV-A/B)، ورمز QR للفاتورة الإلكترونية (TLV، المرحلتان 1 و2)، وبطاقات الصعود IATA BCBP. وتصحيح المنظور بحواف Canny والبحث عن شكل رباعي (OpenCV)."
     - en: "A check digit is blind to G/6, S/8 and L/1 (values 10 apart), and on real photos two misreads can cancel out. So a document number is verified only when the printed number on the page matches. Both cases have regression tests."

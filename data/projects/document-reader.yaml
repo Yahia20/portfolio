@@ -1,0 +1,155 @@
+# Written for a non-technical reader. Technical detail lives only under `tech`.
+
+slug: document-reader
+category: document-ai
+status: completed
+featured: false
+order: 1
+date: 2026-10
+
+title:
+  en: Read IDs and invoices from a photo, and know which fields to trust
+  ar: اقرأ الهويات والفواتير من صورة، واعرف أي البيانات تثق بها
+tagline:
+  en: "I built a reader for passports, ID cards, visas, ZATCA tax invoices and boarding passes. It checks every field before it reaches your system."
+  ar: "بنيت قارئًا لجوازات السفر وبطاقات الهوية والتأشيرات وفواتير هيئة الزكاة وبطاقات صعود الطائرة، يتحقق من كل معلومة قبل أن تصل إلى نظامك."
+
+role:
+  en: I built the whole project, from the document reader to the 600-document test and the real-photo benchmark.
+  ar: بنيت المشروع بالكامل، من القارئ نفسه حتى اختبار الـ 600 مستند واختبار الصور الحقيقية.
+
+cover:
+  image: cover.png
+  alt:
+    en: "Summary: 100% of verified fields correct on 600 test documents, 64% of fields need no person, 99.9% on real phone video of passports"
+    ar: "الخلاصة: 100% من البيانات المُثبتة صحيحة على 600 مستند اختبار، و64% من البيانات لا تحتاج موظفًا، و99.9% على فيديوهات جوال حقيقية لجوازات السفر"
+
+stats:
+  - display: { en: "100%", ar: "100%" }
+    label: { en: "of the fields it marks as verified are correct", ar: "من البيانات التي يعتبرها مُثبتة صحيحة" }
+    note: { en: "3,076 of 3,076, on 600 documents it never saw", ar: "3,076 من 3,076، على 600 مستند لم يرها" }
+  - display: { en: "64%", ar: "64%" }
+    label: { en: "of all fields go into your system with no person checking", ar: "من كل البيانات تدخل نظامك دون مراجعة موظف" }
+  - display: { en: "99.9%", ar: "99.9%" }
+    label: { en: "of verified passport fields correct on real phone video", ar: "من بيانات الجوازات المُثبتة صحيحة في فيديوهات جوال حقيقية" }
+    note: { en: "9,066 fields from 3,315 frames", ar: "9,066 معلومة من 3,315 لقطة" }
+  - display: { en: "4.3 s", ar: "4.3 ث" }
+    label: { en: "per document on an ordinary laptop, no paid service", ar: "لكل مستند على لابتوب عادي، دون أي خدمة مدفوعة" }
+
+problem:
+  title: { en: "The problem", ar: "المشكلة" }
+  body:
+    en: >-
+      Travel agencies, hotels and finance teams in Saudi Arabia retype passports, IDs and supplier
+      invoices by hand every day. Reading tools exist, but they give you text, not certainty: you
+      still don't know which values are right. A wrong passport number on a booking or a wrong VAT
+      amount in the accounts costs far more than the time saved. The useful question is not "can a
+      machine read this?" but "which of these values can I trust without checking?"
+    ar: >-
+      وكالات السفر والفنادق وفرق المالية في السعودية تعيد كتابة الجوازات والهويات وفواتير الموردين
+      يدويًا كل يوم. أدوات القراءة موجودة، لكنها تعطيك نصًا لا يقينًا: لا تعرف أي القيم صحيحة. ورقم جواز
+      خاطئ في حجز أو مبلغ ضريبة خاطئ في الحسابات يكلّف أكثر بكثير من الوقت الذي وفّرته. السؤال المفيد ليس
+      «هل تستطيع الآلة قراءة هذا؟» بل «أي هذه القيم أثق بها دون مراجعة؟»
+
+steps:
+  - icon: scan
+    title: { en: "Straighten the photo", ar: "تسوية الصورة" }
+    body:
+      en: "The reader finds the document's four corners in a phone photo and flattens it, the way a scanner app does."
+      ar: "يجد القارئ زوايا المستند الأربع في صورة الجوال ويعدّلها، كما يفعل تطبيق المسح الضوئي."
+  - icon: search
+    title: { en: "Read codes and text", ar: "قراءة الرموز والنص" }
+    body:
+      en: "It decodes the ZATCA QR code and the boarding-pass barcode, then reads the text twice: once for English and numbers, once for Arabic."
+      ar: "يقرأ رمز QR الضريبي وباركود بطاقة الصعود، ثم يقرأ النص مرتين: مرة للإنجليزية والأرقام ومرة للعربية."
+  - icon: shield
+    title: { en: "Check against the standard", ar: "المطابقة مع المعيار" }
+    body:
+      en: "Passports carry check digits, invoices carry a QR code and VAT must be 15%. A value counts as proven only when one of these checks confirms it."
+      ar: "في الجواز أرقام تحقق، وفي الفاتورة رمز QR، والضريبة يجب أن تكون 15%. لا تُعتبر القيمة مُثبتة إلا إذا أكدها أحد هذه التحققات."
+  - icon: check
+    title: { en: "Give every field a status", ar: "حالة لكل معلومة" }
+    body:
+      en: "Each field comes back verified, read, or for review, with the reason. A person checks only what the reader could not prove."
+      ar: "كل معلومة تأتي مُثبتة أو مقروءة أو للمراجعة، مع السبب. فيراجع الموظف فقط ما لم يستطع القارئ إثباته."
+  - icon: target
+    title: { en: "Test it honestly", ar: "اختباره بأمانة" }
+    body:
+      en: "600 test documents in 10 types, a third of them in designs it never saw, plus 3,315 real phone-video frames of passports from 12 countries."
+      ar: "600 مستند اختبار من 10 أنواع، ثلثها بتصميمات لم يرها، إضافة إلى 3,315 لقطة فيديو جوال حقيقية لجوازات من 12 دولة."
+
+results:
+  title: { en: "Results", ar: "النتائج" }
+  as_of: { en: "600 test documents and 3,315 real frames · October 2026", ar: "600 مستند اختبار و3,315 لقطة حقيقية · أكتوبر 2026" }
+  points:
+    - en: Every one of the 3,076 fields it marked as verified was correct, on scans, phone photos and difficult photos alike.
+      ar: كل المعلومات الـ 3,076 التي اعتبرها مُثبتة كانت صحيحة، في الصور الممسوحة وصور الجوال والصور الصعبة على حد سواء.
+    - en: 64% of all fields needed no person. On difficult photos (tilted, blurred, shadowed) that drops to 42%, but the error rate does not rise. The reader just sends more to review.
+      ar: 64% من كل البيانات لم تحتج موظفًا. في الصور الصعبة (المائلة والمهزوزة وذات الظل) تنخفض النسبة إلى 42%، لكن الأخطاء لا تزيد. يحيل القارئ إلى المراجعة أكثر فقط.
+    - en: "On real phone video of passports, 99.9% of the fields it verified were correct. It read the whole passport code line exactly in 40% of frames: behind the commercial Dynamsoft SDK (48%), far ahead of free tools (7% and 0.3%)."
+      ar: "في فيديوهات جوال حقيقية لجوازات السفر، كانت 99.9% من البيانات التي أثبتها صحيحة. وقرأ سطري الجواز الآليين كاملين بلا خطأ في 40% من اللقطات: أقل من مكتبة Dynamsoft التجارية (48%)، وأعلى بكثير من الأدوات المجانية (7% و0.3%)."
+    - en: It sorted 598 of 600 documents into the right type, including documents it should not try to read.
+      ar: صنّف 598 من 600 مستند في نوعها الصحيح، ومنها مستندات لا يجب أن يحاول قراءتها.
+
+value:
+  title: { en: "How this can help your business", ar: "كيف يفيد هذا شركتك" }
+  items:
+    - icon: compass
+      title: { en: "Faster bookings", ar: "حجوزات أسرع" }
+      body: { en: "Photograph a passport and get passenger data that is checked before it reaches the airline.", ar: "صوّر الجواز واحصل على بيانات المسافر مُراجَعة قبل أن تصل لشركة الطيران." }
+    - icon: coin
+      title: { en: "Cleaner accounts", ar: "حسابات أدق" }
+      body: { en: "Supplier invoices matched to their ZATCA QR code. A printed total that disagrees with the code is flagged.", ar: "فواتير الموردين تُطابَق مع رمز QR الضريبي، وأي إجمالي مطبوع يخالف الرمز يُعلَّم." }
+    - icon: shield
+      title: { en: "Know what to check", ar: "اعرف ماذا تراجع" }
+      body: { en: "Your team reviews only the fields the reader could not prove, with the reason shown.", ar: "يراجع فريقك فقط البيانات التي لم يستطع القارئ إثباتها، مع ظهور السبب." }
+  fits:
+    en: Travel agencies, hotels, clinics, banks and finance teams — anyone who types data from passports, IDs or invoices into a system.
+    ar: وكالات السفر والفنادق والعيادات والبنوك وفرق المالية — كل من يُدخل بيانات من جوازات أو هويات أو فواتير في نظام.
+
+limits:
+  title: { en: "Good to know", ar: "من المهم أن تعرف" }
+  items:
+    - en: The 600 test documents are fictional specimens I generated; no real customer document was used. A business would confirm the automation rate on its own documents. The real-photo test uses public specimen passports.
+      ar: مستندات الاختبار الـ 600 نماذج خيالية ولّدتها، ولم أستخدم أي مستند حقيقي لعميل. وتتأكد الشركة من نسبة الأتمتة على مستنداتها هي. واختبار الصور الحقيقية يستخدم جوازات نموذجية عامة.
+    - en: Some fields can never be proven from a photo, such as an invoice number or a name in Arabic. They come back as "read" for a quick human look.
+      ar: بعض البيانات لا يمكن إثباتها من صورة أبدًا، مثل رقم الفاتورة أو الاسم بالعربية. تأتي بحالة «مقروءة» ليلقي عليها الموظف نظرة سريعة.
+    - en: The real-photo test is not fully blind. Halfway through it I found and fixed two rules that let wrong values through, then ran everything again.
+      ar: اختبار الصور الحقيقية ليس أعمى تمامًا. في منتصفه وجدت قاعدتين سمحتا بمرور قيم خاطئة فأصلحتهما، ثم أعدت تشغيل كل شيء.
+
+tech:
+  stack: [Python, OpenCV, RapidOCR, ONNX Runtime, PP-OCRv6, zxing-cpp, Playwright, pytest]
+  points:
+    - en: "OCR on CPU with RapidOCR: PP-OCRv6 small for detection and Latin recognition, PP-OCRv5 Arabic for Arabic (PP-OCRv6 does not cover Arabic yet). Each line keeps both readings, and on the MRZ the check digits choose between them."
+      ar: "قراءة النص على المعالج بمكتبة RapidOCR: نموذج PP-OCRv6 للكشف والتعرف اللاتيني، وPP-OCRv5 للعربية (PP-OCRv6 لا يدعم العربية بعد). كل سطر يحتفظ بالقراءتين، وفي المنطقة الآلية تختار أرقام التحقق بينهما."
+    - en: "Standards implemented from the specifications: ICAO 9303 MRZ (TD1, TD2, TD3, MRV-A/B), ZATCA e-invoice QR (TLV, phases 1 and 2), IATA BCBP boarding passes. Perspective correction with Canny edges and a four-corner contour search (OpenCV)."
+      ar: "معايير مطبّقة من مواصفاتها: المنطقة الآلية ICAO 9303 (TD1 وTD2 وTD3 وMRV-A/B)، ورمز QR للفاتورة الإلكترونية (TLV، المرحلتان 1 و2)، وبطاقات الصعود IATA BCBP. وتصحيح المنظور بحواف Canny والبحث عن شكل رباعي (OpenCV)."
+    - en: "A check digit is blind to G/6, S/8 and L/1 (values 10 apart), and on real photos two misreads can cancel out. So a document number is verified only when the printed number on the page matches. Both cases have regression tests."
+      ar: "رقم التحقق لا يرى الفرق بين G و6 وS و8 وL و1 (قيم بينها 10)، وفي الصور الحقيقية قد يلغي خطآن أحدهما الآخر. لذلك لا يُثبت رقم الوثيقة إلا إذا طابق الرقم المطبوع في الصفحة. وللحالتين اختبارات."
+    - en: "Test data: 14 HTML designs rendered with headless Chrome, then degraded to scans and phone photos (perspective, blur, shadow, glare, JPEG); 3 designs held out. Real photos: the curated MIDV-500 MRZ benchmark (3,315 frames)."
+      ar: "بيانات الاختبار: 14 تصميم HTML تُرسم بمتصفح Chrome ثم تُشوَّه لتشبه المسح الضوئي وصور الجوال (منظور واهتزاز وظل ولمعان وضغط)، مع إبعاد 3 تصميمات. والصور الحقيقية: معيار MIDV-500 المنقّح (3,315 لقطة)."
+
+links:
+  - kind: live
+    url: https://yahia20.github.io/ksa-document-reader/
+    label: { en: "Open the results page (English and Arabic)", ar: "افتح صفحة النتائج (عربي وإنجليزي)" }
+  - kind: github
+    url: https://github.com/Yahia20/ksa-document-reader
+    label: { en: "Code and tests on GitHub", ar: "الكود والاختبارات على GitHub" }
+
+gallery:
+  - image: cover.png
+    layout: own
+    caption: { en: "The short answer and the headline numbers", ar: "الخلاصة والأرقام الرئيسية" }
+  - image: example.png
+    layout: own
+    caption: { en: "A passport photo: every field with its status and source", ar: "صورة جواز: كل معلومة بحالتها ومصدرها" }
+  - image: invoice.png
+    layout: own
+    caption: { en: "An Arabic tax invoice in a design it never saw, checked against its ZATCA QR", ar: "فاتورة ضريبية عربية بتصميم لم يره، مُطابَقة مع رمز QR الضريبي" }
+  - image: results.png
+    layout: own
+    caption: { en: "Results for all 10 document types", ar: "النتائج لأنواع المستندات العشرة" }
+  - image: realphotos.png
+    layout: own
+    caption: { en: "Real phone video of passports, compared with a commercial SDK", ar: "فيديوهات جوال حقيقية لجوازات السفر، مقارنةً بمكتبة تجارية" }

@@ -19,6 +19,15 @@
     en: Assistants that answer from your own documents and hand over to a person instead of guessing.
     ar: مساعدات تجيب من مستنداتك أنت، وتحوّل العميل لموظف بدل أن تخمّن.
 
+- id: document-ai
+  icon: scan
+  name:
+    en: Document reading & computer vision
+    ar: قراءة المستندات والرؤية الحاسوبية
+  description:
+    en: Reading passports, IDs and invoices from photos, and checking every field before it reaches your system.
+    ar: قراءة الجوازات والهويات والفواتير من الصور، والتحقق من كل معلومة قبل أن تصل إلى نظامك.
+
 - id: data-analysis
   icon: chart
   name:

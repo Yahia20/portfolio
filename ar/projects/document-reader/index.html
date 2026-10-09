@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اقرأ الهويات والفواتير من صورة، واعرف أي البيانات تثق بها · يحيى زكريا</title>
+  <meta name="description" content="بنيت قارئًا لجوازات السفر وبطاقات الهوية والتأشيرات وفواتير هيئة الزكاة وبطاقات صعود الطائرة، يتحقق من كل معلومة قبل أن تصل إلى نظامك.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="اقرأ الهويات والفواتير من صورة، واعرف أي البيانات تثق بها · يحيى زكريا">
+  <meta property="og:description" content="بنيت قارئًا لجوازات السفر وبطاقات الهوية والتأشيرات وفواتير هيئة الزكاة وبطاقات صعود الطائرة، يتحقق من كل معلومة قبل أن تصل إلى نظامك.">
+  <meta property="og:type" content="website">
+<meta property="og:image" content="../../../assets/projects/document-reader/ar/cover.png">  <link rel="alternate" hreflang="en" href="../../../en/projects/document-reader/">
+  <link rel="icon" href="../../../static/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../static/css/site.css">
+  <noscript><style>.call-panel[hidden]{display:block}.call-panel+.call-panel{margin-top:16px}</style></noscript>
+  <script>
+    /* Before first paint: saved theme (no flash), and a flag for JS-only styles. */
+    document.documentElement.classList.add("js");
+    try { var th = localStorage.getItem("theme"); if (th) document.documentElement.dataset.theme = th; } catch (e) {}
+  </script>
+</head>
+<body class="page-project">
+  <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="../../../ar/" aria-label="يحيى زكريا">
+        <span class="brand-mark" aria-hidden="true">YZ</span>
+        <span class="brand-text">
+          <span class="brand-name">يحيى زكريا</span>
+          <span class="brand-role">مهندس ذكاء اصطناعي</span>
+        </span>
+      </a>
+      <nav class="tabs" aria-label="الرئيسية">
+        <a href="../../../ar/" >الرئيسية</a>
+        <a href="../../../ar/projects/" aria-current="page">المشاريع</a>
+        <a href="../../../ar/about/" >من أنا</a>
+        <a href="../../../ar/contact/" >تواصل</a>
+      </nav>
+      <div class="header-tools">
+        <a class="tool lang-switch" href="../../../en/projects/document-reader/" hreflang="en" lang="en" data-lang="en">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span>English</span>
+        </a>
+        <button class="tool theme-toggle" type="button" aria-label="تبديل الوضع الفاتح / الداكن" title="تبديل الوضع الفاتح / الداكن">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<article class="project">
+  <header class="project-hero">
+    <div class="wrap">
+      <a class="back" href="../../../ar/projects/#document-ai"><svg class="icon icon-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg> كل المشاريع</a>
+      <div class="card-meta">
+        <span class="chip-static"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4"/><path d="M8 9h8M8 12h8M8 15h5"/></svg>قراءة المستندات والرؤية الحاسوبية</span>
+        
+      </div>
+      <h1 class="project-title">اقرأ الهويات والفواتير من صورة، واعرف أي البيانات تثق بها</h1>
+      <p class="lead project-tagline">بنيت قارئًا لجوازات السفر وبطاقات الهوية والتأشيرات وفواتير هيئة الزكاة وبطاقات صعود الطائرة، يتحقق من كل معلومة قبل أن تصل إلى نظامك.</p>
+      <dl class="project-facts">
+        <div><dt>دوري</dt><dd>بنيت المشروع بالكامل، من القارئ نفسه حتى اختبار الـ 600 مستند واختبار الصور الحقيقية.</dd></div>
+      </dl>
+      <figure class="project-cover">
+        <img src="../../../assets/projects/document-reader/ar/cover.png" alt="الخلاصة: 100% من البيانات المُثبتة صحيحة على 600 مستند اختبار، و64% من البيانات لا تحتاج موظفًا، و99.9% على فيديوهات جوال حقيقية لجوازات السفر" width="1200" height="675">
+      </figure>
+      <div class="stats">
+<div class="stat">
+  <p class="stat-value"><bdi dir="ltr">100%</bdi></p>
+  <p class="stat-label">من البيانات التي يعتبرها مُثبتة صحيحة</p>
+<p class="stat-note">3,076 من 3,076، على 600 مستند لم يرها</p></div><div class="stat">
+  <p class="stat-value"><bdi dir="ltr">64%</bdi></p>
+  <p class="stat-label">من كل البيانات تدخل نظامك دون مراجعة موظف</p>
+</div><div class="stat">
+  <p class="stat-value"><bdi dir="ltr">99.9%</bdi></p>
+  <p class="stat-label">من بيانات الجوازات المُثبتة صحيحة في فيديوهات جوال حقيقية</p>
+<p class="stat-note">9,066 معلومة من 3,315 لقطة</p></div><div class="stat">
+  <p class="stat-value"><bdi dir="rtl">4.3 ث</bdi></p>
+  <p class="stat-label">لكل مستند على لابتوب عادي، دون أي خدمة مدفوعة</p>
+</div>      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">المشكلة</h2>
+      <p class="prose">وكالات السفر والفنادق وفرق المالية في السعودية تعيد كتابة الجوازات والهويات وفواتير الموردين يدويًا كل يوم. أدوات القراءة موجودة، لكنها تعطيك نصًا لا يقينًا: لا تعرف أي القيم صحيحة. ورقم جواز خاطئ في حجز أو مبلغ ضريبة خاطئ في الحسابات يكلّف أكثر بكثير من الوقت الذي وفّرته. السؤال المفيد ليس «هل تستطيع الآلة قراءة هذا؟» بل «أي هذه القيم أثق بها دون مراجعة؟»</p>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap">
+      <h2 class="section-title">كيف يعمل</h2>
+      <div class="stepper" data-stepper>
+        <ol class="step-list" role="list">
+          <li>
+            <button class="step-btn" type="button" id="step-tab-1" aria-controls="step-panel-1" aria-selected="true">
+              <span class="step-num">1</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4"/><path d="M8 9h8M8 12h8M8 15h5"/></svg></span>
+              <span class="step-name">تسوية الصورة</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-2" aria-controls="step-panel-2" aria-selected="false">
+              <span class="step-num">2</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3M8.5 11h5"/></svg></span>
+              <span class="step-name">قراءة الرموز والنص</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-3" aria-controls="step-panel-3" aria-selected="false">
+              <span class="step-num">3</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span class="step-name">المطابقة مع المعيار</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-4" aria-controls="step-panel-4" aria-selected="false">
+              <span class="step-num">4</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg></span>
+              <span class="step-name">حالة لكل معلومة</span>
+            </button>
+          </li>
+          <li>
+            <button class="step-btn" type="button" id="step-tab-5" aria-controls="step-panel-5" aria-selected="false">
+              <span class="step-num">5</span>
+              <span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="step-name">اختباره بأمانة</span>
+            </button>
+          </li>
+        </ol>
+        <div class="step-panels">
+          <div class="step-panel" id="step-panel-1" role="tabpanel" aria-labelledby="step-tab-1">
+            <p class="step-kicker">الخطوة 1 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4"/><path d="M8 9h8M8 12h8M8 15h5"/></svg> تسوية الصورة</h3>
+            <p>يجد القارئ زوايا المستند الأربع في صورة الجوال ويعدّلها، كما يفعل تطبيق المسح الضوئي.</p>
+          </div>
+          <div class="step-panel" id="step-panel-2" role="tabpanel" aria-labelledby="step-tab-2">
+            <p class="step-kicker">الخطوة 2 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3M8.5 11h5"/></svg> قراءة الرموز والنص</h3>
+            <p>يقرأ رمز QR الضريبي وباركود بطاقة الصعود، ثم يقرأ النص مرتين: مرة للإنجليزية والأرقام ومرة للعربية.</p>
+          </div>
+          <div class="step-panel" id="step-panel-3" role="tabpanel" aria-labelledby="step-tab-3">
+            <p class="step-kicker">الخطوة 3 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg> المطابقة مع المعيار</h3>
+            <p>في الجواز أرقام تحقق، وفي الفاتورة رمز QR، والضريبة يجب أن تكون 15%. لا تُعتبر القيمة مُثبتة إلا إذا أكدها أحد هذه التحققات.</p>
+          </div>
+          <div class="step-panel" id="step-panel-4" role="tabpanel" aria-labelledby="step-tab-4">
+            <p class="step-kicker">الخطوة 4 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg> حالة لكل معلومة</h3>
+            <p>كل معلومة تأتي مُثبتة أو مقروءة أو للمراجعة، مع السبب. فيراجع الموظف فقط ما لم يستطع القارئ إثباته.</p>
+          </div>
+          <div class="step-panel" id="step-panel-5" role="tabpanel" aria-labelledby="step-tab-5">
+            <p class="step-kicker">الخطوة 5 / 5</p>
+            <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg> اختباره بأمانة</h3>
+            <p>600 مستند اختبار من 10 أنواع، ثلثها بتصميمات لم يرها، إضافة إلى 3,315 لقطة فيديو جوال حقيقية لجوازات من 12 دولة.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">النتائج</h2>
+      <p class="muted">600 مستند اختبار و3,315 لقطة حقيقية · أكتوبر 2026</p>
+      <ul class="checks" role="list">
+<li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>كل المعلومات الـ 3,076 التي اعتبرها مُثبتة كانت صحيحة، في الصور الممسوحة وصور الجوال والصور الصعبة على حد سواء.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>64% من كل البيانات لم تحتج موظفًا. في الصور الصعبة (المائلة والمهزوزة وذات الظل) تنخفض النسبة إلى 42%، لكن الأخطاء لا تزيد. يحيل القارئ إلى المراجعة أكثر فقط.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>في فيديوهات جوال حقيقية لجوازات السفر، كانت 99.9% من البيانات التي أثبتها صحيحة. وقرأ سطري الجواز الآليين كاملين بلا خطأ في 40% من اللقطات: أقل من مكتبة Dynamsoft التجارية (48%)، وأعلى بكثير من الأدوات المجانية (7% و0.3%).</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></svg><span>صنّف 598 من 600 مستند في نوعها الصحيح، ومنها مستندات لا يجب أن يحاول قراءتها.</span></li>      </ul>
+    </div>
+  </section>
+
+
+
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">كيف يفيد هذا شركتك</h2>
+      <div class="grid grid-3">
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+          <h3>حجوزات أسرع</h3>
+          <p>صوّر الجواز واحصل على بيانات المسافر مُراجَعة قبل أن تصل لشركة الطيران.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.4-.9-1.4-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2s1 1.6 2.5 2 2.5.9 2.5 2-1 2-2.5 2c-1.1 0-2.1-.6-2.5-1.5M12 6.5V8M12 16v1.5"/></svg></span>
+          <h3>حسابات أدق</h3>
+          <p>فواتير الموردين تُطابَق مع رمز QR الضريبي، وأي إجمالي مطبوع يخالف الرمز يُعلَّم.</p>
+        </div>
+        <div class="service reveal">
+          <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>اعرف ماذا تراجع</h3>
+          <p>يراجع فريقك فقط البيانات التي لم يستطع القارئ إثباتها، مع ظهور السبب.</p>
+        </div>
+      </div>
+      <p class="fits reveal"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg> <span>وكالات السفر والفنادق والعيادات والبنوك وفرق المالية — كل من يُدخل بيانات من جوازات أو هويات أو فواتير في نظام.</span></p>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap narrow reveal">
+      <h2 class="section-title">من المهم أن تعرف</h2>
+      <ul class="checks checks-info" role="list">
+<li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><span>مستندات الاختبار الـ 600 نماذج خيالية ولّدتها، ولم أستخدم أي مستند حقيقي لعميل. وتتأكد الشركة من نسبة الأتمتة على مستنداتها هي. واختبار الصور الحقيقية يستخدم جوازات نموذجية عامة.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><span>بعض البيانات لا يمكن إثباتها من صورة أبدًا، مثل رقم الفاتورة أو الاسم بالعربية. تأتي بحالة «مقروءة» ليلقي عليها الموظف نظرة سريعة.</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><span>اختبار الصور الحقيقية ليس أعمى تمامًا. في منتصفه وجدت قاعدتين سمحتا بمرور قيم خاطئة فأصلحتهما، ثم أعدت تشغيل كل شيء.</span></li>      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">الصور</h2>
+      <div class="gallery">
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/document-reader/ar/cover.png" data-caption="الخلاصة والأرقام الرئيسية" aria-label="افتح الصورة: الخلاصة والأرقام الرئيسية">
+            <img src="../../../assets/projects/document-reader/ar/cover.png" alt="الخلاصة والأرقام الرئيسية" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>الخلاصة والأرقام الرئيسية</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/document-reader/ar/example.png" data-caption="صورة جواز: كل معلومة بحالتها ومصدرها" aria-label="افتح الصورة: صورة جواز: كل معلومة بحالتها ومصدرها">
+            <img src="../../../assets/projects/document-reader/ar/example.png" alt="صورة جواز: كل معلومة بحالتها ومصدرها" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>صورة جواز: كل معلومة بحالتها ومصدرها</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/document-reader/ar/invoice.png" data-caption="فاتورة ضريبية عربية بتصميم لم يره، مُطابَقة مع رمز QR الضريبي" aria-label="افتح الصورة: فاتورة ضريبية عربية بتصميم لم يره، مُطابَقة مع رمز QR الضريبي">
+            <img src="../../../assets/projects/document-reader/ar/invoice.png" alt="فاتورة ضريبية عربية بتصميم لم يره، مُطابَقة مع رمز QR الضريبي" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>فاتورة ضريبية عربية بتصميم لم يره، مُطابَقة مع رمز QR الضريبي</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/document-reader/ar/results.png" data-caption="النتائج لأنواع المستندات العشرة" aria-label="افتح الصورة: النتائج لأنواع المستندات العشرة">
+            <img src="../../../assets/projects/document-reader/ar/results.png" alt="النتائج لأنواع المستندات العشرة" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>النتائج لأنواع المستندات العشرة</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/document-reader/ar/realphotos.png" data-caption="فيديوهات جوال حقيقية لجوازات السفر، مقارنةً بمكتبة تجارية" aria-label="افتح الصورة: فيديوهات جوال حقيقية لجوازات السفر، مقارنةً بمكتبة تجارية">
+            <img src="../../../assets/projects/document-reader/ar/realphotos.png" alt="فيديوهات جوال حقيقية لجوازات السفر، مقارنةً بمكتبة تجارية" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>فيديوهات جوال حقيقية لجوازات السفر، مقارنةً بمكتبة تجارية</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <details class="tech">
+        <summary><span>التفاصيل التقنية</span><span class="muted small">للمهندسين ومسؤولي التوظيف</span></summary>
+        <ul class="tech-stack" role="list"><li>Python</li><li>OpenCV</li><li>RapidOCR</li><li>ONNX Runtime</li><li>PP-OCRv6</li><li>zxing-cpp</li><li>Playwright</li><li>pytest</li></ul>
+        <ul class="tech-points"><li>قراءة النص على المعالج بمكتبة RapidOCR: نموذج PP-OCRv6 للكشف والتعرف اللاتيني، وPP-OCRv5 للعربية (PP-OCRv6 لا يدعم العربية بعد). كل سطر يحتفظ بالقراءتين، وفي المنطقة الآلية تختار أرقام التحقق بينهما.</li><li>معايير مطبّقة من مواصفاتها: المنطقة الآلية ICAO 9303 (TD1 وTD2 وTD3 وMRV-A/B)، ورمز QR للفاتورة الإلكترونية (TLV، المرحلتان 1 و2)، وبطاقات الصعود IATA BCBP. وتصحيح المنظور بحواف Canny والبحث عن شكل رباعي (OpenCV).</li><li>رقم التحقق لا يرى الفرق بين G و6 وS و8 وL و1 (قيم بينها 10)، وفي الصور الحقيقية قد يلغي خطآن أحدهما الآخر. لذلك لا يُثبت رقم الوثيقة إلا إذا طابق الرقم المطبوع في الصفحة. وللحالتين اختبارات.</li><li>بيانات الاختبار: 14 تصميم HTML تُرسم بمتصفح Chrome ثم تُشوَّه لتشبه المسح الضوئي وصور الجوال (منظور واهتزاز وظل ولمعان وضغط)، مع إبعاد 3 تصميمات. والصور الحقيقية: معيار MIDV-500 المنقّح (3,315 لقطة).</li></ul>
+        <div class="actions">
+<a class="btn btn-ghost" href="https://yahia20.github.io/ksa-document-reader/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M6.3 6.3a8 8 0 0 0 0 11.4M17.7 6.3a8 8 0 0 1 0 11.4"/></svg> افتح صفحة النتائج (عربي وإنجليزي) <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><a class="btn btn-ghost" href="https://github.com/Yahia20/ksa-document-reader" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> الكود والاختبارات على GitHub <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cta-band reveal">
+      <div>
+        <h2>لنتحدث عن مشروعك</h2>
+        <p>أخبرني بما تحاول إصلاحه أو معرفته. سأرد عليك بخطة واضحة: الخطوات، والمدة، وتكلفة التشغيل.</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="../../../ar/contact/">تواصل معي <svg class="icon icon-dir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+</article>
+
+<dialog class="lightbox" aria-label="الصور">
+  <button class="lightbox-close tool" type="button" aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <img alt="">
+  <p class="lightbox-caption"></p>
+</dialog>
+<div class="tooltip" role="status" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="footer-name">يحيى زكريا · مهندس ذكاء اصطناعي</p>
+        <p class="muted small">القاهرة، مصر · أعمل عن بُعد مع فرق في السعودية</p>
+      </div>
+      <ul class="footer-links" role="list">
+        <li><a href="mailto:yahiazakaria412@gmail.com"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="sr-only">Email</span></a></li>
+        <li><a href="https://www.linkedin.com/in/yahia-zakaria-a27384213" rel="me noopener" target="_blank" title="لينكدإن"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><span class="sr-only">لينكدإن</span></a></li>
+        <li><a href="https://github.com/Yahia20" rel="me noopener" target="_blank" title="جيت هب"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span class="sr-only">جيت هب</span></a></li>
+        <li><a href="https://mostaql.com/u/Yehia_Z_Ali" rel="me noopener" target="_blank" title="مستقل (عمل حر)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></svg><span class="sr-only">مستقل (عمل حر)</span></a></li>
+        <li><a href="https://www.kaggle.com/yahiazakaria20" rel="me noopener" target="_blank" title="كاجل"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3v18M17 4l-7 8 7 8M10 12l2-2"/></svg><span class="sr-only">كاجل</span></a></li>
+      </ul>
+    </div>
+    <div class="wrap"><p class="muted small">© 2026 يحيى زكريا</p></div>
+  </footer>
+
+  <script src="../../../static/js/site.js" defer></script>
+</body>
+</html>

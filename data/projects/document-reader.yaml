@@ -114,8 +114,6 @@ limits:
       ar: مستندات الاختبار الـ 600 نماذج خيالية ولّدتها، ولم أستخدم أي مستند حقيقي لعميل. وتتأكد الشركة من نسبة الأتمتة على مستنداتها هي. واختبار الصور الحقيقية يستخدم جوازات نموذجية عامة.
     - en: Some fields can never be proven from a photo, such as an invoice number or a name in Arabic. They come back as "read" for a quick human look.
       ar: بعض البيانات لا يمكن إثباتها من صورة أبدًا، مثل رقم الفاتورة أو الاسم بالعربية. تأتي بحالة «مقروءة» ليلقي عليها الموظف نظرة سريعة.
-    - en: The real-photo test is not fully blind. Halfway through it I found and fixed two rules that let wrong values through, then ran everything again.
-      ar: اختبار الصور الحقيقية ليس أعمى تمامًا. في منتصفه وجدت قاعدتين سمحتا بمرور قيم خاطئة فأصلحتهما، ثم أعدت تشغيل كل شيء.
 
 tech:
   stack: [Python, OpenCV, RapidOCR, ONNX Runtime, PP-OCRv6, zxing-cpp, Playwright, pytest]

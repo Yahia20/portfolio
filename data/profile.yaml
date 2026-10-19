@@ -154,13 +154,17 @@ languages:
 # after the person has read this exact wording and agreed to it being public.
 testimonials:
   - quote:
+      # Arabic is Mohamed Amin's own wording (sent 2026-10-19); the English translates it.
       en: >-
-        Yahia is a precise and dependable engineer. His analysis and dashboards gave our sales team
-        clear numbers to base decisions on, and he always explained his results in plain terms.
-        I recommend him with confidence.
+        Yahia is a precise and dependable engineer who works with dedication and integrity. His
+        analysis and the dashboards he built gave our sales team clear numbers to base our decisions
+        on, and he always explained his results clearly. He stands out for his hard work,
+        persistence and constant drive to learn and develop himself. I recommend him with
+        confidence and wish him every success.
       ar: >-
-        يحيى مهندس دقيق ويُعتمد عليه. قدّمت تحليلاته ولوحات المتابعة التي بناها لفريق المبيعات
-        أرقامًا واضحة نبني عليها قراراتنا، وكان دائمًا يشرح نتائجه بوضوح. أوصي به بكل ثقة.
+        يحيى مهندس دقيق ويُعتمد عليه، يعمل بإخلاص وأمانة. قدّمت تحليلاته ولوحات المتابعة التي بناها
+        لفريق المبيعات أرقامًا واضحة نبني عليها قراراتنا، وكان دائمًا يشرح نتائجه بوضوح، ويتميز
+        بالاجتهاد والمثابرة وبحرصه المستمر على التعلم وتطوير نفسه. أوصي به بكل ثقة، وأتمنى له كل التوفيق.
     name: { en: "Mohamed Amin", ar: "أ. محمد أمين" }
     title: { en: "Head of Sales, Travel Gate KSA", ar: "رئيس قسم المبيعات، ترافل جيت" }
     approved: true

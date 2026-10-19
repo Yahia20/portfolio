@@ -41,13 +41,13 @@ intro:
 about:
   - en: >-
       I'm an AI engineer based in Cairo. Since November 2025 I've worked with Travel Gate, a travel
-      agency in Saudi Arabia, where I built the system that now transcribes and reviews every
-      customer call and chat — work that used to depend on a supervisor listening to a few calls
-      at random.
+      agency in Saudi Arabia, where I built the system that reviews customer-support chats in
+      Arabic and scores each one against the same checklist — with the call side built and ready
+      for when calls come in.
     ar: >-
       أنا مهندس ذكاء اصطناعي من القاهرة. منذ نوفمبر 2025 أعمل مع ترافل جيت، وكالة سفر في
-      السعودية، حيث بنيت النظام الذي يفرّغ ويراجع الآن كل مكالمة ومحادثة مع العملاء — وهو عمل
-      كان يعتمد على مشرف يستمع لعدد قليل من المكالمات يختارها عشوائيًا.
+      السعودية، حيث بنيت النظام الذي يراجع محادثات خدمة العملاء بالعربية ويقيّم كل محادثة بنفس
+      المعايير — وجزء المكالمات مبني وجاهز لحين وصول المكالمات.
   - en: >-
       Before that I trained for 540 hours in AI and data engineering at Egypt's National
       Telecommunication Institute, and studied Information Systems at Fayoum University's
@@ -88,7 +88,7 @@ services:
     body:
       en: A fair test of which model does your task best and what it will cost you each month.
       ar: اختبار عادل لأي نموذج يؤدي مهمتك بأفضل شكل، وكم سيكلفك شهريًا.
-    proof: [choosing-a-model]
+    proof: [support-assistant]
 
 experience:
   - org: { en: "OrenGreenberg", ar: "OrenGreenberg" }
@@ -103,8 +103,8 @@ experience:
     period: { en: "Nov 2025 – present", ar: "نوفمبر 2025 – الآن" }
     place: { en: "Remote · Riyadh, Saudi Arabia", ar: "عن بُعد · الرياض، السعودية" }
     points:
-      - en: Built the system that transcribes and scores every customer call and chat, live since September 2026.
-        ar: بنيت النظام الذي يفرّغ ويقيّم كل مكالمة ومحادثة مع العملاء، ويعمل فعليًا منذ سبتمبر 2026.
+      - en: "Built the system that scores customer-support chats in Arabic against a quality checklist, with the evidence quoted; the call side is built and ready for when calls come in."
+        ar: "بنيت النظام الذي يقيّم محادثات خدمة العملاء بالعربية حسب معايير الجودة مع اقتباس الدليل؛ وجزء المكالمات مبني وجاهز لحين وصول المكالمات."
       - en: Built sales, agent-performance and marketing dashboards covering more than 9,000 customer contacts.
         ar: بنيت لوحات متابعة للمبيعات وأداء الموظفين والتسويق تغطي أكثر من 9,000 جهة اتصال.
       - en: Wrote a demand analysis and 3-month forecast that supported a partnership decision with a major airline.
@@ -144,7 +144,7 @@ skills:
   - group: { en: "Data & dashboards", ar: "البيانات ولوحات المتابعة" }
     items: [Python, pandas, SQL, PostgreSQL, Power BI, Apache Superset, Plotly]
   - group: { en: "Shipping it", ar: "التشغيل والنشر" }
-    items: [FastAPI, Docker, n8n, AWS, Railway, Modal, Git]
+    items: [FastAPI, Docker, n8n, AWS, Railway, Git]
 
 languages:
   - { name: { en: Arabic, ar: العربية }, level: { en: Native, ar: اللغة الأم } }

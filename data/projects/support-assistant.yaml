@@ -1,5 +1,6 @@
 # Written for a non-technical reader. Technical detail lives only under `tech`.
-# Numbers come from github.com/Yahia20/arabic-support-assistant results/*/test.summary.json.
+# Numbers come from github.com/Yahia20/arabic-support-assistant results/*/test.summary.json;
+# the examples table from data/demos/support-assistant (scripts/export_portfolio.py there).
 
 slug: support-assistant
 category: ai-assistants
@@ -88,6 +89,42 @@ results:
       ar: "حسب اللغة: لهجة سعودية 124 من 126، فصحى 40 من 40، إنجليزي 79 من 79."
     - en: Both misses were safe — a question it could have answered went to a person instead.
       ar: الخطآن كانا آمنين — سؤال كان يمكن أن يجيبه ذهب لموظف بدلًا من ذلك.
+    - en: "The same test on a model that costs 5 times more: it sent 4 wrong answers and missed 3 hand-overs, so the cheaper model is the one that ships."
+      ar: "نفس الاختبار على نموذج أغلى بخمس مرات: أرسل 4 إجابات خاطئة وفاته 3 تحويلات، لذلك النموذج الأرخص هو المعتمد."
+
+comparison:
+  title: { en: "Same messages, two models", ar: "نفس الرسائل، نموذجان" }
+  intro:
+    en: Three numbers that decide whether an assistant is safe to put in front of customers.
+    ar: ثلاثة أرقام تحدد إن كان المساعد آمنًا أمام العملاء.
+  tests:
+    - id: precision
+      label: { en: "Answers sent that were right", ar: "إجابات أُرسلت وكانت صحيحة" }
+      note: { en: "a wrong answer reaches a customer", ar: "الإجابة الخاطئة تصل للعميل" }
+    - id: handoff
+      label: { en: "Handed over when needed", ar: "حوّل عند الحاجة" }
+      note: { en: "complaints, compensation, a specific booking", ar: "شكاوى، تعويضات، حجز محدد" }
+    - id: automation
+      label: { en: "Answered by itself", ar: "أجاب وحده" }
+      note: { en: "of the questions the policy answers", ar: "من الأسئلة التي تجيبها السياسة" }
+  models:
+    - name: { en: "DeepSeek Flash", ar: "DeepSeek Flash" }
+      kind: { en: "$0.17 per 1,000 · 1.4 s", ar: "0.17 دولار لكل 1,000 · 1.4 ث" }
+      scores: { precision: 1.0, handoff: 1.0, automation: 0.9879 }
+      highlight: true
+    - name: { en: "DeepSeek V4 Pro", ar: "DeepSeek V4 Pro" }
+      kind: { en: "$0.92 per 1,000 · 3.4 s", ar: "0.92 دولار لكل 1,000 · 3.4 ث" }
+      scores: { precision: 0.976, handoff: 0.9559, automation: 0.9879 }
+  takeaway:
+    en: "The expensive model answered three compensation and exception requests itself — \"there is no additional financial compensation\" — a decision the policy never makes. The cheaper model handed every one to a person."
+    ar: "النموذج الغالي أجاب بنفسه على ثلاثة طلبات تعويض واستثناء — «لا يتوفر تعويض مالي إضافي» — وهو قرار لم تقله السياسة. والنموذج الأرخص حوّلها كلها لموظف."
+
+examples:
+  title: { en: "Test messages, and what each model did", ar: "رسائل من الاختبار، وماذا فعل كل نموذج" }
+  intro:
+    en: "24 messages from the frozen test: a spread across topics and languages, plus all 5 where the two models disagree. All 245 are on GitHub."
+    ar: "24 رسالة من الاختبار المغلق: عيّنة من مواضيع ولغات مختلفة، ومعها الرسائل الخمس التي اختلف فيها النموذجان. الرسائل الـ 245 كلها على GitHub."
+  source: support-assistant
 
 value:
   title: { en: "How this can help your business", ar: "كيف يفيد هذا شركتك" }
@@ -116,7 +153,7 @@ limits:
       ar: إذا أردت أن يعطي أرقام الطوارئ، يجب كتابتها في السياسة؛ وإلا يحوّل الرسالة لموظف.
 
 tech:
-  stack: [Python, LLMs, RAG, sentence-transformers, DeepSeek, OpenAI SDK, Pydantic]
+  stack: [Python, LLMs, RAG, LLM evaluation, sentence-transformers, DeepSeek, OpenAI SDK, Pydantic]
   points:
     - en: "Retrieval: every policy line embedded in Arabic and English (paraphrase-multilingual-MiniLM-L12-v2); a section scores as its best line plus a word-overlap bonus; top 5 sections plus an index of all 14, with one optional `need_section` lookup. The right section reached the model for 165 of 165 policy questions."
       ar: "البحث: كل سطر في السياسة مُمثَّل بالعربي والإنجليزي (paraphrase-multilingual-MiniLM-L12-v2)؛ القسم يأخذ درجة أفضل سطر فيه مع إضافة لتطابق الكلمات؛ أفضل 5 أقسام مع فهرس الأقسام الـ 14، وطلب قسم إضافي مرة واحدة عند الحاجة. وصل القسم الصحيح للنموذج في 165 من 165."
@@ -141,3 +178,5 @@ gallery:
     caption: { en: "How it works", ar: "كيف يعمل" }
   - image: results.png
     caption: { en: "Results on the frozen test", ar: "النتائج في الاختبار المغلق" }
+  - image: comparison.png
+    caption: { en: "Same messages, two models", ar: "نفس الرسائل، نموذجان" }

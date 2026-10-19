@@ -477,6 +477,7 @@ bdi { unicode-bidi: isolate; }
 .legend .swatch { width: 14px; height: 14px; border-radius: 4px; margin-top: .35em; flex: none; }
 .series-1 { background: color-mix(in srgb, var(--ink) 22%, var(--surface)); }
 .series-2 { background: var(--accent); }
+.series-3 { background: color-mix(in srgb, var(--accent) 42%, var(--surface)); }
 .compare-bars { gap: 18px; }
 .compare-group { display: grid; gap: 4px; padding: 12px 12px 8px; border-radius: 14px; }
 .compare-group.is-highlight { background: var(--accent-soft); }

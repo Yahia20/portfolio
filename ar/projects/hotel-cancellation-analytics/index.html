@@ -9,7 +9,12 @@
   <meta property="og:title" content="أوقف خسارة الأموال بسبب إلغاء حجوزات الفنادق · يحيى زكريا">
   <meta property="og:description" content="حلّلت 119 ألف حجز فندقي لأعرف كم تكلّف الإلغاءات، ومن الذي يلغي، وماذا يجب أن يفعل الفندق.">
   <meta property="og:type" content="website">
-<meta property="og:image" content="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png">  <link rel="alternate" hreflang="en" href="../../../en/projects/hotel-cancellation-analytics/">
+  <meta property="og:site_name" content="يحيى زكريا">
+  <meta property="og:locale" content="ar_SA">
+<meta property="og:url" content="https://yahia20.github.io/portfolio/ar/projects/hotel-cancellation-analytics/">
+  <link rel="canonical" href="https://yahia20.github.io/portfolio/ar/projects/hotel-cancellation-analytics/"><meta property="og:image" content="https://yahia20.github.io/portfolio/assets/projects/hotel-cancellation-analytics/ar/cover.png">  <meta property="og:image:alt" content="أوقف خسارة الأموال بسبب إلغاء حجوزات الفنادق · يحيى زكريا">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="../../../en/projects/hotel-cancellation-analytics/">
   <link rel="icon" href="../../../static/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +71,7 @@
         <div><dt>دوري</dt><dd>بنيت المشروع بالكامل، من البيانات الخام حتى التوصية ولوحة المتابعة.</dd></div>
       </dl>
       <figure class="project-cover">
-        <img src="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" alt="الخلاصة: 37% من الحجوزات أُلغيت بقيمة 16.7 مليون يورو؛ العربون للحجوزات الخطرة يربح 399 ألف يورو، والعربون للجميع يخسر 199 ألف يورو" width="1200" height="675">
+        <img src="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" alt="من يلغي (92% ممن ألغوا سابقًا، و68% من الحجوزات قبلها بسنة، و10% من حجوزات آخر أسبوع) ونتيجة العربون: +399 ألف € للحجوزات الخطرة فقط، و−199 ألف € للجميع" width="1200" height="675">
       </figure>
       <div class="stats">
 <div class="stat">
@@ -213,8 +218,14 @@
       <h2 class="section-title">الصور</h2>
       <div class="gallery">
         <figure class="reveal">
-          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" data-caption="الخلاصة والأرقام الرئيسية" aria-label="افتح الصورة: الخلاصة والأرقام الرئيسية">
-            <img src="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" alt="الخلاصة والأرقام الرئيسية" loading="lazy" width="1200" height="675">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" data-caption="نظرة سريعة" aria-label="افتح الصورة: نظرة سريعة">
+            <img src="../../../assets/projects/hotel-cancellation-analytics/ar/cover.png" alt="نظرة سريعة" loading="lazy" width="1200" height="675">
+          </button>
+          <figcaption>نظرة سريعة</figcaption>
+        </figure>
+        <figure class="reveal">
+          <button class="gallery-btn" type="button" data-lightbox="../../../assets/projects/hotel-cancellation-analytics/ar/summary.png" data-caption="الخلاصة والأرقام الرئيسية" aria-label="افتح الصورة: الخلاصة والأرقام الرئيسية">
+            <img src="../../../assets/projects/hotel-cancellation-analytics/ar/summary.png" alt="الخلاصة والأرقام الرئيسية" loading="lazy" width="1200" height="675">
           </button>
           <figcaption>الخلاصة والأرقام الرئيسية</figcaption>
         </figure>
@@ -251,7 +262,7 @@
       <details class="tech">
         <summary><span>التفاصيل التقنية</span><span class="muted small">للمهندسين ومسؤولي التوظيف</span></summary>
         <ul class="tech-stack" role="list"><li>Python</li><li>SQL</li><li>dbt</li><li>DuckDB</li><li>LightGBM</li><li>scikit-learn</li><li>Plotly</li><li>pytest</li></ul>
-        <ul class="tech-points"><li>مستودع dbt على DuckDB (طبقات staging وfacts وmarts) مع 28 اختبار بيانات، منها اختبارات مطابقة: كل صف أصلي إما محفوظ أو مستبعد بقاعدة مسمّاة، والإيرادات متطابقة حتى السنت بالحجز وبالليلة وبالشهر.</li><li>تدقيق التسريب: الأعمدة التي تُملأ بعد الحجز (المواقف، والغرفة المخصصة، وتعديلات الحجز، والدولة المصححة) مستبعدة. تضخّم النتيجة بسببها وبسبب التقسيم العشوائي مُقاس ومنشور (77.6% صادقة مقابل 88.7%).</li><li>تقييم شهري متتابع (walk-forward): كل شهر في 2017 يقيّمه نموذج LightGBM أُعيد تدريبه على كل الوصولات السابقة. ROC AUC بقيمة 0.850، وBrier بقيمة 0.150، مع فحص المعايرة لكل شريحة خطر.</li><li>اختبار السياسة تاريخيًا: الحد اختير على سبتمبر–ديسمبر 2016 وطُبّق دون تغيير على 2017، مع شبكة حساسية لنسب الرفض وإعادة البيع. أمر واحد يعيد بناء كل شيء في حوالي دقيقتين على لابتوب.</li></ul>
+        <ul class="tech-points"><li>مستودع dbt على DuckDB (طبقات staging وfacts وmarts) مع 28 اختبار بيانات، منها اختبارات مطابقة: كل صف أصلي إما محفوظ أو مستبعد بقاعدة مسمّاة، والإيرادات متطابقة حتى السنت بالحجز وبالليلة وبالشهر.</li><li>تدقيق التسريب: الأعمدة التي تُملأ بعد الحجز (المواقف، والغرفة المخصصة، وتعديلات الحجز، والدولة المصححة) مستبعدة. تضخّم النتيجة بسببها وبسبب التقسيم العشوائي مُقاس ومنشور (77.6% صادقة مقابل 88.7%).</li><li>تقييم شهري متتابع (walk-forward): كل شهر في 2017 يقيّمه نموذج LightGBM أُعيد تدريبه على كل الوصولات السابقة. ROC AUC بقيمة 0.850، وBrier بقيمة 0.150، مع فحص المعايرة لكل شريحة خطر.</li><li>اختبار السياسة تاريخيًا: الحد اختير على سبتمبر–ديسمبر 2016 وطُبّق دون تغيير على 2017، مع شبكة حساسية لنسب الرفض وإعادة البيع. أمر واحد يعيد بناء كل شيء في حوالي دقيقتين.</li></ul>
         <div class="actions">
 <a class="btn btn-ghost" href="https://yahia20.github.io/hotel-revenue-analytics/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M6.3 6.3a8 8 0 0 0 0 11.4M17.7 6.3a8 8 0 0 1 0 11.4"/></svg> افتح لوحة المتابعة (عربي وإنجليزي) <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><a class="btn btn-ghost" href="https://github.com/Yahia20/hotel-revenue-analytics" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> الكود والاختبارات على GitHub <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>        </div>
       </details>

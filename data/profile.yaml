@@ -163,4 +163,4 @@ testimonials:
         أرقامًا واضحة نبني عليها قراراتنا، وكان دائمًا يشرح نتائجه بوضوح. أوصي به بكل ثقة.
     name: { en: "Mohamed Amin", ar: "أ. محمد أمين" }
     title: { en: "Head of Sales, Travel Gate KSA", ar: "رئيس قسم المبيعات، ترافل جيت" }
-    approved: false
+    approved: true

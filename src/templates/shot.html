@@ -43,6 +43,39 @@
   .cover .frame-foot .who { color: #dfe4e8; }
   .cover .brand-mark { background: #eef0f2; color: #111417; }
 
+  /* document-reader and hotel covers */
+  .mrz { margin: 0; font-family: "Consolas", "Courier New", monospace; font-size: 14.5px; letter-spacing: .5px; color: #dfe4e8; direction: ltr; text-align: left; line-height: 1.6; white-space: nowrap; overflow: hidden; }
+  .fields { display: grid; gap: 7px; }
+  .fields > div { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: center; font-size: 15px; color: #dfe4e8; }
+  .fields .v { color: #fff; font-weight: 600; font-family: "IBM Plex Sans", "IBM Plex Sans Arabic", sans-serif; }
+  .st { font-size: 12.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+  .st-ok { background: rgb(92 205 131 / .16); color: #8fe3b0; }
+  .st-read { background: rgb(240 179 91 / .16); color: #f5c27a; }
+  .hbars { display: grid; gap: 9px; }
+  .hbars > div { display: grid; grid-template-columns: 190px 1fr 3em; gap: 12px; align-items: center; font-size: 15px; color: #dfe4e8; }
+  .hbars .track { height: 14px; border-radius: 7px; background: rgb(255 255 255 / .1); overflow: hidden; }
+  .hbars .track i { display: block; height: 100%; border-radius: 7px; background: #3cc4b1; }
+  .hbars bdi { font-weight: 700; color: #fff; text-align: end; }
+  .money { font-size: 26px; font-weight: 700; }
+  .money.up { color: #5fd6c4; }
+  .money.down { color: #ff8073; }
+
+  /* share image (1200×630) */
+  .og { padding: 60px 64px; }
+  .og-grid { display: grid; grid-template-columns: 1fr 330px; gap: 52px; align-items: center; flex: 1; }
+  .og h1 { font-size: 52px; line-height: 1.12; margin: 0 0 30px; }
+  :lang(ar) .og h1 { font-size: 50px; line-height: 1.4; }
+  .og .kicker { font-size: 20px; margin-bottom: 16px; }
+  .og-proof { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .og-proof li { background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .12); border-radius: 14px; padding: 10px 14px; display: flex; flex-direction: column; }
+  .og-proof strong { font-size: 24px; color: #5fd6c4; line-height: 1.2; }
+  .og-proof span { font-size: 14px; color: #b9c1c9; line-height: 1.35; }
+  .og-proof .og-name { font-size: 13px; font-weight: 700; color: #8fa0ad; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
+  :lang(ar) .og-proof .og-name { text-transform: none; letter-spacing: 0; }
+  .og h1 { font-size: 46px; margin-bottom: 24px; }
+  :lang(ar) .og h1 { font-size: 44px; }
+  .og-portrait { width: 330px; height: 420px; object-fit: cover; object-position: 50% 15%; border-radius: 26px; border: 1px solid rgb(255 255 255 / .14); box-shadow: 0 30px 60px -30px rgb(0 0 0 / .8); }
+
   /* how it works */
   .steps5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 18px; }
   .s5 { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px; position: relative; box-shadow: var(--shadow); }
@@ -165,6 +198,89 @@
     </div>
   </div>
   <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span></span></div>
+</div>
+
+{% elif shot == "cover-docreader" %}
+<div class="frame cover">
+  <div class="cover-grid">
+    <div>
+      <h1>{{ t(p.title) }}</h1>
+      <p class="sub">{{ t({"en": "Passports, IDs, visas, ZATCA invoices and boarding passes", "ar": "الجوازات والهويات والتأشيرات وفواتير هيئة الزكاة وبطاقات صعود الطائرة"}) }}</p>
+    </div>
+    <div class="flow">
+      <div class="flow-card">
+        <h4>{{ icon("scan") }} {{ t({"en": "Passport photo · machine-readable lines", "ar": "صورة جواز · السطور المقروءة آليًا"}) }}</h4>
+        <p class="mrz">P&lt;UTOERIKSSON&lt;&lt;ANNA&lt;MARIA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>L898902C36UTO7408122F1204159ZE184226B&lt;&lt;&lt;&lt;&lt;10</p>
+      </div>
+      <div class="flow-card">
+        <h4>{{ icon("check") }} {{ t({"en": "Every field gets a status", "ar": "لكل معلومة حالة"}) }}</h4>
+        <div class="fields">
+          {% for label, value, st in [
+            ({"en": "Document number", "ar": "رقم الوثيقة"}, "L898902C3", "ok"),
+            ({"en": "Date of birth", "ar": "تاريخ الميلاد"}, "1974-08-12", "ok"),
+            ({"en": "Expiry date", "ar": "تاريخ الانتهاء"}, "2012-04-15", "ok"),
+            ({"en": "Name in Arabic", "ar": "الاسم بالعربية"}, "آنا ماريا", "read"),
+          ] %}
+          <div><span>{{ t(label) }}</span><bdi class="v">{{ value }}</bdi>
+            <span class="st st-{{ st }}">{{ t({"en": "✓ Verified", "ar": "✓ مُثبتة"} if st == "ok" else {"en": "Read · quick look", "ar": "مقروءة · نظرة سريعة"}) }}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="flow-card">
+        <h4>{{ icon("shield") }} {{ t({"en": "ZATCA tax invoice", "ar": "فاتورة ضريبية (هيئة الزكاة)"}) }}</h4>
+        <div class="fields"><div><span>{{ t({"en": "VAT 15%", "ar": "ضريبة 15%"}) }}</span><bdi class="v">{{ t({"en": "SAR 1,725.00", "ar": "1,725.00 ريال"}) }}</bdi><span class="st st-ok">{{ t({"en": "✓ Matches the QR", "ar": "✓ تطابق رمز QR"}) }}</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span></span></div>
+</div>
+
+{% elif shot == "cover-hotel" %}
+<div class="frame cover">
+  <div class="cover-grid">
+    <div>
+      <h1>{{ t(p.title) }}</h1>
+      <p class="sub">{{ t({"en": "119,000 bookings: what cancellations cost, who cancels, and who to ask for a deposit", "ar": "119 ألف حجز: كم تكلّف الإلغاءات، ومن يلغي، ومن نطلب منه العربون"}) }}</p>
+    </div>
+    <div class="flow">
+      <div class="flow-card">
+        <h4>{{ icon("search") }} {{ t({"en": "Who cancels", "ar": "من يلغي"}) }}</h4>
+        <div class="hbars">
+          {% for label, v in [
+            ({"en": "Guest cancelled before", "ar": "ضيف ألغى من قبل"}, 92),
+            ({"en": "Booked a year ahead", "ar": "حجز قبلها بسنة"}, 68),
+            ({"en": "Booked in the last week", "ar": "حجز في آخر أسبوع"}, 10),
+          ] %}
+          <div><span>{{ t(label) }}</span><span class="track"><i style="inline-size: {{ v }}%"></i></span><bdi>{{ v }}%</bdi></div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="flow-card">
+        <h4>{{ icon("coin") }} {{ t({"en": "Deposit policy, tested on 8 months of 2017", "ar": "سياسة العربون، مُختبرة على 8 أشهر من 2017"}) }}</h4>
+        <div class="fields">
+          <div><span>{{ t({"en": "Only risky bookings", "ar": "الحجوزات الخطرة فقط"}) }}</span><span></span><bdi class="money up">+€399k</bdi></div>
+          <div><span>{{ t({"en": "Every guest", "ar": "كل الضيوف"}) }}</span><span></span><bdi class="money down">−€199k</bdi></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span></span></div>
+</div>
+
+{% elif shot == "og" %}
+<div class="frame cover og">
+  <div class="og-grid">
+    <div>
+      <p class="kicker">{{ t(profile.name) }} · {{ t(profile.role) }}</p>
+      <h1>{{ t(profile.headline) }}</h1>
+      <ul class="og-proof" role="list">
+        {% for pr in projects[:4] if pr.stats %}{% set s = pr.stats[0] %}
+        <li><span class="og-name">{{ t(pr.short_title or pr.title) }}</span><strong>{{ stat_value(s, t) }}</strong><span>{{ t(s.label) }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <img class="og-portrait" src="{{ root }}assets/img/profile/{{ profile.portrait }}" alt="">
+  </div>
 </div>
 
 {% elif shot == "how-it-works" %}

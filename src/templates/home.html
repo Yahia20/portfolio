@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% from "_icons.html" import icon %}
-{% from "_parts.html" import stat, project_card %}
+{% from "_parts.html" import work_card, testimonial %}
 
 {% block main %}
 <section class="hero">
@@ -28,7 +28,24 @@
   </div>
 </section>
 
-<section class="section section-tint">
+{% if projects %}
+<section class="section section-tint" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title" id="work-title">{{ ui("selected_work") }}</h2>
+        <p class="section-sub">{{ ui("selected_sub") }}</p>
+      </div>
+      <a class="btn btn-ghost" href="{{ root }}{{ lang }}/projects/">{{ ui("all_projects") }} {{ icon("arrow", "icon icon-dir") }}</a>
+    </div>
+    <div class="grid grid-work">
+      {% for p in projects[:4] %}{{ work_card(p, t, ui, root, lang, cat_by_id) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
   <div class="wrap">
     <h2 class="section-title">{{ ui("what_i_do") }}</h2>
     <div class="grid grid-4">
@@ -37,11 +54,25 @@
         <span class="service-icon">{{ icon(s.icon) }}</span>
         <h3>{{ t(s.title) }}</h3>
         <p>{{ t(s.body) }}</p>
+        {% if s.proof %}
+        <p class="service-proof"><span>{{ ui("see_it_in") }}:</span>
+          {% for slug in s.proof %}{% set pr = project_by_slug[slug] %}<a href="{{ root }}{{ lang }}/projects/{{ slug }}/">{{ t(pr.short_title or pr.title) }}</a>{% endfor %}
+        </p>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
   </div>
 </section>
+
+{% if testimonials %}
+<section class="section section-tint" aria-labelledby="quotes-title">
+  <div class="wrap narrow">
+    <h2 class="section-title" id="quotes-title">{{ ui("testimonials") }}</h2>
+    {% for q in testimonials %}{{ testimonial(q, t) }}{% endfor %}
+  </div>
+</section>
+{% endif %}
 
 <section class="section">
   <div class="wrap cta-band reveal">

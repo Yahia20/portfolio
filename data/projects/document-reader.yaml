@@ -10,6 +10,7 @@ date: 2026-10
 title:
   en: Read IDs and invoices from a photo, and know which fields to trust
   ar: اقرأ الهويات والفواتير من صورة، واعرف أي البيانات تثق بها
+short_title: { en: "Document reader", ar: "قارئ المستندات" }
 tagline:
   en: "I built a reader for passports, ID cards, visas, ZATCA tax invoices and boarding passes. It checks every field before it reaches your system."
   ar: "بنيت قارئًا لجوازات السفر وبطاقات الهوية والتأشيرات وفواتير هيئة الزكاة وبطاقات صعود الطائرة، يتحقق من كل معلومة قبل أن تصل إلى نظامك."
@@ -21,8 +22,8 @@ role:
 cover:
   image: cover.png
   alt:
-    en: "Summary: 100% of verified fields correct on 600 test documents, 64% of fields need no person, 99.9% on real phone video of passports"
-    ar: "الخلاصة: 100% من البيانات المُثبتة صحيحة على 600 مستند اختبار، و64% من البيانات لا تحتاج موظفًا، و99.9% على فيديوهات جوال حقيقية لجوازات السفر"
+    en: "A passport's machine-readable lines turned into fields marked verified, and an invoice's VAT matched to its ZATCA QR code"
+    ar: "سطور جواز السفر المقروءة آليًا تتحول إلى معلومات مُثبتة، وضريبة فاتورة تُطابَق مع رمز QR الخاص بهيئة الزكاة"
 
 stats:
   - display: { en: "100%", ar: "100%" }
@@ -137,6 +138,9 @@ links:
 
 gallery:
   - image: cover.png
+    layout: cover-docreader
+    caption: { en: "At a glance", ar: "نظرة سريعة" }
+  - image: summary.png
     layout: own
     caption: { en: "The short answer and the headline numbers", ar: "الخلاصة والأرقام الرئيسية" }
   - image: example.png

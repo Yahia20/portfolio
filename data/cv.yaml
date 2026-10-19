@@ -1,0 +1,79 @@
+# The downloadable CV (English, one A4 page). Rebuild the PDF after editing:
+#     python src/build.py --cv
+# Contact details, education, certifications and languages come from site.yaml and profile.yaml.
+# Only claims I can back up in an interview go here.
+
+headline: AI Engineer · LLMs, Computer Vision & Data Analytics
+
+summary: >-
+  AI engineer working remotely with a travel agency in Saudi Arabia. I build systems that turn
+  Arabic conversations, documents and business data into numbers people can act on, and I test
+  them on data they have never seen before trusting the result. Recent work: an Arabic data
+  assistant that is 97.6% correct on a 200-question test, a document reader whose verified fields
+  were 100% correct on 600 test documents, and a revenue analysis of 119,000 hotel bookings.
+
+skills:
+  - group: LLMs & AI
+    items: LLMs, RAG, AI agents, LangChain, LangGraph, prompt engineering, LLM evaluation, Claude API
+  - group: Deep learning & vision
+    items: PyTorch, Hugging Face Transformers, fine-tuning, OCR (PP-OCR), OpenCV, ONNX Runtime
+  - group: Machine learning
+    items: scikit-learn, XGBoost, LightGBM, forecasting, time-based validation, leakage checks
+  - group: Data & BI
+    items: SQL, PostgreSQL, DuckDB, dbt, pandas, Power BI, Apache Superset, Plotly
+  - group: Engineering
+    items: Python, FastAPI, Docker, n8n, Railway, Git, GitHub
+
+experience:
+  - role: Data Analyst / AI Researcher
+    org: OrenGreenberg
+    place: Remote · Serbia
+    period: Jul 2026 – Present
+    points:
+      - Helping explore how AI is changing go-to-market and marketing work.
+  - role: AI Engineer
+    org: Travel Gate KSA
+    place: Remote · Riyadh, Saudi Arabia
+    period: Nov 2025 – Present
+    points:
+      - Built an LLM tool that analyses Arabic customer-support chats to score agent quality and surface service insights for managers.
+      - Built a pipeline that collects CRM conversations into a PostgreSQL database and enriches them with AI analysis (Python, FastAPI, n8n, Railway).
+      - Designed dashboards in Bitrix24 BI Builder (Apache Superset) tracking the sales pipeline, agent performance and marketing conversion across 9,000+ contacts.
+      - Delivered a demand analysis and 3-month forecast over 7,953 deals that supported a partnership decision with a major airline.
+      - Found and corrected misleading KPIs caused by data-quality issues, including an inflated conversion rate.
+  - role: AI Engineer Trainee
+    org: National Telecommunication Institute (NTI)
+    place: Alexandria, Egypt
+    period: Jul 2025 – Oct 2025
+    points:
+      - 540-hour "Hire Ready" programme in AI and data engineering.
+      - Built the charts layer of a team project that gathers competitor information from the web and turns it into market insights.
+
+projects:
+  - name: KSA Document Reader
+    stack: Python, OpenCV, PP-OCR, ONNX Runtime
+    link: github.com/Yahia20/ksa-document-reader
+    body: >-
+      Reads passports, IDs, visas, ZATCA invoices and boarding passes (10 document types) from
+      photos and gives every field a status: verified, read or for review. 100% of verified fields
+      correct on a frozen 600-document test; 99.86% on 3,315 real phone-video frames (MIDV-500).
+  - name: Ask Your Data — Arabic data assistant
+    stack: Python, LLMs, SQL, PostgreSQL
+    link: github.com/Yahia20/ask-your-data
+    body: >-
+      Managers ask business questions in Saudi dialect or formal Arabic and get the number, a chart
+      and the query behind it. 31 KPIs defined once in a semantic layer; 97.6% correct on a
+      200-question test written before the code; asks a question back instead of guessing.
+  - name: Hotel Booking & Cancellation Analytics
+    stack: SQL, DuckDB, dbt, Python, LightGBM
+    link: github.com/Yahia20/hotel-revenue-analytics
+    body: >-
+      End-to-end analysis of 119,000+ bookings with 28 automated data checks. Cancellation model
+      evaluated month by month on an unseen year (ROC AUC 0.85); a targeted deposit policy would
+      have added an estimated €399k in eight months, where a deposit for everyone loses €199k.
+  - name: Arabic Call Analyzer
+    stack: Python, Hugging Face, LangChain, Pydantic
+    link: github.com/Yahia20/arabic-call-analyzer
+    body: >-
+      Call-centre QA for Arabic support calls: transcript, summary, call reason, whether the problem
+      was solved, and an agent scorecard with a quote from the call backing every score.

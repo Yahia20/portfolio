@@ -40,6 +40,8 @@
   "alert": '<path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17v.01"/>',
   "info": '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/>',
   "plus": '<path d="M12 5v14M5 12h14"/>',
+  "download": '<path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/>',
+  "file": '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/>',
 } %}
 {% macro icon(name, cls="icon") -%}
 <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{{ ICONS.get(name, ICONS["spark"]) | safe }}</svg>

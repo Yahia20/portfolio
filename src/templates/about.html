@@ -20,6 +20,7 @@
       {% for para in profile.about %}<p class="prose">{{ t(para) }}</p>{% endfor %}
       <div class="actions">
         <a class="btn btn-primary" href="{{ root }}{{ lang }}/contact/">{{ icon("mail") }} {{ ui("get_in_touch") }}</a>
+        {% if cv_url %}<a class="btn btn-ghost" href="{{ cv_url }}" download>{{ icon("download") }} {{ ui("download_cv") }}</a>{% endif %}
         <a class="btn btn-ghost" href="{{ root }}{{ lang }}/projects/">{{ ui("see_work") }} {{ icon("arrow", "icon icon-dir") }}</a>
       </div>
     </div>

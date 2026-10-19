@@ -6,7 +6,7 @@
 
 {% block title %}{{ t(p.title) }} · {{ t(profile.name) }}{% endblock %}
 {% block description %}{{ t(p.tagline) }}{% endblock %}
-{% block og_image %}<meta property="og:image" content="{{ root }}assets/projects/{{ p.slug }}/{{ lang }}/{{ p.cover.image }}">{% endblock %}
+{% block og_image %}<meta property="og:image" content="{{ absolute('assets/projects/' ~ p.slug ~ '/' ~ lang ~ '/' ~ p.cover.image) }}">{% endblock %}
 
 {% block main %}
 <article class="project">

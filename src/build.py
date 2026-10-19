@@ -1,7 +1,8 @@
 """Build the site from data/ into dist/.
 
     python src/build.py            # validate data, render every page in both languages
-    python src/build.py --shots    # also render the project images (PNG) with headless Chrome
+    python src/build.py --shots    # also render the project and share images (PNG) with headless Chrome
+    python src/build.py --cv       # also print the CV (data/cv.yaml) to a PDF with headless Chrome
     python src/build.py --serve    # build, then preview on http://localhost:8000
 
 Pages use relative links only, so dist/ works from any host, any sub-path, or straight off disk.
@@ -23,7 +24,7 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined
 from pydantic import ValidationError
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from schema import LANGS, Category, Profile, Project, Site  # noqa: E402
+from schema import CV, LANGS, Category, Profile, Project, Site  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -32,6 +33,7 @@ DIST = ROOT / "dist"
 ASSETS = ROOT / "assets"
 
 SHOT_SIZE = (1200, 675)
+OG_SIZE = (1200, 630)      # the preview image link-sharing sites (LinkedIn, WhatsApp, X) show
 CHROME_PATHS = [
     Path(r"C:\Program Files\Google\Chrome\Application\chrome.exe"),
     Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"),
@@ -61,6 +63,18 @@ UI = {
     "see_work": {"en": "See my work", "ar": "شاهد أعمالي"},
     "get_in_touch": {"en": "Get in touch", "ar": "تواصل معي"},
     "featured": {"en": "Featured project", "ar": "المشروع المميز"},
+    "selected_work": {"en": "Selected work", "ar": "أعمال مختارة"},
+    "selected_sub": {
+        "en": "Real problems, measured results. Each one is written up for the people who would use it.",
+        "ar": "مشاكل حقيقية ونتائج مقاسة. كل مشروع مكتوب لمن سيستخدمه.",
+    },
+    "all_projects": {"en": "All projects", "ar": "كل المشاريع"},
+    "see_it_in": {"en": "See it in", "ar": "شاهده في"},
+    "download_cv": {"en": "Download CV", "ar": "تحميل السيرة الذاتية"},
+    "cv_title": {"en": "My CV", "ar": "سيرتي الذاتية"},
+    "view": {"en": "View", "ar": "عرض"},
+    "cv_note": {"en": "One page · PDF", "ar": "صفحة واحدة · PDF بالإنجليزية"},
+    "testimonials": {"en": "What people I work with say", "ar": "ماذا يقول من عملت معهم"},
     "read_story": {"en": "Read the full story", "ar": "اقرأ القصة كاملة"},
     "what_i_do": {"en": "What I can help with", "ar": "ما الذي أستطيع مساعدتك فيه"},
     "all": {"en": "All", "ar": "الكل"},
@@ -193,6 +207,11 @@ def load_all():
                 if not (reports / f"{call.file}.json").exists():
                     problems.append(f"{f}: demo call '{call.file}' has no report in {reports.relative_to(ROOT)}")
 
+    for svc in profile.services:
+        for slug in svc.proof:
+            if slug not in slugs:
+                problems.append(f"profile.yaml: service '{svc.title.en}' points to project '{slug}', which doesn't exist ({', '.join(slugs)})")
+
     if profile.portrait and not (ASSETS / "img" / "profile" / profile.portrait).exists():
         problems.append(f"profile.yaml: portrait '{profile.portrait}' not found in assets/img/profile/")
     for photo in profile.gallery:
@@ -204,6 +223,10 @@ def load_all():
 
     projects.sort(key=lambda p: (cat_ids.index(p.category), p.order, p.slug))
     return site, profile, categories, projects
+
+
+def load_cv() -> CV:
+    return _load(DATA / "cv.yaml", CV)
 
 
 def load_demo(project: Project, lang: str) -> dict:
@@ -306,6 +329,9 @@ def render_all(env: Environment, site, profile, categories, projects) -> list[st
     used_cats = [c for c in categories if any(p.category == c.id for p in projects)]
     featured = next((p for p in projects if p.featured), projects[0] if projects else None)
     cat_by_id = {c.id: c for c in categories}
+    project_by_slug = {p.slug: p for p in projects}
+    testimonials = [q for q in profile.testimonials if q.approved]
+    base = site.base_url.rstrip("/")
 
     for lang in LANGS:
         other = "ar" if lang == "en" else "en"
@@ -318,13 +344,19 @@ def render_all(env: Environment, site, profile, categories, projects) -> list[st
             rel = page_path(lang, kind, slug)
             depth = rel.count("/")
             root = "../" * depth
+            def absolute(path: str, _root=root) -> str:
+                """Link-sharing sites need full URLs; locally (no base_url) fall back to relative."""
+                return f"{base}/{path}" if base else f"{_root}{path}"
+
             html = env.get_template(template).render(
                 lang=lang, other=other, dir="rtl" if lang == "ar" else "ltr",
                 t=lambda text: text.get(lang), ui=ui, root=root, kind=kind,
                 here=page_path(lang, kind, slug).removesuffix("index.html"),
                 there=page_path(other, kind, slug).removesuffix("index.html"),
                 site=site, profile=profile, categories=used_cats, cat_by_id=cat_by_id,
-                projects=projects, featured=featured, year=date.today().year, **ctx,
+                projects=projects, featured=featured, year=date.today().year,
+                project_by_slug=project_by_slug, testimonials=testimonials, absolute=absolute,
+                cv_url=f"{root}assets/{site.cv}" if site.cv else "", **ctx,
             )
             out = DIST / rel
             out.parent.mkdir(parents=True, exist_ok=True)
@@ -392,19 +424,60 @@ def render_shots(env: Environment, site, profile, projects) -> list[Path]:
                 html_path.write_text(tpl.render(
                     lang=lang, dir="rtl" if lang == "ar" else "ltr", t=lambda x, _l=lang: x.get(_l),
                     ui=lambda k, s=None, _l=lang: (UI[k] if s is None else UI[k][s])[_l],
-                    shot=name, project=p, demo=demo, examples=examples, profile=profile, site=site, root="../../../",
+                    shot=name, project=p, demo=demo, examples=examples, profile=profile, site=site, projects=projects, root="../../../",
                     width=SHOT_SIZE[0], height=SHOT_SIZE[1],
                 ), encoding="utf-8")
                 png = ASSETS / "projects" / p.slug / lang / item.image
                 png.parent.mkdir(parents=True, exist_ok=True)
-                subprocess.run([
-                    str(chrome), "--headless=new", "--disable-gpu", "--hide-scrollbars",
-                    "--force-device-scale-factor=2", f"--window-size={SHOT_SIZE[0]},{SHOT_SIZE[1]}",
-                    "--virtual-time-budget=8000", f"--screenshot={png}", html_path.as_uri(),
-                ], check=True, capture_output=True, timeout=120)
+                _screenshot(chrome, html_path, png, SHOT_SIZE)
                 made.append(png)
                 print(f"  image  {png.relative_to(ROOT)}")
+
+    # The share image for the site's own pages (project pages share their cover instead).
+    for lang in LANGS:
+        html_path = DIST / "shots" / "_site" / lang / "og.html"
+        html_path.parent.mkdir(parents=True, exist_ok=True)
+        html_path.write_text(tpl.render(
+            lang=lang, dir="rtl" if lang == "ar" else "ltr", t=lambda x, _l=lang: x.get(_l),
+            ui=lambda k, s=None, _l=lang: (UI[k] if s is None else UI[k][s])[_l],
+            shot="og", project=None, demo=None, examples=None, profile=profile, site=site, projects=projects,
+            root="../../../", width=OG_SIZE[0], height=OG_SIZE[1],
+        ), encoding="utf-8")
+        png = ASSETS / "og" / f"{lang}.png"
+        png.parent.mkdir(parents=True, exist_ok=True)
+        _screenshot(chrome, html_path, png, OG_SIZE, scale=1)
+        made.append(png)
+        print(f"  image  {png.relative_to(ROOT)}")
     return made
+
+
+def _screenshot(chrome: Path, html: Path, png: Path, size: tuple[int, int], scale: int = 2) -> None:
+    subprocess.run([
+        str(chrome), "--headless=new", "--disable-gpu", "--hide-scrollbars",
+        f"--force-device-scale-factor={scale}", f"--window-size={size[0]},{size[1]}",
+        "--virtual-time-budget=8000", f"--screenshot={png}", html.as_uri(),
+    ], check=True, capture_output=True, timeout=120)
+
+
+def render_cv(env: Environment, site, profile) -> Path:
+    """Print data/cv.yaml to a one-page A4 PDF at assets/<site.cv>."""
+    chrome = find_chrome()
+    if not chrome:
+        raise SystemExit("--cv needs Chrome or Edge installed")
+    if not site.cv:
+        raise SystemExit("--cv: set `cv:` in data/site.yaml to the PDF's path under assets/")
+    html_path = DIST / "_cv" / "cv.html"
+    html_path.parent.mkdir(parents=True, exist_ok=True)
+    html_path.write_text(env.get_template("cv.html").render(cv=load_cv(), site=site, profile=profile), encoding="utf-8")
+    pdf = ASSETS / site.cv
+    pdf.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run([
+        str(chrome), "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
+        f"--print-to-pdf={pdf}", html_path.as_uri(),
+    ], check=True, capture_output=True, timeout=120)
+    shutil.rmtree(html_path.parent)
+    print(f"  cv     {pdf.relative_to(ROOT)}")
+    return pdf
 
 
 # --- entry point ------------------------------------------------------------------------------
@@ -412,6 +485,7 @@ def render_shots(env: Environment, site, profile, projects) -> list[Path]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--shots", action="store_true", help="also render project images with headless Chrome")
+    ap.add_argument("--cv", action="store_true", help="also print the CV to PDF with headless Chrome")
     ap.add_argument("--serve", action="store_true", help="preview on http://localhost:8000 after building")
     ap.add_argument("--port", type=int, default=8000)
     args = ap.parse_args()
@@ -430,7 +504,14 @@ def main() -> int:
     copy_static()
     if args.shots:
         render_shots(env, site, profile, projects)
-        copy_static()  # pick up the fresh images
+        shutil.rmtree(DIST / "shots")  # the HTML behind the images is not part of the site
+    if args.cv:
+        render_cv(env, site, profile)
+    if args.shots or args.cv:
+        copy_static()  # pick up the fresh files
+    if site.cv and not (ASSETS / site.cv).exists():
+        print(f"data/site.yaml: cv '{site.cv}' not found in assets/ — run `python src/build.py --cv` to make it")
+        return 1
     pages = render_all(env, site, profile, categories, projects)
     print(f"built {len(pages)} pages · {len(projects)} project(s) · {len(LANGS)} languages → {DIST.relative_to(ROOT)}/")
 

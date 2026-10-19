@@ -70,28 +70,34 @@ services:
     body:
       en: Every conversation transcribed and scored against your own checklist, with the evidence quoted.
       ar: كل محادثة تُفرَّغ وتُقيَّم حسب معاييرك أنت، مع اقتباس الدليل.
+    proof: [arabic-call-qa]
   - icon: chat
     title: { en: "Assistants that know your business", ar: "مساعد ذكي يعرف شركتك" }
     body:
-      en: A chatbot that answers from your policies and documents, and hands over to a person when it isn't sure.
-      ar: روبوت محادثة يجيب من سياساتك ومستنداتك، ويحوّل لموظف عندما لا يكون متأكدًا.
+      en: An assistant that answers from your own data and documents, and asks or hands over to a person when it isn't sure.
+      ar: مساعد يجيب من بياناتك ومستنداتك أنت، ويسأل أو يحوّل لموظف عندما لا يكون متأكدًا.
+    proof: [ask-your-data, document-reader]
   - icon: chart
     title: { en: "Dashboards & forecasts", ar: "لوحات متابعة وتوقعات" }
     body:
       en: Clean numbers, clear dashboards and demand forecasts your management can decide on.
       ar: أرقام نظيفة ولوحات واضحة وتوقعات للطلب تستطيع إدارتك أن تتخذ قرارها بناءً عليها.
+    proof: [hotel-cancellation-analytics]
   - icon: check
     title: { en: "Choosing the right AI model", ar: "اختيار نموذج الذكاء الاصطناعي المناسب" }
     body:
       en: A fair test of which model does your task best and what it will cost you each month.
       ar: اختبار عادل لأي نموذج يؤدي مهمتك بأفضل شكل، وكم سيكلفك شهريًا.
+    proof: [ask-your-data]
 
 experience:
   - org: { en: "OrenGreenberg", ar: "OrenGreenberg" }
     role: { en: "Data Analyst / AI Researcher", ar: "محلل بيانات / باحث ذكاء اصطناعي" }
     period: { en: "Jul 2026 – present", ar: "يوليو 2026 – الآن" }
     place: { en: "Remote · Serbia", ar: "عن بُعد · صربيا" }
-    points: []
+    points:
+      - en: Helping explore how AI is changing go-to-market and marketing work.
+        ar: أساعد في استكشاف كيف يغيّر الذكاء الاصطناعي عمل التسويق واستراتيجيات الوصول إلى السوق.
   - org: { en: "Travel Gate KSA", ar: "ترافل جيت" }
     role: { en: "AI Engineer", ar: "مهندس ذكاء اصطناعي" }
     period: { en: "Nov 2025 – present", ar: "نوفمبر 2025 – الآن" }
@@ -143,3 +149,18 @@ skills:
 languages:
   - { name: { en: Arabic, ar: العربية }, level: { en: Native, ar: اللغة الأم } }
   - { name: { en: English, ar: الإنجليزية }, level: { en: Professional working, ar: مستوى عمل احترافي } }
+
+# Quotes from people I worked with. Each stays hidden until `approved: true`, which is set only
+# after the person has read this exact wording and agreed to it being public.
+testimonials:
+  - quote:
+      en: >-
+        Yahia is a precise and dependable engineer. His analysis and dashboards gave our sales team
+        clear numbers to base decisions on, and he always explained his results in plain terms.
+        I recommend him with confidence.
+      ar: >-
+        يحيى مهندس دقيق ويُعتمد عليه. قدّمت تحليلاته ولوحات المتابعة التي بناها لفريق المبيعات
+        أرقامًا واضحة نبني عليها قراراتنا، وكان دائمًا يشرح نتائجه بوضوح. أوصي به بكل ثقة.
+    name: { en: "Mohamed Amin", ar: "أ. محمد أمين" }
+    title: { en: "Head of Sales, Travel Gate KSA", ar: "رئيس قسم المبيعات، ترافل جيت" }
+    approved: false

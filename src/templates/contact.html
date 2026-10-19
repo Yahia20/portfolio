@@ -30,6 +30,17 @@
     </div>
     {% endif %}
 
+    {% if cv_url %}
+    <div class="email-card">
+      <span class="service-icon">{{ icon("file") }}</span>
+      <span class="email-addr cv-label">{{ ui("cv_title") }} <span class="muted small">{{ ui("cv_note") }}</span></span>
+      <div class="email-actions">
+        <a class="btn btn-ghost" href="{{ cv_url }}" target="_blank" rel="noopener">{{ icon("external") }} {{ ui("view") }}</a>
+        <a class="btn btn-primary" href="{{ cv_url }}" download>{{ icon("download") }} {{ ui("download_cv") }}</a>
+      </div>
+    </div>
+    {% endif %}
+
     <h2 class="section-title small-title">{{ ui("elsewhere") }}</h2>
     <ul class="link-cards" role="list">
       {% for l in site.contact.links %}

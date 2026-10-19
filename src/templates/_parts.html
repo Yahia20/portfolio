@@ -18,6 +18,33 @@
 </div>
 {%- endmacro %}
 
+{# Compact card for the home page: picture, title and the one number that sells it. #}
+{% macro work_card(p, t, ui, root, lang, cat_by_id) -%}
+<article class="card work-card reveal">
+  <a class="card-link" href="{{ root }}{{ lang }}/projects/{{ p.slug }}/">
+    <div class="card-media">
+      <img src="{{ root }}assets/projects/{{ p.slug }}/{{ lang }}/{{ p.cover.image }}" alt="{{ t(p.cover.alt) }}" loading="lazy" width="1200" height="675">
+    </div>
+    <div class="card-body">
+      <span class="work-cat">{{ icon(cat_by_id[p.category].icon) }}{{ t(cat_by_id[p.category].name) }}</span>
+      <h3 class="card-title">{{ t(p.title) }}</h3>
+      {% if p.stats %}{% set s = p.stats[0] %}
+      <p class="work-stat"><strong>{{ stat_value(s, t) }}</strong><span>{{ t(s.label) }}</span></p>
+      {% endif %}
+      <span class="card-cta">{{ ui("read_story") }} {{ icon("arrow", "icon icon-dir") }}</span>
+    </div>
+  </a>
+</article>
+{%- endmacro %}
+
+{% macro testimonial(q, t) -%}
+<figure class="quote-card reveal">
+  <span class="quote-mark" aria-hidden="true">{{ icon("quote") }}</span>
+  <blockquote><p>{{ t(q.quote) }}</p></blockquote>
+  <figcaption><strong>{{ t(q.name) }}</strong><span>{{ t(q.title) }}</span></figcaption>
+</figure>
+{%- endmacro %}
+
 {# Status badges ("Live" / "Completed") are not shown on the site; `status` stays in the YAML as data. #}
 {% macro status_badge(status, ui) -%}{%- endmacro %}
 

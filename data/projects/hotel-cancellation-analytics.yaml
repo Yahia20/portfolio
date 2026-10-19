@@ -10,6 +10,7 @@ date: 2026-10
 title:
   en: Stop losing money to hotel cancellations
   ar: أوقف خسارة الأموال بسبب إلغاء حجوزات الفنادق
+short_title: { en: "Hotel cancellation analysis", ar: "تحليل إلغاءات الفنادق" }
 tagline:
   en: "I analysed 119,000 hotel bookings to find out what cancellations cost, who cancels, and what the hotel should do about it."
   ar: "حلّلت 119 ألف حجز فندقي لأعرف كم تكلّف الإلغاءات، ومن الذي يلغي، وماذا يجب أن يفعل الفندق."
@@ -21,8 +22,8 @@ role:
 cover:
   image: cover.png
   alt:
-    en: "Summary: 37% of bookings cancelled, worth €16.7M; a deposit for risky bookings earns €399k, a deposit for everyone loses €199k"
-    ar: "الخلاصة: 37% من الحجوزات أُلغيت بقيمة 16.7 مليون يورو؛ العربون للحجوزات الخطرة يربح 399 ألف يورو، والعربون للجميع يخسر 199 ألف يورو"
+    en: "Who cancels (92% of past cancellers, 68% of bookings a year ahead, 10% of last-week bookings) and the deposit result: +€399k for risky bookings only, −€199k for everyone"
+    ar: "من يلغي (92% ممن ألغوا سابقًا، و68% من الحجوزات قبلها بسنة، و10% من حجوزات آخر أسبوع) ونتيجة العربون: +399 ألف € للحجوزات الخطرة فقط، و−199 ألف € للجميع"
 
 stats:
   - display: { en: "€399k", ar: "399 ألف €" }
@@ -122,8 +123,8 @@ tech:
       ar: "تدقيق التسريب: الأعمدة التي تُملأ بعد الحجز (المواقف، والغرفة المخصصة، وتعديلات الحجز، والدولة المصححة) مستبعدة. تضخّم النتيجة بسببها وبسبب التقسيم العشوائي مُقاس ومنشور (77.6% صادقة مقابل 88.7%)."
     - en: "Monthly walk-forward scoring: each 2017 month is scored by a LightGBM model retrained on all earlier arrivals. ROC AUC 0.850, Brier 0.150, calibration checked per risk band."
       ar: "تقييم شهري متتابع (walk-forward): كل شهر في 2017 يقيّمه نموذج LightGBM أُعيد تدريبه على كل الوصولات السابقة. ROC AUC بقيمة 0.850، وBrier بقيمة 0.150، مع فحص المعايرة لكل شريحة خطر."
-    - en: "Policy backtest: threshold chosen on Sep–Dec 2016, applied unchanged to 2017, with a sensitivity grid over walk-away and resale rates. One command rebuilds everything in about two minutes on a laptop."
-      ar: "اختبار السياسة تاريخيًا: الحد اختير على سبتمبر–ديسمبر 2016 وطُبّق دون تغيير على 2017، مع شبكة حساسية لنسب الرفض وإعادة البيع. أمر واحد يعيد بناء كل شيء في حوالي دقيقتين على لابتوب."
+    - en: "Policy backtest: threshold chosen on Sep–Dec 2016, applied unchanged to 2017, with a sensitivity grid over walk-away and resale rates. One command rebuilds everything in about two minutes."
+      ar: "اختبار السياسة تاريخيًا: الحد اختير على سبتمبر–ديسمبر 2016 وطُبّق دون تغيير على 2017، مع شبكة حساسية لنسب الرفض وإعادة البيع. أمر واحد يعيد بناء كل شيء في حوالي دقيقتين."
 
 links:
   - kind: live
@@ -135,6 +136,9 @@ links:
 
 gallery:
   - image: cover.png
+    layout: cover-hotel
+    caption: { en: "At a glance", ar: "نظرة سريعة" }
+  - image: summary.png
     layout: own
     caption: { en: "The short answer and the headline numbers", ar: "الخلاصة والأرقام الرئيسية" }
   - image: drivers.png

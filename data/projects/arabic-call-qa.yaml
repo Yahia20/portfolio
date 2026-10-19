@@ -12,6 +12,7 @@ date: 2026-09
 title:
   en: Every customer call, reviewed automatically
   ar: كل مكالمة عميل تُراجَع تلقائيًا
+short_title: { en: "Call quality review", ar: "مراجعة جودة المكالمات" }
 tagline:
   en: An AI quality supervisor for Arabic call centres — it listens to every call, scores it against your checklist, and shows the evidence.
   ar: مشرف جودة ذكي لمراكز الاتصال العربية — يسمع كل مكالمة ويقيّمها حسب معاييرك ويعرض الدليل.

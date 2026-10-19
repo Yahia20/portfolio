@@ -67,6 +67,11 @@ class Nav(Strict):
     contact: Text
 
 
+class Analytics(Strict):
+    """Visitor counting. Empty = off. GoatCounter is free and sets no cookies."""
+    goatcounter: str = ""   # the site code from https://<code>.goatcounter.com
+
+
 class Site(Strict):
     base_url: str = ""
     default_lang: Literal["en", "ar"] = "ar"
@@ -74,6 +79,8 @@ class Site(Strict):
     description: Text
     nav: Nav
     contact: Contact
+    cv: str = ""            # PDF under assets/, offered for download on About and Contact
+    analytics: Analytics = Analytics()
 
 
 # --- profile.yaml ----------------------------------------------------------------------------
@@ -88,6 +95,7 @@ class Service(Strict):
     icon: str
     title: Text
     body: Text
+    proof: list[str] = []   # project slugs that show this service in action
 
 
 class Job(Strict):
@@ -120,6 +128,15 @@ class Language(Strict):
     level: Text
 
 
+class Testimonial(Strict):
+    """A quote from someone I worked with. Shown only once `approved` is true — set it after
+    the person has read the exact wording and agreed to it being public."""
+    quote: Text
+    name: Text
+    title: Text
+    approved: bool = False
+
+
 class Profile(Strict):
     name: Text
     role: Text
@@ -137,6 +154,40 @@ class Profile(Strict):
     certifications: list[Certification]
     skills: list[SkillGroup]
     languages: list[Language]
+    testimonials: list[Testimonial] = []
+
+
+# --- cv.yaml ---------------------------------------------------------------------------------
+# The downloadable CV. English only: it is written for recruiters, and the facts it shares with
+# the site (contact, education, certifications, languages) are read from site.yaml and profile.yaml.
+
+class CVSkill(Strict):
+    group: str
+    items: str
+
+
+class CVJob(Strict):
+    role: str
+    org: str
+    place: str
+    period: str
+    points: list[str]
+
+
+class CVProject(Strict):
+    name: str
+    stack: str
+    link: str = ""
+    body: str
+
+
+class CV(Strict):
+    headline: str
+    summary: str
+    skills: list[CVSkill]
+    experience: list[CVJob]
+    projects: list[CVProject]
+    training: list[str] = []
 
 
 # --- categories.yaml -------------------------------------------------------------------------
@@ -288,6 +339,7 @@ class Project(Strict):
     order: int = 100
     date: str
     title: Text
+    short_title: Text | None = None   # a few words, for links that point to the project
     tagline: Text
     client: dict[str, Text] | None = None
     role: Text

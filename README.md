@@ -8,7 +8,8 @@ YAML files in `data/`; the build checks them against a schema and turns them int
 ```bash
 pip install -r requirements.txt
 python src/build.py --serve        # build + preview on http://localhost:8000
-python src/build.py --shots        # also re-render the project images (needs Chrome or Edge)
+python src/build.py --shots        # also re-render the project images and share images (needs Chrome or Edge)
+python src/build.py --cv           # also print the CV from data/cv.yaml to assets/cv/ (needs Chrome or Edge)
 python -m pytest                   # data and build checks
 ```
 
@@ -20,7 +21,8 @@ The output in `dist/` is plain HTML/CSS/JS with relative links, so it can be hos
 ```
 data/
   site.yaml             title, navigation labels, contact links
-  profile.yaml          about me, services, experience, skills, certifications, photos
+  profile.yaml          about me, services, experience, skills, certifications, photos, testimonials
+  cv.yaml               the downloadable one-page CV (English)
   categories.yaml       project categories, in display order
   projects/<slug>.yaml  one file per project — the file name is the URL
   demos/<slug>/         raw output a project page reads (e.g. the call-QA reports)
@@ -57,6 +59,16 @@ data\projects\my-project.yaml:
 
 Put them in `assets/img/profile/`, then in `data/profile.yaml` set `portrait: portrait.jpg`
 and add entries under `gallery:`. Until a portrait is set, the site shows initials.
+
+## Testimonials
+
+Add them under `testimonials:` in `data/profile.yaml`. Each one stays hidden until you set
+`approved: true` — do that only after the person has read the exact wording and agreed.
+
+## Visitor counting
+
+Create a free account at goatcounter.com, then put your site code in `data/site.yaml` under
+`analytics: goatcounter:`. Leave it empty to switch counting off.
 
 ## Publish
 

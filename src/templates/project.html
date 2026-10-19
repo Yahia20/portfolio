@@ -251,7 +251,7 @@
           <tbody>
             {% for r in examples.rows %}
             <tr data-disagree="{{ 'true' if r.disagree else 'false' }}">
-              <td class="ex-text" lang="en" dir="ltr">{{ r.text }}</td>
+              <td class="ex-text" dir="auto">{{ r.text }}</td>
               <td class="ex-expected">{{ r.expected }}</td>
               {% for a in r.answers %}<td class="ex-answer {{ 'is-ok' if a.ok else 'is-miss' }}">{{ icon("check" if a.ok else "x") }}<span>{{ a.label }}</span></td>{% endfor %}
             </tr>

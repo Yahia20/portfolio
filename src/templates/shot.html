@@ -60,6 +60,26 @@
   .money.up { color: #5fd6c4; }
   .money.down { color: #ff8073; }
 
+  /* support assistant and model covers */
+  .cover h1.h1-sm { font-size: 40px; }
+  :lang(ar) .cover h1.h1-sm { font-size: 38px; }
+  .bubble { max-width: 88%; padding: 12px 16px; border-radius: 18px; font-size: 16px; line-height: 1.6; color: #eef0f2; font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif; }
+  .bubble.cust { background: rgb(255 255 255 / .1); border: 1px solid rgb(255 255 255 / .14); justify-self: start; }
+  .bubble.bot { background: rgb(60 196 177 / .14); border: 1px solid rgb(60 196 177 / .35); justify-self: end; }
+  .bubble.bot b { color: #5fd6c4; }
+  .bubble .st { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; }
+  .bubble .st .icon { width: 14px; height: 14px; }
+  .bubble.handoff { background: rgb(240 179 91 / .1); border-color: rgb(240 179 91 / .35); padding: 8px 12px; }
+  .bubble.handoff .st { margin: 0; }
+  .models2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .mcard h4 { font-size: 17px; color: #dfe4e8; margin-bottom: 12px; }
+  .mcard.best { border-color: rgb(60 196 177 / .6); background: rgb(60 196 177 / .1); }
+  .mrow { display: flex; flex-direction: column; margin-bottom: 10px; }
+  .mrow bdi { font-size: 26px; font-weight: 700; line-height: 1.15; }
+  .mrow bdi.up { color: #5fd6c4; }
+  .mrow bdi.down { color: #ff8073; }
+  .mrow span { font-size: 13.5px; color: #b9c1c9; }
+
   /* share image (1200×630) */
   .og { padding: 60px 64px; }
   .og-grid { display: grid; grid-template-columns: 1fr 330px; gap: 52px; align-items: center; flex: 1; }
@@ -262,6 +282,54 @@
           <div><span>{{ t({"en": "Every guest", "ar": "كل الضيوف"}) }}</span><span></span><bdi class="money down">−€199k</bdi></div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span></span></div>
+</div>
+
+{% elif shot == "cover-support" %}
+<div class="frame cover">
+  <div class="cover-grid">
+    <div>
+      <h1 class="h1-sm">{{ t(p.title) }}</h1>
+      <p class="sub">{{ t({"en": "Saudi dialect, formal Arabic or English · every answer checked by code", "ar": "لهجة سعودية أو فصحى أو إنجليزي · كل إجابة يراجعها الكود"}) }}</p>
+    </div>
+    <div class="flow">
+      <div class="bubble cust" lang="ar" dir="rtl">ابي اغير موعد رحلتي وتذكرتي توفير، كم الرسوم؟</div>
+      <div class="bubble bot" lang="ar" dir="rtl">رسوم التغيير <b>250 ريال</b> لكل راكب، بالإضافة لفرق السعر إن وُجد.
+        <span class="st st-ok">✓ {{ t({"en": "verified in the policy", "ar": "مُتحقق منها في السياسة"}) }}</span></div>
+      <div class="bubble cust" lang="ar" dir="rtl">ابي تعويض عن الفندق، كان وسخ</div>
+      <div class="bubble bot handoff"><span class="st st-read">{{ icon("user") }} {{ t({"en": "Handed to a person · compensation", "ar": "حُوّلت لموظف · تعويض"}) }}</span></div>
+    </div>
+  </div>
+  <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span></span></div>
+</div>
+
+{% elif shot == "cover-models" %}
+<div class="frame cover">
+  <div class="cover-grid">
+    <div>
+      <h1 class="h1-sm">{{ t(p.title) }}</h1>
+      <p class="sub">{{ t({"en": "Same 245 customer messages · same checks · only the model changes", "ar": "نفس الـ 245 رسالة · نفس الفحوصات · النموذج فقط يتغير"}) }}</p>
+    </div>
+    <div class="models2">
+      {% for name, rows, best in [
+        ("DeepSeek Flash", [("0 / 163", True), ("68 / 68", True), ("$0.17", True), ("1.4 s", True)], True),
+        ("DeepSeek V4 Pro", [("4 / 167", False), ("65 / 68", False), ("$0.92", False), ("3.4 s", False)], False),
+      ] %}
+      <div class="flow-card mcard{{ ' best' if best }}">
+        <h4>{{ name }}</h4>
+        {% set labels = [
+          {"en": "wrong answers sent", "ar": "إجابات خاطئة أُرسلت"},
+          {"en": "handed over when needed", "ar": "حوّل عند الحاجة"},
+          {"en": "per 1,000 conversations", "ar": "لكل 1,000 محادثة"},
+          {"en": "median reply", "ar": "متوسط الرد"},
+        ] %}
+        {% for v, good in rows %}
+        <div class="mrow"><bdi class="{{ 'up' if good else 'down' }}">{{ v }}</bdi><span>{{ t(labels[loop.index0]) }}</span></div>
+        {% endfor %}
+      </div>
+      {% endfor %}
     </div>
   </div>
   <div class="frame-foot"><span class="who"><span class="brand-mark">YZ</span>{{ t(profile.name) }} · {{ t(profile.role) }}</span><span></span></div>

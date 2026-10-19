@@ -1,0 +1,236 @@
+{
+ "models": [
+  {
+   "id": "deepseek-flash",
+   "name": {
+    "en": "DeepSeek Flash",
+    "ar": "DeepSeek Flash"
+   }
+  },
+  {
+   "id": "deepseek-v4-pro",
+   "name": {
+    "en": "DeepSeek V4 Pro",
+    "ar": "DeepSeek V4 Pro"
+   }
+  }
+ ],
+ "messages": [
+  {
+   "id": "t001",
+   "text": "ابي اغير موعد رحلتي وتذكرتي توفير، كم الرسوم؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t012",
+   "text": "كم رسوم تغيير الموعد لتذكرة توفير لو احنا 3 ركاب؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t023",
+   "text": "لو الغيت تذكرة المرن لي ولزوجتي كم يخصمون؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t029",
+   "text": "عندي شنطة 35 كيلو، يقبلونها؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t031",
+   "text": "كم عدد الحقائب المسجلة المسموح بها في درجة الأعمال؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_wrong"
+   }
+  },
+  {
+   "id": "t047",
+   "text": "وش الدول اللي تحجزون لها موعد تأشيرة؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t051",
+   "text": "ابي الغي باقة العمرة وباقي على السفر 20 يوم، كم يرجع لي؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t056",
+   "text": "كم يدفع طفل عمره 6 سنوات في باقة العمرة؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t081",
+   "text": "Do you accept Apple Pay?",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t103",
+   "text": "كم نقطة أكسب عند شراء باقة عمرة بقيمة 5000 ريال؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t123",
+   "text": "زوجتي حامل بالاسبوع 30، وش تحتاج عشان تسافر؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t146",
+   "text": "ابي اعطي تذكرتي لاخوي يسافر بدالي",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t165",
+   "text": "اقدر اكلمكم الساعة 1 الفجر؟",
+   "expected": "answer_ok",
+   "predictions": {
+    "deepseek-flash": "answer_ok",
+    "deepseek-v4-pro": "answer_ok"
+   }
+  },
+  {
+   "id": "t166",
+   "text": "الموظف عندكم كان مره قليل ادب معي، ابي اشتكي",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "handoff"
+   }
+  },
+  {
+   "id": "t177",
+   "text": "رحلتي تأخرت 7 ساعات، كم التعويض اللي تعطوني؟",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "answer_wrong"
+   }
+  },
+  {
+   "id": "t178",
+   "text": "How much compensation will you pay me for the delay?",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "answer_wrong"
+   }
+  },
+  {
+   "id": "t184",
+   "text": "الغوا حجزي رقم SF-48213 الحين",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "handoff"
+   }
+  },
+  {
+   "id": "t198",
+   "text": "تبيعون تأمين سفر؟",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "handoff"
+   }
+  },
+  {
+   "id": "t210",
+   "text": "اقدر اسافر لدبي بالهوية الوطنية بدون جواز؟",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "handoff"
+   }
+  },
+  {
+   "id": "t214",
+   "text": "ابوي تعبان في المطار الحين ويحتاج اسعاف",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "handoff"
+   }
+  },
+  {
+   "id": "t222",
+   "text": "تكفى سوو لي استثناء والغوا تذكرة التوفير بدون رسوم",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "handoff"
+   }
+  },
+  {
+   "id": "t225",
+   "text": "هل يمكنكم تمديد صلاحية نقاطي المنتهية؟",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "answer_wrong"
+   }
+  },
+  {
+   "id": "t230",
+   "text": "I want to talk to a human.",
+   "expected": "handoff",
+   "predictions": {
+    "deepseek-flash": "handoff",
+    "deepseek-v4-pro": "handoff"
+   }
+  },
+  {
+   "id": "t234",
+   "text": "السلام عليكم",
+   "expected": "redirect",
+   "predictions": {
+    "deepseek-flash": "redirect",
+    "deepseek-v4-pro": "redirect"
+   }
+  }
+ ]
+}

@@ -76,7 +76,7 @@ services:
     body:
       en: An assistant that answers from your own data and documents, and asks or hands over to a person when it isn't sure.
       ar: مساعد يجيب من بياناتك ومستنداتك أنت، ويسأل أو يحوّل لموظف عندما لا يكون متأكدًا.
-    proof: [ask-your-data, document-reader]
+    proof: [support-assistant, ask-your-data]
   - icon: chart
     title: { en: "Dashboards & forecasts", ar: "لوحات متابعة وتوقعات" }
     body:
@@ -88,7 +88,7 @@ services:
     body:
       en: A fair test of which model does your task best and what it will cost you each month.
       ar: اختبار عادل لأي نموذج يؤدي مهمتك بأفضل شكل، وكم سيكلفك شهريًا.
-    proof: [ask-your-data]
+    proof: [choosing-a-model]
 
 experience:
   - org: { en: "OrenGreenberg", ar: "OrenGreenberg" }

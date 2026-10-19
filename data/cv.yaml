@@ -50,6 +50,14 @@ experience:
       - Built the charts layer of a team project that gathers competitor information from the web and turns it into market insights.
 
 projects:
+  - name: Arabic Support Assistant
+    stack: Python, LLMs, RAG, sentence-transformers, DeepSeek
+    link: github.com/Yahia20/arabic-support-assistant
+    body: >-
+      Answers travel-agency customers in Saudi dialect, formal Arabic or English from written
+      policy; code checks every figure before an answer is sent and hands everything else to a
+      person. 0 wrong answers of 163 sent and 68 of 68 hand-overs on a frozen 245-message test; the
+      model costing 5x more sent 4 wrong answers, so the cheaper one ships ($0.17 per 1,000 chats).
   - name: KSA Document Reader
     stack: Python, OpenCV, PP-OCR, ONNX Runtime
     link: github.com/Yahia20/ksa-document-reader

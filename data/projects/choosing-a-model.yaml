@@ -1,0 +1,159 @@
+# Written for a non-technical reader. Technical detail lives only under `tech`.
+# Numbers come from github.com/Yahia20/arabic-support-assistant results/*/test.summary.json;
+# the examples table from data/demos/support-assistant (scripts/export_portfolio.py there).
+
+slug: choosing-a-model
+category: ai-evaluation
+status: completed
+featured: false
+order: 1
+date: 2026-10
+
+title:
+  en: The AI model that cost 5 times more was the riskier one
+  ar: نموذج الذكاء الاصطناعي الأغلى بخمس مرات كان الأخطر
+short_title: { en: "Choosing the model", ar: "اختيار النموذج" }
+tagline:
+  en: "Before a support assistant goes live, I ran two AI models on the same 245 customer messages. The expensive one sent 4 wrong answers and decided compensation requests on its own. The cheap one sent none."
+  ar: "قبل تشغيل مساعد خدمة العملاء، جرّبت نموذجين على نفس الـ 245 رسالة. النموذج الغالي أرسل 4 إجابات خاطئة وقرر طلبات التعويض بنفسه. والرخيص لم يرسل أي إجابة خاطئة."
+
+role:
+  en: I designed the test, ran both models under identical conditions, and marked every reply with code.
+  ar: صمّمت الاختبار، وشغّلت النموذجين بنفس الظروف تمامًا، وصحّحت كل رد بالكود.
+
+cover:
+  image: cover.png
+  alt:
+    en: "DeepSeek Flash: 0 wrong answers, 68 of 68 handed over, $0.17 per 1,000 conversations. DeepSeek V4 Pro: 4 wrong answers, 65 of 68, $0.92"
+    ar: "DeepSeek Flash: صفر إجابات خاطئة، 68 من 68 حُوّلت، 0.17 دولار لكل 1,000 محادثة. DeepSeek V4 Pro: 4 إجابات خاطئة، 65 من 68، 0.92 دولار"
+
+stats:
+  - display: { en: "0 vs 4", ar: "0 مقابل 4" }
+    label: { en: "wrong answers sent to customers", ar: "إجابات خاطئة وصلت للعملاء" }
+    note: { en: "cheaper model vs expensive model", ar: "النموذج الأرخص مقابل الأغلى" }
+  - display: { en: "5.3×", ar: "5.3×" }
+    label: { en: "cheaper per conversation", ar: "أرخص لكل محادثة" }
+    note: { en: "$0.17 vs $0.92 per 1,000", ar: "0.17 مقابل 0.92 دولار لكل 1,000" }
+  - display: { en: "2.3×", ar: "2.3×" }
+    label: { en: "faster to reply", ar: "أسرع في الرد" }
+    note: { en: "1.4 s vs 3.4 s median", ar: "1.4 مقابل 3.4 ثانية في المتوسط" }
+  - display: { en: "68 vs 65", ar: "68 مقابل 65" }
+    label: { en: "of 68 messages that needed a person reached one", ar: "من 68 رسالة تحتاج موظفًا وصلت له" }
+
+problem:
+  title: { en: "The problem", ar: "المشكلة" }
+  body:
+    en: >-
+      Choosing the AI model behind a customer-facing assistant usually comes down to a demo and
+      the price list, and the assumption that the bigger, more expensive model is the safer
+      choice. But the cost of a support assistant is not the API bill; it is the wrong promise it
+      makes to a customer. The only way to know which model is safer for your task is to run them
+      on the same real-looking messages and count the mistakes that would reach a customer.
+    ar: >-
+      اختيار نموذج الذكاء الاصطناعي خلف مساعد يتعامل مع العملاء يعتمد غالبًا على عرض تجريبي وقائمة
+      الأسعار، وعلى افتراض أن النموذج الأكبر والأغلى هو الأكثر أمانًا. لكن تكلفة مساعد خدمة العملاء ليست
+      فاتورة الاستخدام؛ بل الوعد الخاطئ الذي يقدّمه لعميل. والطريقة الوحيدة لمعرفة أي نموذج أكثر أمانًا
+      لمهمتك هي تشغيلها على نفس الرسائل الواقعية وعدّ الأخطاء التي كانت ستصل للعميل.
+
+steps:
+  - icon: inbox
+    title: { en: "Write the test first", ar: "كتابة الاختبار أولًا" }
+    body:
+      en: "245 customer messages in Saudi dialect, formal Arabic and English, each with the right outcome, saved before any code."
+      ar: "245 رسالة عميل باللهجة السعودية والفصحى والإنجليزية، لكل منها النتيجة الصحيحة، حُفظت قبل أي كود."
+  - icon: scale
+    title: { en: "Same conditions", ar: "نفس الظروف" }
+    body:
+      en: "Both models get the same messages, the same policy search and the same safety checks. Only the model changes."
+      ar: "النموذجان يحصلان على نفس الرسائل ونفس البحث في السياسة ونفس فحوصات الأمان. النموذج فقط يتغير."
+  - icon: check
+    title: { en: "Mark with code", ar: "التصحيح بالكود" }
+    body:
+      en: "Code marks every reply: the right action, the right rule, every figure. No AI grades another AI."
+      ar: "الكود يصحح كل رد: الإجراء الصحيح، والقاعدة الصحيحة، وكل رقم. لا ذكاء اصطناعي يقيّم آخر."
+  - icon: coin
+    title: { en: "Count cost and speed", ar: "حساب التكلفة والسرعة" }
+    body:
+      en: "The real bill and reply time of every call are recorded, so the price is measured, not estimated."
+      ar: "تُسجَّل التكلفة الفعلية ووقت الرد لكل استدعاء، فيكون السعر مقاسًا لا تقديريًا."
+
+comparison:
+  title: { en: "Same messages, two models", ar: "نفس الرسائل، نموذجان" }
+  intro:
+    en: Three numbers that decide whether an assistant is safe to put in front of customers.
+    ar: ثلاثة أرقام تحدد إن كان المساعد آمنًا أمام العملاء.
+  tests:
+    - id: precision
+      label: { en: "Answers sent that were right", ar: "إجابات أُرسلت وكانت صحيحة" }
+      note: { en: "a wrong answer reaches a customer", ar: "الإجابة الخاطئة تصل للعميل" }
+    - id: handoff
+      label: { en: "Handed over when needed", ar: "حوّل عند الحاجة" }
+      note: { en: "complaints, compensation, a specific booking", ar: "شكاوى، تعويضات، حجز محدد" }
+    - id: automation
+      label: { en: "Answered by itself", ar: "أجاب وحده" }
+      note: { en: "of the questions the policy answers", ar: "من الأسئلة التي تجيبها السياسة" }
+  models:
+    - name: { en: "DeepSeek Flash", ar: "DeepSeek Flash" }
+      kind: { en: "$0.17 per 1,000 · 1.4 s", ar: "0.17 دولار لكل 1,000 · 1.4 ث" }
+      scores: { precision: 1.0, handoff: 1.0, automation: 0.9879 }
+      highlight: true
+    - name: { en: "DeepSeek V4 Pro", ar: "DeepSeek V4 Pro" }
+      kind: { en: "$0.92 per 1,000 · 3.4 s", ar: "0.92 دولار لكل 1,000 · 3.4 ث" }
+      scores: { precision: 0.976, handoff: 0.9559, automation: 0.9879 }
+  takeaway:
+    en: "The expensive model answered three compensation and exception requests itself — \"there is no additional financial compensation\" — a decision the policy never makes. The cheaper model handed every one to a person."
+    ar: "النموذج الغالي أجاب بنفسه على ثلاثة طلبات تعويض واستثناء — «لا يتوفر تعويض مالي إضافي» — وهو قرار لم تقله السياسة. والنموذج الأرخص حوّلها كلها لموظف."
+
+examples:
+  title: { en: "Test messages, and what each model did", ar: "رسائل من الاختبار، وماذا فعل كل نموذج" }
+  intro:
+    en: "24 messages from the frozen test: a spread across topics and languages, plus all 5 where the two models disagree. All 245 are on GitHub."
+    ar: "24 رسالة من الاختبار المغلق: عيّنة من مواضيع ولغات مختلفة، ومعها الرسائل الخمس التي اختلف فيها النموذجان. الرسائل الـ 245 كلها على GitHub."
+  source: support-assistant
+
+value:
+  title: { en: "How this can help your business", ar: "كيف يفيد هذا شركتك" }
+  items:
+    - icon: scale
+      title: { en: "A decision on evidence", ar: "قرار مبني على دليل" }
+      body: { en: "Know which model makes fewer mistakes on your own messages before you sign up for one.", ar: "اعرف أي نموذج يخطئ أقل على رسائلك أنت قبل أن تلتزم بواحد." }
+    - icon: coin
+      title: { en: "A smaller monthly bill", ar: "فاتورة شهرية أقل" }
+      body: { en: "Here the right choice was also 5 times cheaper. Paying more does not buy safety by default.", ar: "هنا الاختيار الصحيح كان أيضًا أرخص بخمس مرات. الدفع أكثر لا يشتري الأمان تلقائيًا." }
+    - icon: target
+      title: { en: "A test you keep", ar: "اختبار يبقى معك" }
+      body: { en: "When a new model comes out, the same test answers whether to switch in an afternoon.", ar: "عندما يصدر نموذج جديد، نفس الاختبار يجيب إن كان التغيير يستحق، خلال ساعات." }
+  fits:
+    en: Any team about to put an AI model in front of customers or into a workflow, and any team paying for a large model it may not need.
+    ar: أي فريق على وشك وضع نموذج ذكاء اصطناعي أمام العملاء أو في سير عمل، وأي فريق يدفع لنموذج كبير قد لا يحتاجه.
+
+limits:
+  title: { en: "Good to know", ar: "من المهم أن تعرف" }
+  items:
+    - en: Two models from one provider so far. The result is about this task, not about the models in general.
+      ar: نموذجان من مزوّد واحد حتى الآن. النتيجة تخص هذه المهمة، وليست حكمًا عامًا على النموذجين.
+    - en: "The marking is strict: one of the expensive model's four was a correct reply that wrote \"two bags\" in words."
+      ar: "التصحيح صارم: أحد أخطاء النموذج الغالي الأربعة كان ردًا صحيحًا كتب «حقيبتين» بالحروف."
+
+tech:
+  stack: [Python, LLM evaluation, DeepSeek, OpenAI SDK]
+  points:
+    - en: "Identical pipeline for both models (retrieval, prompt, JSON schema, code checks); temperature 0; every reply cached with its real cost and latency; spend capped."
+      ar: "نفس المسار للنموذجين (البحث، التعليمات، صيغة JSON، فحوصات الكود)؛ درجة حرارة 0؛ كل رد محفوظ بتكلفته ووقته الفعليين؛ والإنفاق محدود بسقف."
+    - en: "Metrics: answer precision (right answers / answers sent), hand-over recall, automation (right answers / answerable), cost per 1,000 messages, median latency. Test committed before the assistant code; marking by code only."
+      ar: "المقاييس: دقة الإجابات المرسلة، ونسبة التحويل الصحيح، ونسبة الأتمتة، والتكلفة لكل 1,000 رسالة، ومتوسط زمن الرد. الاختبار حُفظ قبل كود المساعد؛ والتصحيح بالكود فقط."
+
+links:
+  - kind: live
+    url: https://yahia20.github.io/arabic-support-assistant/
+    label: { en: "Results page with every miss explained", ar: "صفحة النتائج مع شرح كل خطأ" }
+  - kind: github
+    url: https://github.com/Yahia20/arabic-support-assistant
+    label: { en: "Test set and results on GitHub", ar: "الاختبار والنتائج على GitHub" }
+
+gallery:
+  - image: cover.png
+    layout: cover-models
+    caption: { en: "The two models side by side", ar: "النموذجان جنبًا إلى جنب" }
+  - image: comparison.png
+    caption: { en: "Same messages, two models", ar: "نفس الرسائل، نموذجان" }

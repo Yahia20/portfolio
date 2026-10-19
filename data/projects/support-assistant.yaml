@@ -1,0 +1,143 @@
+# Written for a non-technical reader. Technical detail lives only under `tech`.
+# Numbers come from github.com/Yahia20/arabic-support-assistant results/*/test.summary.json.
+
+slug: support-assistant
+category: ai-assistants
+status: completed
+featured: false
+order: 1
+date: 2026-10
+
+title:
+  en: A support assistant that answers in Saudi dialect — and knows when to hand over
+  ar: مساعد خدمة عملاء يرد باللهجة السعودية — ويعرف متى يحوّل لموظف
+short_title: { en: "Saudi support assistant", ar: "مساعد خدمة العملاء" }
+tagline:
+  en: "Customers ask about fees, refunds, baggage, visas and Umrah in Saudi dialect, formal Arabic or English. It answers only from your written policy, code checks every answer, and anything it can't prove goes to a person."
+  ar: "يسأل العملاء عن الرسوم والاسترداد والأمتعة والتأشيرات والعمرة باللهجة السعودية أو الفصحى أو الإنجليزية. يجيب فقط من سياستك المكتوبة، والكود يراجع كل إجابة، وكل ما لا يستطيع إثباته يذهب لموظف."
+
+role:
+  en: I built it end to end — the policy book, the assistant, the checks, and a 245-message test written before the code.
+  ar: بنيته بالكامل — كتاب السياسات، والمساعد، والفحوصات، واختبار من 245 رسالة كُتب قبل الكود.
+
+cover:
+  image: cover.png
+  alt:
+    en: "A customer asks in Saudi dialect about the Saver change fee and gets SAR 250, verified against the policy; a compensation request goes to a person"
+    ar: "عميل يسأل باللهجة السعودية عن رسوم تغيير تذكرة التوفير فيحصل على 250 ريال مُتحقق منها من السياسة؛ وطلب تعويض يُحوَّل لموظف"
+
+stats:
+  - display: { en: "0", ar: "0" }
+    label: { en: "wrong answers sent to customers", ar: "إجابات خاطئة وصلت للعملاء" }
+    note: { en: "163 answers sent on 245 test messages", ar: "من 163 إجابة على 245 رسالة اختبار" }
+  - display: { en: "68 / 68", ar: "68 / 68" }
+    label: { en: "messages that needed a person were handed over", ar: "رسالة تحتاج موظفًا حُوّلت له" }
+  - display: { en: "98.8%", ar: "98.8%" }
+    label: { en: "of policy questions answered correctly with no person", ar: "من أسئلة السياسة أُجيبت صحيحًا دون موظف" }
+  - display: { en: "$0.17", ar: "0.17 دولار" }
+    label: { en: "per 1,000 conversations", ar: "لكل 1,000 محادثة" }
+    note: { en: "median reply in 1.4 seconds", ar: "متوسط الرد 1.4 ثانية" }
+
+problem:
+  title: { en: "The problem", ar: "المشكلة" }
+  body:
+    en: >-
+      Most customer questions to a travel agency have a written answer: how much to change a
+      Saver ticket, when a refund arrives, how many bags a child gets. The team answers them by
+      hand, again and again, in WhatsApp and on the phone. A chatbot looks like the fix, but a
+      chatbot that makes up a refund deadline or promises compensation costs more than it saves.
+      The real requirement is an assistant that answers only what the policy says, in the way
+      Saudi customers actually write, and hands everything else to a person.
+    ar: >-
+      معظم أسئلة العملاء لوكالة السفر لها إجابة مكتوبة: كم رسوم تغيير تذكرة التوفير، متى يرجع المبلغ،
+      كم حقيبة للطفل. والفريق يجيب عنها يدويًا مرة بعد مرة على الواتساب والهاتف. روبوت المحادثة يبدو
+      حلًا، لكن الروبوت الذي يخترع موعد استرداد أو يعد بتعويض يكلّف أكثر مما يوفّر. المطلوب فعلًا مساعد
+      يجيب فقط بما تقوله السياسة، وبالطريقة التي يكتب بها العملاء السعوديون فعلًا، ويحوّل كل ما عدا ذلك لموظف.
+
+steps:
+  - icon: search
+    title: { en: "Find the rule", ar: "إيجاد القاعدة" }
+    body:
+      en: "Each message is matched to the closest sections of the company policy, in Arabic or English."
+      ar: "كل رسالة تُطابَق مع أقرب أقسام سياسة الشركة، بالعربي أو الإنجليزي."
+  - icon: chat
+    title: { en: "Decide", ar: "القرار" }
+    body:
+      en: "The AI chooses: answer from the policy, hand over to a person, or politely redirect an off-topic message."
+      ar: "الذكاء الاصطناعي يختار: يجيب من السياسة، أو يحوّل لموظف، أو يعتذر بلطف عن رسالة خارج الموضوع."
+  - icon: shield
+    title: { en: "Check with code", ar: "المراجعة بالكود" }
+    body:
+      en: "An answer is sent only if every fee and deadline in it is written in the policy. Otherwise a person gets it."
+      ar: "لا تُرسل الإجابة إلا إذا كان كل رسم وموعد فيها مكتوبًا في السياسة. وإلا تذهب لموظف."
+  - icon: user
+    title: { en: "Hand over cleanly", ar: "تحويل منظّم" }
+    body:
+      en: "Complaints, compensation, a specific booking, emergencies and anything not in the policy go to a person with a one-line summary."
+      ar: "الشكاوى والتعويضات والحجز المحدد والطوارئ وكل ما ليس في السياسة تذهب لموظف مع ملخص بسطر واحد."
+
+results:
+  title: { en: "Results", ar: "النتائج" }
+  as_of: { en: "245 test messages written before the code · October 2026", ar: "245 رسالة اختبار كُتبت قبل الكود · أكتوبر 2026" }
+  points:
+    - en: Every one of the 163 answers it sent was right — the right rule and every figure the question needed.
+      ar: كل الإجابات الـ 163 التي أرسلها كانت صحيحة — القاعدة الصحيحة وكل رقم يحتاجه السؤال.
+    - en: All 68 messages that needed a person reached one — complaints, compensation, actions on a booking, emergencies and legal threats.
+      ar: كل الرسائل الـ 68 التي تحتاج موظفًا وصلت له — شكاوى وتعويضات وطلبات على حجز وطوارئ وتهديدات قانونية.
+    - en: "By language: Saudi dialect 124 of 126, formal Arabic 40 of 40, English 79 of 79."
+      ar: "حسب اللغة: لهجة سعودية 124 من 126، فصحى 40 من 40، إنجليزي 79 من 79."
+    - en: Both misses were safe — a question it could have answered went to a person instead.
+      ar: الخطآن كانا آمنين — سؤال كان يمكن أن يجيبه ذهب لموظف بدلًا من ذلك.
+
+value:
+  title: { en: "How this can help your business", ar: "كيف يفيد هذا شركتك" }
+  items:
+    - icon: chat
+      title: { en: "Routine questions answered", ar: "الأسئلة المتكررة تُجاب" }
+      body: { en: "Fees, refunds, baggage, visas and payment, in the customer's own dialect, any time of day.", ar: "الرسوم والاسترداد والأمتعة والتأشيرات والدفع، بلهجة العميل نفسه، في أي وقت." }
+    - icon: shield
+      title: { en: "No invented promises", ar: "لا وعود مخترعة" }
+      body: { en: "Code blocks any fee or deadline that isn't in your policy before a customer sees it.", ar: "الكود يمنع أي رسم أو موعد غير موجود في سياستك قبل أن يراه العميل." }
+    - icon: user
+      title: { en: "Your team gets the hard cases", ar: "فريقك يتفرغ للحالات الصعبة" }
+      body: { en: "Complaints and exceptions arrive with a summary, so the agent starts with the context.", ar: "الشكاوى والاستثناءات تصل مع ملخص، فيبدأ الموظف وهو يعرف السياق." }
+  fits:
+    en: Travel agencies, hotels, clinics, telecom and e-commerce — any business with written policies and customers who ask the same questions every day.
+    ar: وكالات السفر والفنادق والعيادات والاتصالات والمتاجر الإلكترونية — أي شركة لديها سياسات مكتوبة وعملاء يسألون نفس الأسئلة كل يوم.
+
+limits:
+  title: { en: "Good to know", ar: "من المهم أن تعرف" }
+  items:
+    - en: The company and its policy are fictional, written for this project. For a real business, the assistant reads your own policy.
+      ar: الشركة وسياستها وهميتان كُتبتا لهذا المشروع. مع شركة حقيقية، يقرأ المساعد سياستك أنت.
+    - en: The test uses single messages, not long conversations.
+      ar: الاختبار على رسائل منفردة، وليس محادثات طويلة.
+    - en: If you want it to give emergency phone numbers, they have to be written into the policy; otherwise it hands the message to a person.
+      ar: إذا أردت أن يعطي أرقام الطوارئ، يجب كتابتها في السياسة؛ وإلا يحوّل الرسالة لموظف.
+
+tech:
+  stack: [Python, LLMs, RAG, sentence-transformers, DeepSeek, OpenAI SDK, Pydantic]
+  points:
+    - en: "Retrieval: every policy line embedded in Arabic and English (paraphrase-multilingual-MiniLM-L12-v2); a section scores as its best line plus a word-overlap bonus; top 5 sections plus an index of all 14, with one optional `need_section` lookup. The right section reached the model for 165 of 165 policy questions."
+      ar: "البحث: كل سطر في السياسة مُمثَّل بالعربي والإنجليزي (paraphrase-multilingual-MiniLM-L12-v2)؛ القسم يأخذ درجة أفضل سطر فيه مع إضافة لتطابق الكلمات؛ أفضل 5 أقسام مع فهرس الأقسام الـ 14، وطلب قسم إضافي مرة واحدة عند الحاجة. وصل القسم الصحيح للنموذج في 165 من 165."
+    - en: "One JSON call per message (action, reply, cited sections, hand-over reason and agent summary). A code check sends an answer only if it cites a shown section and every number in it is in that section or one arithmetic step from the customer's numbers; hand-over replies get the same number check."
+      ar: "استدعاء JSON واحد لكل رسالة (الإجراء، الرد، الأقسام، سبب التحويل وملخص للموظف). الفحص بالكود لا يرسل الإجابة إلا إذا ذكرت قسمًا عُرض، وكان كل رقم فيها في القسم أو على بعد عملية حسابية واحدة من أرقام العميل؛ وردود التحويل تمر بنفس الفحص."
+    - en: "Frozen test (245 messages: 126 Saudi dialect, 40 formal Arabic, 79 English) committed before the assistant code; tuning on a separate 78-message dev set; marking by code only; responses cached and spend capped."
+      ar: "اختبار مغلق (245 رسالة: 126 لهجة سعودية، 40 فصحى، 79 إنجليزي) حُفظ قبل كود المساعد؛ التحسين على مجموعة منفصلة من 78 رسالة؛ التصحيح بالكود فقط؛ والردود محفوظة والإنفاق محدود بسقف."
+
+links:
+  - kind: live
+    url: https://yahia20.github.io/arabic-support-assistant/
+    label: { en: "Results page with real replies", ar: "صفحة النتائج مع ردود حقيقية" }
+  - kind: github
+    url: https://github.com/Yahia20/arabic-support-assistant
+    label: { en: "Code, test set and results on GitHub", ar: "الكود والاختبار والنتائج على GitHub" }
+
+gallery:
+  - image: cover.png
+    layout: cover-support
+    caption: { en: "An answer verified against the policy, and a compensation request handed over", ar: "إجابة مُتحقق منها من السياسة، وطلب تعويض يُحوَّل لموظف" }
+  - image: how-it-works.png
+    caption: { en: "How it works", ar: "كيف يعمل" }
+  - image: results.png
+    caption: { en: "Results on the frozen test", ar: "النتائج في الاختبار المغلق" }

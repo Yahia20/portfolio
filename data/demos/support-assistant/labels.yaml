@@ -1,0 +1,4 @@
+answer_ok: { en: "Correct answer", ar: "إجابة صحيحة" }
+answer_wrong: { en: "Wrong answer", ar: "إجابة خاطئة" }
+handoff: { en: "Hands to a person", ar: "يحوّل لموظف" }
+redirect: { en: "Polite redirect", ar: "يعتذر ويوجّه" }

@@ -342,8 +342,9 @@
       <p class="kicker">{{ t(profile.name) }} · {{ t(profile.role) }}</p>
       <h1>{{ t(profile.headline) }}</h1>
       <ul class="og-proof" role="list">
-        {% for pr in (projects | selectattr("stats") | list)[:4] %}{% set s = pr.stats[0] %}
-        <li><span class="og-name">{{ t(pr.short_title or pr.title) }}</span><strong>{{ stat_value(s, t) }}</strong><span>{{ t(s.label) }}</span></li>
+        {% set chosen = site.share_projects or (projects | selectattr("stats") | map(attribute="slug") | list) %}
+        {% for slug in chosen[:4] %}{% set pr = projects | selectattr("slug", "equalto", slug) | first %}{% if pr and pr.stats %}{% set s = pr.stats[0] %}
+        <li><span class="og-name">{{ t(pr.short_title or pr.title) }}</span><strong>{{ stat_value(s, t) }}</strong><span>{{ t(s.label) }}</span></li>{% endif %}
         {% endfor %}
       </ul>
     </div>

@@ -10,19 +10,31 @@ order: 1                # lower comes first inside its category
 date: 2026-09
 
 title:
-  en: Every customer conversation, reviewed automatically
-  ar: كل محادثة عميل تُراجَع تلقائيًا
-short_title: { en: "Conversation quality review", ar: "مراجعة جودة المحادثات" }
+  en: Every customer call, reviewed automatically
+  ar: كل مكالمة عميل تُراجَع تلقائيًا
+short_title: { en: "Call quality review", ar: "مراجعة جودة المكالمات" }
 tagline:
-  en: "An AI quality supervisor for Arabic customer service — it scores each conversation against your checklist and shows the evidence. Running on customer chats today; the call side is built and ready for when calls come in."
-  ar: "مشرف جودة ذكي لخدمة العملاء بالعربية — يقيّم كل محادثة حسب معاييرك ويعرض الدليل. يعمل اليوم على محادثات العملاء، وجزء المكالمات جاهز لحين وصول المكالمات."
+  en: An AI quality supervisor for Arabic call centres — it listens to every call, scores it against your checklist, and shows the evidence.
+  ar: مشرف جودة ذكي لمراكز الاتصال العربية — يسمع كل مكالمة ويقيّمها حسب معاييرك ويعرض الدليل.
 
 client:
   name: { en: "Travel Gate KSA", ar: "ترافل جيت" }
   about: { en: "Travel agency · Saudi Arabia", ar: "وكالة سفر · السعودية" }
 role:
-  en: Designed and built the whole system, from the CRM data to the reports.
-  ar: صمّمت وبنيت النظام بالكامل، من بيانات نظام العملاء حتى التقارير.
+  en: Designed and built the whole system, from recordings to reports.
+  ar: صمّمت وبنيت النظام بالكامل، من التسجيلات حتى التقارير.
+
+# Headline numbers, measured on the six sample calls shown in the demo below.
+stats:
+  - display: { en: "6 / 6", ar: "6 / 6" }
+    label: { en: "sample calls scored, every score backed by a quote", ar: "مكالمات تجريبية قُيّمت، وكل درجة مدعومة باقتباس" }
+  - display: { en: "4 of 6", ar: "4 من 6" }
+    label: { en: "calls sent to a supervisor, each with the reason", ar: "مكالمات أُحيلت للمشرف، ومع كل واحدة السبب" }
+  - display: { en: "SAR 1,300", ar: "1,300 ريال" }
+    label: { en: "refund promise caught that the policy forbids", ar: "وعد باسترداد تمنعه السياسة، تم رصده" }
+  - display: { en: "5", ar: "5" }
+    label: { en: "skills scored on every call", ar: "مهارات تُقيَّم في كل مكالمة" }
+    note: { en: "greeting, listening, solving, policy, closing", ar: "التحية، الإنصات، الحل، السياسة، الإنهاء" }
 
 cover:
   image: cover.png
@@ -49,13 +61,13 @@ steps:
   - icon: inbox
     title: { en: "Collect", ar: "التجميع" }
     body:
-      en: Customer chats are collected from the CRM into one database, each linked to its customer — no one has to export anything. Call recordings join the same place once calls come in.
-      ar: تُجمع محادثات العملاء من نظام العملاء في قاعدة بيانات واحدة، كلٌّ منها مربوط بعميله — دون أن يصدّر أحد أي شيء يدويًا. وتنضم تسجيلات المكالمات لنفس المكان عند وصولها.
+      en: Call recordings from the phone system and chats from the CRM are gathered into one place, each linked to its customer — no one has to export anything.
+      ar: تُجمع تسجيلات المكالمات من نظام الهاتف والمحادثات من نظام العملاء في مكان واحد، كلٌّ منها مربوط بعميله — دون أن يصدّر أحد أي شيء يدويًا.
   - icon: waveform
     title: { en: "Transcribe", ar: "التفريغ" }
     body:
-      en: For calls, a speech model built for Arabic turns each recording into text. It copes with Gulf and Egyptian dialects, formal Arabic, and English words dropped in mid-sentence.
-      ar: في المكالمات، نموذج مصمَّم للغة العربية يحوّل كل تسجيل إلى نص. يتعامل مع اللهجات الخليجية والمصرية والفصحى، ومع الكلمات الإنجليزية وسط الكلام.
+      en: A speech model built for Arabic turns each call into text. It copes with Gulf and Egyptian dialects, formal Arabic, and English words dropped in mid-sentence.
+      ar: نموذج مصمَّم للغة العربية يحوّل كل مكالمة إلى نص. يتعامل مع اللهجات الخليجية والمصرية والفصحى، ومع الكلمات الإنجليزية وسط الكلام.
   - icon: check
     title: { en: "Score", ar: "التقييم" }
     body:
@@ -69,21 +81,21 @@ steps:
   - icon: chart
     title: { en: "Report", ar: "التقرير" }
     body:
-      en: One report per conversation, plus a team summary that ranks the weakest skill first — that is next week's training plan.
-      ar: تقرير لكل محادثة، وملخص للفريق يرتّب المهارات من الأضعف — وهذه هي خطة تدريب الأسبوع القادم.
+      en: One report per call, plus a team summary that ranks the weakest skill first — that is next week's training plan.
+      ar: تقرير لكل مكالمة، وملخص للفريق يرتّب المهارات من الأضعف — وهذه هي خطة تدريب الأسبوع القادم.
 
 results:
   title: { en: "Where it stands", ar: "الوضع الحالي" }
   as_of: { en: "Travel Gate, October 2026", ar: "ترافل جيت، أكتوبر 2026" }
   points:
-    - en: In use at Travel Gate on customer-support chats in Arabic. Each chat is scored on the same checklist, with the sentence behind every score.
-      ar: يعمل في ترافل جيت على محادثات خدمة العملاء بالعربية. كل محادثة تُقيَّم بنفس المعايير، ومع كل درجة الجملة التي بُنيت عليها.
-    - en: Chats are brought together from the CRM into one PostgreSQL database, each linked to its customer.
-      ar: المحادثات تُجمع من نظام العملاء في قاعدة PostgreSQL واحدة، كلٌّ منها مربوط بعميله.
-    - en: The call side — transcription and call scoring — is built and shown below on six sample calls. It goes live when the agency starts taking calls into the system.
-      ar: جزء المكالمات — التفريغ وتقييم المكالمة — مبني ومعروض أدناه على ست مكالمات تجريبية، ويبدأ العمل عندما تبدأ الوكالة باستقبال المكالمات في النظام.
-    - en: Recordings that contain no real speech are recognised and set aside, so an empty call will never drag an agent's average down.
-      ar: التسجيلات التي لا تحتوي على كلام حقيقي تُكتشف وتُستبعد، فلن تُنزل مكالمةٌ فارغة متوسطَ الموظف.
+    - en: Built for Travel Gate. The same scoring already runs on the agency's customer chats; the call side goes live as calls start coming into the system.
+      ar: مبني لترافل جيت. نفس التقييم يعمل بالفعل على محادثات عملاء الوكالة، وجزء المكالمات يبدأ العمل مع بدء وصول المكالمات للنظام.
+    - en: Shown below on six sample calls I wrote to cover the cases a supervisor cares about. All six were scored and four were sent to a supervisor, each with the reason.
+      ar: معروض أدناه على ست مكالمات تجريبية كتبتها لتغطي الحالات التي تهم المشرف. قُيّمت الست كلها، وأُحيلت أربع منها للمشرف ومع كل واحدة السبب.
+    - en: In the samples it caught an agent promising a full refund on a non-refundable ticket — SAR 1,300 the company would otherwise have paid.
+      ar: في المكالمات التجريبية رصد موظفًا يعد باسترداد كامل لتذكرة غير قابلة للاسترداد — 1,300 ريال كانت الشركة ستدفعها.
+    - en: Recordings that contain no real speech are recognised and set aside, so an empty call never drags an agent's average down.
+      ar: التسجيلات التي لا تحتوي على كلام حقيقي تُكتشف وتُستبعد، فلا تُنزل مكالمةٌ فارغة متوسطَ الموظف.
 
 demo:
   kind: call-qa
@@ -163,8 +175,8 @@ limits:
   items:
     - en: Transcripts are not word-perfect — in noisy dialect calls roughly one word in four can be off. That is fine for judging how an agent behaved, not for quoting in a legal dispute.
       ar: النص المفرَّغ ليس مطابقًا حرفيًا — في المكالمات المزدحمة باللهجة قد تخطئ كلمة من كل أربع تقريبًا. هذا كافٍ للحكم على سلوك الموظف، لا للاستشهاد به في نزاع قانوني.
-    - en: Before using the scores in performance reviews, a supervisor should score around 50 conversations by hand so I can check that the AI agrees with them.
-      ar: قبل استخدام الدرجات في تقييم الأداء، يُفضَّل أن يقيّم المشرف حوالي 50 محادثة يدويًا لأتأكد أن الذكاء الاصطناعي يتفق معه.
+    - en: Before using the scores in performance reviews, a supervisor should score around 50 calls by hand so I can check that the AI agrees with them.
+      ar: قبل استخدام الدرجات في تقييم الأداء، يُفضَّل أن يقيّم المشرف حوالي 50 مكالمة يدويًا لأتأكد أن الذكاء الاصطناعي يتفق معه.
     - en: When the phone system records both voices on one track, the AI works out who is speaking from context. Recording each side separately makes that exact.
       ar: عندما يسجّل نظام الهاتف الصوتين على مسار واحد، يستنتج الذكاء الاصطناعي من المتحدث من سياق الكلام. تسجيل كل طرف على حدة يجعل ذلك دقيقًا.
 
@@ -175,8 +187,8 @@ tech:
       ar: "تفريغ المكالمات: نموذج عربي مفتوح المصدر بحجم 2 مليار معامل (Cohere Transcribe Arabic)، مُختبر على مكالمات تجريبية، ويُشغَّل فعليًا مع وصول المكالمات."
     - en: "Scoring: two independent AI passes — one reads the customer's side, one grades the agent — with structured output, so every score arrives with its evidence in a fixed shape."
       ar: "التقييم: مرحلتان مستقلتان — واحدة تقرأ جانب العميل وأخرى تقيّم الموظف — بمخرجات منظمة، فتصل كل درجة ومعها دليلها بشكل ثابت."
-    - en: "Plumbing: n8n schedules the work, a tested Python service does the maths, and PostgreSQL (25 tables) holds every customer, conversation and score."
-      ar: "البنية: n8n يجدول العمل، وخدمة بايثون مختبرة تقوم بالحسابات، وقاعدة PostgreSQL (25 جدولًا) تحفظ كل عميل ومحادثة ودرجة."
+    - en: "Plumbing: n8n schedules the work, a tested Python service does the transcription and the maths, and PostgreSQL (25 tables) holds every customer, call, chat and score."
+      ar: "البنية: n8n يجدول العمل، وخدمة بايثون مختبرة تقوم بالتفريغ والحسابات، وقاعدة PostgreSQL (25 جدولًا) تحفظ كل عميل ومكالمة ومحادثة ودرجة."
     - en: "The open-source version on GitHub runs the same scoring on your own recordings or transcripts, with 13 automated tests."
       ar: "النسخة مفتوحة المصدر على GitHub تشغّل نفس التقييم على تسجيلاتك أو نصوصك، ومعها 13 اختبارًا آليًا."
 

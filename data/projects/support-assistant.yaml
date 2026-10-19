@@ -87,8 +87,8 @@ results:
       ar: كل الرسائل الـ 68 التي تحتاج موظفًا وصلت له — شكاوى وتعويضات وطلبات على حجز وطوارئ وتهديدات قانونية.
     - en: "By language: Saudi dialect 124 of 126, formal Arabic 40 of 40, English 79 of 79."
       ar: "حسب اللغة: لهجة سعودية 124 من 126، فصحى 40 من 40، إنجليزي 79 من 79."
-    - en: Both misses were safe — a question it could have answered went to a person instead.
-      ar: الخطآن كانا آمنين — سؤال كان يمكن أن يجيبه ذهب لموظف بدلًا من ذلك.
+    - en: The 2 policy questions it did not answer itself were safe misses — they went to a person instead of getting a wrong reply.
+      ar: سؤالا السياسة اللذان لم يجب عنهما بنفسه كانا خطأين آمنين — ذهبا لموظف بدلًا من رد خاطئ.
     - en: "The same test on a model that costs 5 times more: it sent 4 wrong answers and missed 3 hand-overs, so the cheaper model is the one that ships."
       ar: "نفس الاختبار على نموذج أغلى بخمس مرات: أرسل 4 إجابات خاطئة وفاته 3 تحويلات، لذلك النموذج الأرخص هو المعتمد."
 
@@ -149,6 +149,8 @@ limits:
       ar: الشركة وسياستها وهميتان كُتبتا لهذا المشروع. مع شركة حقيقية، يقرأ المساعد سياستك أنت.
     - en: The test uses single messages, not long conversations.
       ar: الاختبار على رسائل منفردة، وليس محادثات طويلة.
+    - en: "The marking is strict: one of the expensive model's 4 wrong answers was a correct reply that wrote \"two bags\" in words instead of the number."
+      ar: "التصحيح صارم: أحد الإجابات الخاطئة الأربع للنموذج الأغلى كان ردًا صحيحًا كتب «حقيبتين» بالحروف بدل الرقم."
     - en: If you want it to give emergency phone numbers, they have to be written into the policy; otherwise it hands the message to a person.
       ar: إذا أردت أن يعطي أرقام الطوارئ، يجب كتابتها في السياسة؛ وإلا يحوّل الرسالة لموظف.
 

@@ -207,6 +207,9 @@ def load_all():
                 if not (reports / f"{call.file}.json").exists():
                     problems.append(f"{f}: demo call '{call.file}' has no report in {reports.relative_to(ROOT)}")
 
+    for slug in site.share_projects:
+        if slug not in slugs:
+            problems.append(f"site.yaml: share_projects lists '{slug}', which doesn't exist ({', '.join(slugs)})")
     for svc in profile.services:
         for slug in svc.proof:
             if slug not in slugs:

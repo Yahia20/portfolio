@@ -80,6 +80,7 @@ class Site(Strict):
     nav: Nav
     contact: Contact
     cv: str = ""            # PDF under assets/, offered for download on About and Contact
+    share_projects: list[str] = []   # slugs whose first number goes on the link-preview image
     analytics: Analytics = Analytics()
 
 

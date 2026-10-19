@@ -37,6 +37,9 @@ contact:
 # The CV PDF, relative to assets/. Rebuilt from data/cv.yaml by `python src/build.py --cv`.
 cv: cv/Yahia_Zakaria_CV.pdf
 
+# The four projects whose headline number appears on the link-preview image (LinkedIn, WhatsApp).
+share_projects: [support-assistant, document-reader, ask-your-data, hotel-cancellation-analytics]
+
 # Visitor counting. Leave empty to switch it off. To switch it on: create a free account at
 # goatcounter.com, pick a code (e.g. yahia → yahia.goatcounter.com) and put the code here.
 analytics:

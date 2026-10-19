@@ -16,7 +16,9 @@
     <h1>404</h1>
     <p>{{ ui.not_found.en }}</p>
     <p dir="rtl" lang="ar">{{ ui.not_found.ar }}</p>
-    <p><a href="/en/">{{ ui.go_home.en }}</a> · <a href="/ar/" lang="ar">{{ ui.go_home.ar }}</a></p>
+    {# GitHub Pages serves this page at whatever address was mistyped, so links must be absolute. #}
+    {% set home = site.base_url.rstrip("/") ~ "/" if site.base_url else "/" %}
+    <p><a href="{{ home }}en/">{{ ui.go_home.en }}</a> · <a href="{{ home }}ar/" lang="ar">{{ ui.go_home.ar }}</a></p>
   </main>
 </body>
 </html>
